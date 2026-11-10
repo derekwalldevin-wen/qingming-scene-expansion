@@ -1,0 +1,3702 @@
+{
+  "schema": "building-expansion-game-preview-receipt-v2",
+  "generatedAt": "2026-11-10T09:52:22.326Z",
+  "build": {
+    "node": "v24.18.0",
+    "apiCalls": 0,
+    "networkCalls": 0,
+    "serverStarted": false,
+    "browserOpened": false,
+    "distWritten": false,
+    "mode": "build"
+  },
+  "base": {
+    "main": {
+      "path": "dist/src/main.js",
+      "bytes": 58414,
+      "sha256": "73cd7093173728891903df409de5b672b2b926dc08905284fa73d4ecdb03fac7"
+    },
+    "world": {
+      "path": "dist/src/world.js",
+      "bytes": 42590,
+      "sha256": "c3f06a7dff5f811d9c09876134e296092fdb469541ae77a2a8681df597de6298"
+    },
+    "index": {
+      "path": "dist/index.html",
+      "bytes": 18236,
+      "sha256": "2c56439fb6c7cacffdb4d42728ec796cc00d861fe9f71490cc33f2bd21178854"
+    }
+  },
+  "baseUnchangedAfterBuild": true,
+  "distIntegrity": {
+    "checkedAfterBuild": true,
+    "unchanged": true,
+    "note": "builder 前后各读一次 dist 的 main.js/world.js/index.html；SHA 相同才算通过"
+  },
+  "streetSurfaces": {
+    "module": "modules/street-surfaces.js",
+    "sha256": "f6cd8da4fafec8f09dfe267f509a691a929583001def44d94e0ac57c3651e8c6",
+    "mountPatch": "main-install-preview（createWorld 之后独立 try/catch 调用 installStreetSurfaces；失败写 errors 并保留原街面）",
+    "paving": {
+      "xRange": [
+        70,
+        331.5
+      ],
+      "width": 10.6,
+      "y": 0.633,
+      "textureMeters": 2.4,
+      "color": "#9d9b96",
+      "normalScale": 1.25,
+      "curbWidth": 1,
+      "curbY": 0.641,
+      "apronWidth": 0.7,
+      "apronHeight": 0.06,
+      "transitionBands": [
+        {
+          "xRange": [
+            -26,
+            -14
+          ]
+        },
+        {
+          "xRange": [
+            14,
+            26
+          ]
+        }
+      ],
+      "drawCalls": 3
+    },
+    "railings": {
+      "xRange": [
+        -110,
+        210
+      ],
+      "banks": 2,
+      "step": 2.4,
+      "materialColor": "#6b4a2f",
+      "newelColor": "#553a24",
+      "postSection": 0.15,
+      "handrail": {
+        "section": [
+          0.12,
+          0.1
+        ],
+        "heightAboveDeck": 1.05
+      },
+      "lowerRail": {
+        "section": [
+          0.09,
+          0.07
+        ],
+        "heightAboveDeck": 0.55
+      },
+      "newelCap": {
+        "section": [
+          0.2,
+          0.08,
+          0.2
+        ],
+        "everyBays": 6
+      },
+      "withStonePlinth": true,
+      "stonePlinth": {
+        "section": [
+          0.22,
+          0.12,
+          0.22
+        ],
+        "color": "#7a7264"
+      },
+      "drawCalls": 2,
+      "decorative": true,
+      "collidable": false
+    },
+    "revetment": {
+      "xRange": [
+        -110,
+        210
+      ],
+      "banks": 2,
+      "width": 0.8,
+      "topAboveBank": 0.03,
+      "faceDepth": {
+        "min": 0.45,
+        "max": 0.6,
+        "waterY": 0.04
+      },
+      "color": "#7d7a72",
+      "skipZones": [
+        [
+          -14,
+          14
+        ],
+        [
+          -56,
+          -22
+        ],
+        [
+          28,
+          52
+        ]
+      ],
+      "textureMeters": 1.2,
+      "drawCalls": 1,
+      "note": "土坡→石岸→木栏杆 层次；颜色压暗避免岸线发白；装饰性无碰撞"
+    },
+    "wall": {
+      "requestedRect": {
+        "xMin": 200,
+        "xMax": 345,
+        "zMin": 10,
+        "zMax": 70
+      },
+      "finalCoordinates": "runtime street.wall.rect（南墙可能整条外移 12m；默认 zMin 10→-2）",
+      "gateOpeningZ": [
+        27,
+        53
+      ],
+      "gateJunctions": "门洞 z∈[27,53] 留空；既有西墙 z 2–26/54–78；门侧墩台 z=24.4/55.6；南/北墙外移后用 westTieIns 补齐西线缝隙（运行时 street.wall.westTieIns）",
+      "moduleMeters": 6,
+      "merlonSpacing": 1.7,
+      "merlonHeight": 1,
+      "stringCourses": 3,
+      "pilasterSpacing": 6,
+      "bodyTexture": "procedural-brick-512 (2.4m repeat, 0.3m course, body-only)",
+      "textureStats": "runtime street.wall.texture {size, generationMs, reused}",
+      "lowWallHeight": 8.2,
+      "detour": {
+        "step": 8,
+        "max": 16,
+        "levels": 2,
+        "direction": "outward only",
+        "wholeShift": "南移 12m 后矮墙 ≤5 且少于直线方案才整条南移（规则不变）"
+      },
+      "towers": 6,
+      "drawCalls": 3,
+      "continuity": "straight → outward 8m one-step then 16m two-step detour → 8.2m raised half-height wall where still blocked; whole-south shift 12m only when low walls ≤5 and fewer; low wall positions recorded at runtime street.wall.lowWalls",
+      "colliders": "runtime: per wall module/connector/low-wall boxes added to world.colliders (colliderIndex lazy sync)"
+    },
+    "wallContinuity": {
+      "south": {
+        "range": "x 202.5 → eastCoord（≈345）",
+        "expectedLength": 142.5,
+        "detourOffsets": [
+          0,
+          8,
+          16
+        ],
+        "detourDirection": "outward only（-z）",
+        "lowWallHeight": 8.2,
+        "oldBehavior": "冲突段直接跳过（用户看到 17 段、x≈217–295 一带缺口）",
+        "newBehavior": "直线→向外 8m 优先/最多 16m 两档绕行→8.2m raised 半高墙；南移规则不变（矮墙 ≤5 且更少才整条南移），墙体连续"
+      },
+      "wholeShiftOption": {
+        "available": true,
+        "shift": 12,
+        "forced": true,
+        "trigger": "整条外移 12m 后矮墙 ≤5 且少于直线方案（总长不变）→ 强制触发",
+        "cost": "城池南边界外扩 12m、南侧空地变大，墙与南侧既有景物距离变远；仍逐段检查 placed/主街/门洞"
+      },
+      "brickTexture": {
+        "size": 512,
+        "repeatMeters": 2.4,
+        "courseMeters": 0.3,
+        "brickLengthMeters": 0.6,
+        "maps": [
+          "map",
+          "normalMap",
+          "roughnessMap"
+        ],
+        "externalFiles": false,
+        "appliedTo": "wall body only"
+      },
+      "connectors": "绕行段之间用斜接短墙连接（yaw=atan2(-dz,dx)），避免折线处留缝",
+      "lowBasePositions": "runtime: window.__BUILDING_EXPANSION_PREVIEW__.street.wall.lowWalls（含 run/x/z/height/reason）；构建期无法预知 world colliders 的实际占位，故位置在运行时记录，规则与高度在此固定",
+      "guards": [
+        "不压已 placed 的 11 处（world.placements 含替换建筑，冲突候选直接排除）",
+        "不堵主街（distanceToRoute 街廊检查）",
+        "门洞 z∈[27,53] 留空（运行时 gatePassageClear 复核）"
+      ]
+    },
+    "totalAddedDrawCalls": 9,
+    "collisionsAdded": "runtime: only wall colliders; railings 0"
+  },
+  "densityFill": {
+    "module": "modules/density-fill.js",
+    "sha256": "a8300d65f98f7a2375576fa17c6c124814f29d1c791fc9649ddc8acb4a8d568f",
+    "mountPatch": "main-install-preview（createWorld 之后独立 try/catch 调用 installDensityFill；失败写 errors 并保留原场景）",
+    "city": {
+      "xRange": [
+        78,
+        326
+      ],
+      "propMinOffsetFromEdge": 0.8,
+      "streetWidthMeters": 10.6,
+      "requiredClearWidth": 3.2,
+      "defaultColliders": false,
+      "targets": {
+        "stalls": 10,
+        "props": 150
+      },
+      "spacingMeters": [
+        6,
+        10
+      ],
+      "vegetation": {
+        "softGroundOnly": true,
+        "cityGrass": false,
+        "rejectedReasons": [
+          "pavingZone",
+          "streetBuffer",
+          "waterBuffer",
+          "revetmentBand",
+          "building",
+          "collider",
+          "bounds"
+        ]
+      },
+      "avoidance": "街缘外 0.8–1.2m → 沿街 1.5m 步长最多 6 次 → 0.8x/0.6x 缩放，不行才跳过并写 skippedReasons"
+    },
+    "rural": {
+      "fields": 6,
+      "fences": true,
+      "gates": true,
+      "haystacks": 4,
+      "huts": 2,
+      "groves": 40,
+      "farBelt": {
+        "canopies": 60,
+        "radiusMin": 300,
+        "radiusMax": 380
+      }
+    },
+    "fog": {
+      "near": 105,
+      "far": 400,
+      "patch": "main-fog-far（applyArtStyle 之后设置 scene.fog.near/far）",
+      "override": "window.__BUILDING_EXPANSION_FOG__",
+      "rollback": "改 builder FOG_FAR 或运行时设 far:540",
+      "appliedAtRuntime": "window.__BUILDING_EXPANSION_FOG_APPLIED__"
+    },
+    "materials": [
+      "earth",
+      "paving",
+      "wood",
+      "cloth",
+      "tile"
+    ],
+    "drawCalls": 7,
+    "collisionsAdded": 0,
+    "statsPath": "window.__BUILDING_EXPANSION_PREVIEW__.density"
+  },
+  "people": {
+    "module": "modules/people-extra.js",
+    "sha256": "598fd6d6bc9c6a84adf467a17a0ed0aff1f70fe11ec199a27e822845e26162aa",
+    "mountPatch": "main-install-preview（createWorld 之后独立 try/catch、异步调用 installPeopleExtra；失败写 errors(stage=people) 并保留原场景）",
+    "targetHeightMeters": 1.75,
+    "childHeightMeters": 1.2,
+    "rigged": true,
+    "animation": {
+      "clips": [
+        "Idle",
+        "Walk"
+      ],
+      "idle": {
+        "name": "Idle",
+        "durationSeconds": 4
+      },
+      "walk": {
+        "name": "Walk",
+        "durationSeconds": 1.375
+      },
+      "loop": "LoopRepeat",
+      "tracks": 36,
+      "skinned": true,
+      "phaseOffsetSeconds": [
+        0,
+        1.3,
+        2.6,
+        0.7,
+        1.8,
+        2.9,
+        3.4,
+        3.8,
+        4.2
+      ],
+      "crossFadeSeconds": 0.3,
+      "fallback": "缺 Walk 回退 Idle 并写 errors；缺 Idle 回退轻起伏",
+      "mixer": "AnimationMixer（每模型 1 个，常驻；按状态 crossFade Idle/Walk）"
+    },
+    "walking": [
+      "person-porter-v1",
+      "person-guard-v1"
+    ],
+    "standing": [
+      "person-vendor-v1",
+      "person-boatman-v1",
+      "person-woman-v1",
+      "person-scholar-v1",
+      "person-bearer-v1",
+      "person-monk-v1",
+      "person-child-v1"
+    ],
+    "jumpTargets": [
+      "person-vendor-v1",
+      "person-porter-v1",
+      "person-boatman-v1",
+      "person-woman-v1",
+      "person-scholar-v1",
+      "person-guard-v1",
+      "person-bearer-v1",
+      "person-monk-v1",
+      "person-child-v1"
+    ],
+    "files": [
+      {
+        "id": "person-porter-v1",
+        "label": "挑担货郎",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-porter-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-porter-v1-rigged.glb",
+        "bytes": 9060240,
+        "sha256": "10cf950d8f413a4f7c88f97d15c86be804073c58afe16af74dce09f06fe802fa",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": true,
+          "speedMps": 0.9,
+          "rangeMeters": 25,
+          "lookAheadMeters": 1.4
+        },
+        "phaseSeconds": 1.3,
+        "heightMeters": 1.75,
+        "cameraDistance": 4,
+        "design": {
+          "x": 110,
+          "z": "cityStreetZ(110)-6.0",
+          "y": 0.636,
+          "yaw": "面向街心（-z 侧）",
+          "side": -1,
+          "offset": 6
+        }
+      },
+      {
+        "id": "person-boatman-v1",
+        "label": "船工",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-boatman-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-boatman-v1-rigged.glb",
+        "bytes": 7794056,
+        "sha256": "73efef849a6de0a7d6b4b750ba99d594574cd7b68956bcf23399f41468c9f04a",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": false
+        },
+        "phaseSeconds": 2.6,
+        "heightMeters": 1.75,
+        "cameraDistance": 4,
+        "design": {
+          "x": -25,
+          "z": "canalCenter(-25)+canalHalfWidth(-25)+1.6",
+          "y": "bankHeight+0.01",
+          "yaw": "面向水面",
+          "side": 1,
+          "offset": 11.85
+        }
+      },
+      {
+        "id": "person-vendor-v1",
+        "label": "摊贩",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-vendor-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-vendor-v1-rigged.glb",
+        "bytes": 7985252,
+        "sha256": "b09407f35b228d32c09a4f10e64bb6e48393d923416e02769c881338b68b3698",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": false
+        },
+        "phaseSeconds": 0,
+        "heightMeters": 1.75,
+        "cameraDistance": 4,
+        "design": {
+          "x": 150,
+          "z": "cityStreetZ(150)+6.0",
+          "y": 0.636,
+          "yaw": "面向街心（+z 侧）",
+          "side": 1,
+          "offset": 6
+        }
+      },
+      {
+        "id": "person-woman-v1",
+        "label": "提篮妇人",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-woman-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-woman-v1-rigged.glb",
+        "bytes": 7075996,
+        "sha256": "ca816f959aabfb9656b6756c5e2e12f6c29d1d0586ed185b971898620e875a27",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": false
+        },
+        "phaseSeconds": 0.7,
+        "heightMeters": 1.75,
+        "cameraDistance": 4,
+        "design": {
+          "x": 175,
+          "z": "cityStreetZ(175)+6.0",
+          "y": 0.636,
+          "yaw": "面向街心（+z 侧）",
+          "side": 1,
+          "offset": 6
+        }
+      },
+      {
+        "id": "person-scholar-v1",
+        "label": "青衫书生",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-scholar-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-scholar-v1-rigged.glb",
+        "bytes": 7264384,
+        "sha256": "2af17318ac3964b063d7dc984e0811d4f584bebec9de2aa3e3bd2184fcd56e1d",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": false
+        },
+        "phaseSeconds": 1.8,
+        "heightMeters": 1.75,
+        "cameraDistance": 4,
+        "design": {
+          "x": 205,
+          "z": "cityStreetZ(205)-6.0",
+          "y": 0.636,
+          "yaw": "面向街心（-z 侧）",
+          "side": -1,
+          "offset": 6
+        }
+      },
+      {
+        "id": "person-guard-v1",
+        "label": "差役",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-guard-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-guard-v1-rigged.glb",
+        "bytes": 8541780,
+        "sha256": "b07d198076706e5faf68a5b87918aa16e17f130aef8217a95eb83b55c54f88c9",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": true,
+          "speedMps": 0.88,
+          "rangeMeters": 20,
+          "lookAheadMeters": 1.4
+        },
+        "phaseSeconds": 2.9,
+        "heightMeters": 1.75,
+        "cameraDistance": 4,
+        "design": {
+          "x": 170,
+          "z": "cityStreetZ(170)+6.0",
+          "y": 0.636,
+          "yaw": "面向街心（+z 侧）",
+          "side": 1,
+          "offset": 6
+        }
+      },
+      {
+        "id": "person-bearer-v1",
+        "label": "轿夫",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-bearer-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-bearer-v1-rigged.glb",
+        "bytes": 8513336,
+        "sha256": "478a557c397fc0ac77c31603830697411222efc68a662cca434ade97f9287474",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": false
+        },
+        "phaseSeconds": 3.4,
+        "heightMeters": 1.75,
+        "cameraDistance": 4,
+        "design": {
+          "x": 132,
+          "z": "cityStreetZ(132)+6.0",
+          "y": 0.636,
+          "yaw": "面向街心（+z 侧）",
+          "side": 1,
+          "offset": 6,
+          "cameraDistance": 4
+        }
+      },
+      {
+        "id": "person-monk-v1",
+        "label": "僧人",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-monk-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-monk-v1-rigged.glb",
+        "bytes": 8446884,
+        "sha256": "3bdf511dd2032c20faa6d3743a592911483863338e4e54c5bed27d0ee438984f",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": false
+        },
+        "phaseSeconds": 3.8,
+        "heightMeters": 1.75,
+        "cameraDistance": 4,
+        "design": {
+          "x": -30,
+          "z": "canalCenter(-30)+canalHalfWidth(-30)+2.0",
+          "y": "bankHeight+0.01",
+          "yaw": "面向水面",
+          "side": 1,
+          "bankOffset": 2,
+          "cameraDistance": 4
+        }
+      },
+      {
+        "id": "person-child-v1",
+        "label": "孩童",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-child-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-child-v1-rigged.glb",
+        "bytes": 7466644,
+        "sha256": "726ac62d65703bf8f2f6e81568a80ea8efb182edc5c96d6c786ab4f3a83d5563",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": false
+        },
+        "phaseSeconds": 4.2,
+        "heightMeters": 1.2,
+        "cameraDistance": 2.6,
+        "design": {
+          "x": 192,
+          "z": "cityStreetZ(192)-6.0",
+          "y": 0.636,
+          "yaw": "面向街心（-z 侧）",
+          "side": -1,
+          "offset": 6,
+          "heightMeters": 1.2,
+          "cameraDistance": 2.6
+        }
+      }
+    ],
+    "coordinatesNote": "最终坐标/朝向/缩放以运行时 window.__BUILDING_EXPANSION_PREVIEW__.people.items 为准（构建期按建议坐标 + 沿街平移避让）；原 GLB 字节未改，SHA 见 files",
+    "statsPath": "window.__BUILDING_EXPANSION_PREVIEW__.people",
+    "drawCallsNote": "每个 GLB 为 1 skinned mesh/1 材质，9 件约 +9 draw call（运行时 people.drawCalls 实测；目标 9）"
+  },
+  "approach9Choice": {
+    "chosen": "guided-B09-01-local-G1-v2",
+    "chosenSourceId": "guided-B09-01-local-G1-v2",
+    "chosenAnchorId": "approach-9",
+    "chosenSha256": "535165653debfc9e61fce8b183e4acd5d081fa08c1d1350caf55cc6a1968b4bd",
+    "chosenBytes": 6793064,
+    "alternate": "guided-B09-03-local-G1-v2",
+    "alternateSha256": "8cba958aa7f6cad038153e31107e49e68d4e930697bf1ebf4b70405697fd933d",
+    "alternateUrl": "/preview/candidates/guided-B09-03-local-G1-v2/output-1.glb",
+    "alternateGlb": {
+      "artifactId": "guided-B09-03-local-G1-v2",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-B09-03-local-G1-v2/output-1.glb",
+      "bytes": 8866828,
+      "sha256": "8cba958aa7f6cad038153e31107e49e68d4e930697bf1ebf4b70405697fd933d",
+      "rawProviderBytesPreserved": true
+    },
+    "previousChosen": {
+      "artifactId": "architecture-B09-03-img-v1",
+      "meta": {
+        "artifactId": "architecture-B09-03-img-v1",
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/architecture-B09-03-img-v1/output-0.glb",
+        "bytes": 7963076,
+        "sha256": "b3370ea8f49b655ff6eb8a33d2dc599e5db5ee77aa3d2b06a929640a2fc60b74",
+        "rawProviderBytesPreserved": true
+      }
+    },
+    "reason": "B09-01 v2（单檐两坡）替代原 3 屋顶版与旧 B09-03 图生候选，主替换更贴近参考；B09-03 v2（通长 7 跨前廊）结构也可用，但同锚点只允许一个默认替换，故作为备用/对照保留",
+    "provenanceNote": "B09-01 catalog 原锚点为 approach-2/3；本轮按 lead 决定把 v2 放到 approach-9（沿用 references-b B09-03 的锚点与 sourceId 覆盖），crop/approval 仍取 B09-01；因此跳过 catalog crop SHA 校验，属有意重锚，需 headless 画面确认位置合理",
+    "rollback": "把 SELECTED 中 sourceId=B09-01 的条目换回 {sourceId:\"B09-03\", artifactId:\"architecture-B09-03-img-v1\", approvalKind:\"wave\", candidateId:\"B09-03\", catalogPath:\".../references-b/catalog.json\", kind:\"single\", templateName:\"building_source_B09_03\"} 后重跑 node build_preview.mjs；或改 artifactId 为 guided-B09-03-local-G1-v2 并保留 B09-03 锚点即可换用对照候选",
+    "overlapCheck": {
+      "method": "按 B09-01 v2 拟合后 predictedWorldSize 与 approach-9 锚点中心生成世界 AABB，与 dist visibleRoofPlan 邻近锚点矩形逐对求交（>0.05m）",
+      "predictedWorldSize": {
+        "width": 10.8889,
+        "depth": 9.0264,
+        "height": 8.5089
+      },
+      "neighborOverlaps": [
+        {
+          "id": "approach-8",
+          "x": -118.0008888888889,
+          "z": -35.3421052631579,
+          "w": 11.11111111111111,
+          "d": 4.2,
+          "overlapX": 0.3333388888888891,
+          "overlapZ": 1.4962409356725104
+        }
+      ],
+      "riskLevel": "medium",
+      "note": "仅几何/锚点近似判断，不能替代 headless 画面检查；屋顶、披檐、台基的细部穿插需截图确认"
+    }
+  },
+  "gateChoice": {
+    "chosen": "guided-A05-local-G1-v2",
+    "previous": "guided-A05-local-G1-v1",
+    "chosenSourceId": "guided-A05-local-G1-v2",
+    "anchors": [
+      "city-1",
+      "city-2"
+    ],
+    "kind": "group",
+    "chosenSha256": "ff27b38733cb5dc18ec69de914b9aa51eb98e731f90282b86f0dbc3656011a1b",
+    "chosenBytes": 6802836,
+    "previousSha256": "5894f012ff27c11ea12e75216a123f170e4b86b895f71d104d357c7f64dbb0e2",
+    "previousGlb": {
+      "artifactId": "guided-A05-local-G1-v1",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-A05-local-G1-v1/output-1.glb",
+      "bytes": 7986740,
+      "sha256": "5894f012ff27c11ea12e75216a123f170e4b86b895f71d104d357c7f64dbb0e2",
+      "rawProviderBytesPreserved": true
+    },
+    "previousUrl": "/preview/candidates/guided-A05-local-G1-v1/output-1.glb",
+    "reason": "A05 v2（单檐两坡、三开间前廊门屋）结构更接近原画城门门屋，替代原两座门楼并排+薄板墙版本；旧 guided-A05-local-G1-v1 保留为回退备选，不参与默认替换",
+    "rollback": "把 builder SELECTED 中 A05 条目的 artifactId 改回 guided-A05-local-G1-v1（sourceId/approvalArtifactId 同步改回），重跑 node build_preview.mjs；旧 GLB 原字节仍在 provider/artifacts，未删除",
+    "overlapCheck": {
+      "method": "按 A05 v2 组拟合尺寸与 city-1/2 组中心生成世界 AABB，与 street-surfaces 城墙矩形（墙厚 4.4m、门洞 z∈[27,53]）求交；门洞通行矩形不得被压",
+      "modelBox": {
+        "minX": 285.5556,
+        "maxX": 301.3333,
+        "minZ": 7.517794152046782,
+        "maxZ": 20.74419415204678
+      },
+      "gateOpening": {
+        "id": "west-gate-opening",
+        "x": [
+          197.8,
+          202.2
+        ],
+        "z": [
+          27,
+          53
+        ]
+      },
+      "gatePassageOverlap": {
+        "x": 0,
+        "z": 0
+      },
+      "gateClear": true,
+      "wallOverlaps": [
+        {
+          "id": "south-wall",
+          "x": [
+            200,
+            345
+          ],
+          "z": [
+            7.8,
+            12.2
+          ],
+          "overlapX": 15.778,
+          "overlapZ": 4.4
+        }
+      ],
+      "riskLevel": "medium",
+      "offsetSuggestion": null,
+      "note": "门洞通行已按矩形判断为 clear；城墙本体/南墙的 2D 叠置只代表贴墙/压墙风险，具体穿插需 headless 截图确认"
+    }
+  },
+  "c01Choice": {
+    "chosen": "guided-C01-local-G1-v2",
+    "previous": "architecture-C01-img-v1",
+    "chosenSourceId": "guided-C01-local-G1-v2",
+    "anchorId": "outside-14",
+    "chosenSha256": "f6a22c72dcfecfcd69cd8583cae740988c225d8663310ccdf7018516e3003233",
+    "chosenBytes": 7499800,
+    "previousSha256": "015418d1be815c6e4684c53738e3f71144e3dced57999a0267e49d81619c54e6",
+    "previousGlb": {
+      "artifactId": "architecture-C01-img-v1",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/architecture-C01-img-v1/output-0.glb",
+      "bytes": 8758268,
+      "sha256": "015418d1be815c6e4684c53738e3f71144e3dced57999a0267e49d81619c54e6",
+      "rawProviderBytesPreserved": true
+    },
+    "previousUrl": "/preview/candidates/architecture-C01-img-v1/output-0.glb",
+    "reason": "C01 v2 为两层楼屋（上层木栏隔扇、下层敞廊+腰檐，瓦垄/瓦当清楚），结构与细部优于旧图生版（屋顶偏浅、下层细节弱）；旧 architecture-C01-img-v1 保留为回退备选，不参与默认替换",
+    "rollback": "把 builder SELECTED 中 C01 条目改回 {sourceId:\"C01\", artifactId:\"architecture-C01-img-v1\", approvalKind:\"wave\", candidateId:\"C01\", catalogPath:\".../coverage-a/catalog.json\", kind:\"single\", templateName:\"building_source_C01\"} 后重跑 node build_preview.mjs；旧 GLB 原字节仍在 provider/artifacts，未删除",
+    "overlapCheck": {
+      "method": "按 C01 v2 拟合 predictedWorldSize 与 outside-14 锚点中心生成世界 AABB，与 dist visibleRoofPlan 邻近锚点矩形求交；另与生活场景 4 簇中心/半径做 2D 粗判",
+      "modelBox": {
+        "minX": 70.74879666666668,
+        "maxX": 78.67669666666667,
+        "minZ": 20.9487,
+        "maxZ": 31.0513
+      },
+      "neighborOverlaps": [],
+      "lifeSceneConflicts": [],
+      "riskLevel": "low",
+      "note": "郊野段本身有田畴/树丛，叠置判断是 2D 近似；与密度摊位（运行时随机放置）需 headless 确认，生活场景 4 簇坐标固定可静态粗判"
+    }
+  },
+  "c05Retry": {
+    "attempted": true,
+    "state": "provider-terminal-failure",
+    "status": 4,
+    "charged": false,
+    "artifact": "guided-C05-local-G1-v2",
+    "note": "C05 v2 引导重试在服务商端终态失败（status 4），未扣费、本轮不补发；默认仍使用 guided-C05-local-G1-v1，待后续授权再试"
+  },
+  "c05Choice": {
+    "chosen": "guided-C05-local-G1-v3",
+    "previous": "guided-C05-local-G1-v1",
+    "chosenSourceId": "guided-C05-local-G1-v3",
+    "anchors": [
+      "outside-5",
+      "outside-6"
+    ],
+    "kind": "group",
+    "chosenSha256": "9cad0ad34bb46a4d42be7a5440a74d565ecda7faac4c9c5d25574a64dbc95447",
+    "chosenBytes": 8460540,
+    "previousSha256": "fd956d5df1fbfddceb0aae76747054672a5cab0f26a7e55fe3b2485388e426b1",
+    "previousGlb": {
+      "artifactId": "guided-C05-local-G1-v1",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C05-local-G1-v1/output-1.glb",
+      "bytes": 5947952,
+      "sha256": "fd956d5df1fbfddceb0aae76747054672a5cab0f26a7e55fe3b2485388e426b1",
+      "rawProviderBytesPreserved": true
+    },
+    "previousUrl": "/preview/candidates/guided-C05-local-G1-v1/output-1.glb",
+    "reason": "C05 v3 修复了前廊连续性并带侧廊腰檐，瓦垄/瓦当清楚；替代旧 v1 的断开/弱细节版本，旧 guided-C05-local-G1-v1 保留为回退备选",
+    "rollback": "把 builder SELECTED 中 C05 条目改回 guided-C05-local-G1-v1（sourceId/artifactId/approvalArtifactId 同步改回）后重跑 node build_preview.mjs；旧 GLB 原字节未改",
+    "overlapCheck": {
+      "method": "按 C05 v3 组拟合 AABB 与 dist visibleRoofPlan 邻近锚点求交；另与生活场景 4 簇中心/半径 2D 粗判",
+      "modelBox": {
+        "minX": 87.5526,
+        "maxX": 101.9435,
+        "minZ": -30.6855,
+        "maxZ": -21.3145
+      },
+      "neighborOverlaps": [
+        {
+          "id": "outside-7",
+          "x": 85.74293333333334,
+          "z": -26,
+          "w": 6.549173333333333,
+          "d": 4.2,
+          "overlapX": 1.4649200000000064,
+          "overlapZ": 4.200000000000003
+        }
+      ],
+      "lifeSceneConflicts": [],
+      "riskLevel": "medium",
+      "note": "郊野段与密度摊位为运行时随机放置，静态 2D 判断不能覆盖摊位细部；具体穿插需 headless outside-5 截图确认"
+    }
+  },
+  "c08Retry": {
+    "attempted": true,
+    "state": "succeeded-but-not-adopted",
+    "artifact": "guided-C08-local-G1-v2",
+    "reason": "左上存在脱离主体的屋面碎片，观感不合格；不采用，保留 guided-C08-local-G1-v1",
+    "adopted": false,
+    "note": "生成已成功但未换装；C08 默认仍 guided-C08-local-G1-v1"
+  },
+  "e01Choice": {
+    "chosen": "guided-E01-local-G1-v2",
+    "previous": "guided-E01-local-G1-v1",
+    "chosenSourceId": "guided-E01-local-G1-v2",
+    "anchorId": "outside-3",
+    "chosenSha256": "c2036a1d3d8a8e8c4f7e96016de18e169e42fe4b0b22b947e78d04763cf5a96f",
+    "chosenBytes": 7918676,
+    "previousSha256": "8cd46b77bfe98211e77800527776a6d8f8d65583f1260c0baafb527356648718",
+    "previousGlb": {
+      "artifactId": "guided-E01-local-G1-v1",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E01-local-G1-v1/output-1.glb",
+      "bytes": 6646132,
+      "sha256": "8cd46b77bfe98211e77800527776a6d8f8d65583f1260c0baafb527356648718",
+      "rawProviderBytesPreserved": true
+    },
+    "previousUrl": "/preview/candidates/guided-E01-local-G1-v1/output-1.glb",
+    "reason": "E01 v2 为单檐两坡+前檐连续开敞柱列，结构正确；旧 guided-E01-local-G1-v1 保留为回退备选",
+    "rollback": "把 builder SELECTED 中对应条目 artifactId/sourceId/approvalArtifactId 改回 guided-E01-local-G1-v1 后重跑 node build_preview.mjs；旧 GLB 原字节未改",
+    "overlapCheck": {
+      "method": "按拟合 predictedWorldSize 与锚点中心生成世界 AABB，与 dist visibleRoofPlan 邻近锚点求交；另与生活场景 4 簇中心/半径 2D 粗判",
+      "modelBox": {
+        "minX": 110.47467333333334,
+        "maxX": 118.91967333333334,
+        "minZ": -29.1755,
+        "maxZ": -22.8245
+      },
+      "neighborOverlaps": [],
+      "lifeSceneConflicts": [],
+      "riskLevel": "low",
+      "note": "郊野/城内密度摊位为运行时随机放置，静态 2D 判断不能覆盖摊位细部；具体穿插需 headless 截图确认"
+    }
+  },
+  "e02Choice": {
+    "chosen": "guided-E02-local-G1-v2",
+    "previous": "guided-E02-local-G1-v1",
+    "chosenSourceId": "guided-E02-local-G1-v2",
+    "anchorId": "city-25",
+    "chosenSha256": "c28208fefa40be4d226d30683bff7f4ee17de0aaf1106986f1918ef7a9bb007b",
+    "chosenBytes": 8515556,
+    "previousSha256": "fcc9f8f1143d059d6d0084950d36ff5a2bb7e0da97828954eafc8395fd33cba8",
+    "previousGlb": {
+      "artifactId": "guided-E02-local-G1-v1",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E02-local-G1-v1/output-1.glb",
+      "bytes": 7171884,
+      "sha256": "fcc9f8f1143d059d6d0084950d36ff5a2bb7e0da97828954eafc8395fd33cba8",
+      "rawProviderBytesPreserved": true
+    },
+    "previousUrl": "/preview/candidates/guided-E02-local-G1-v1/output-1.glb",
+    "reason": "E02 v2 为单檐两坡+临河挑台木栏，符合挑台特征；旧 guided-E02-local-G1-v1 保留为回退备选",
+    "rollback": "把 builder SELECTED 中对应条目 artifactId/sourceId/approvalArtifactId 改回 guided-E02-local-G1-v1 后重跑 node build_preview.mjs；旧 GLB 原字节未改",
+    "overlapCheck": {
+      "method": "按拟合 predictedWorldSize 与锚点中心生成世界 AABB，与 dist visibleRoofPlan 邻近锚点求交；另与生活场景 4 簇中心/半径 2D 粗判",
+      "modelBox": {
+        "minX": 143.77778333333333,
+        "maxX": 150.88888333333335,
+        "minZ": -6.123541812865499,
+        "maxZ": -1.123241812865499
+      },
+      "neighborOverlaps": [],
+      "lifeSceneConflicts": [],
+      "riskLevel": "low",
+      "note": "郊野/城内密度摊位为运行时随机放置，静态 2D 判断不能覆盖摊位细部；具体穿插需 headless 截图确认"
+    }
+  },
+  "b0906Retry": {
+    "attempted": true,
+    "state": "succeeded-but-not-adopted",
+    "artifact": "guided-B09-06-local-G1-v2",
+    "reason": "生成出双屋脊/两栋屋顶，不符合单檐约束；保留 guided-B09-06-local-G1-v1",
+    "adopted": false
+  },
+  "alternateSources": [
+    {
+      "artifactId": "guided-B09-01-local-G1-v2",
+      "sourceId": "B09-01",
+      "role": "approach-9-chosen",
+      "url": "/preview/candidates/guided-B09-01-local-G1-v2/output-1.glb",
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-B09-01-local-G1-v2/output-1.glb",
+        "artifactId": "guided-B09-01-local-G1-v2",
+        "bytes": 6793064,
+        "sha256": "535165653debfc9e61fce8b183e4acd5d081fa08c1d1350caf55cc6a1968b4bd",
+        "rawProviderBytesPreserved": true,
+        "triangles": 15466,
+        "extensionsUsed": [],
+        "hasAnimations": false
+      }
+    },
+    {
+      "artifactId": "guided-B09-03-local-G1-v2",
+      "sourceId": "B09-03",
+      "role": "approach-9-alternate",
+      "url": "/preview/candidates/guided-B09-03-local-G1-v2/output-1.glb",
+      "glb": {
+        "artifactId": "guided-B09-03-local-G1-v2",
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-B09-03-local-G1-v2/output-1.glb",
+        "bytes": 8866828,
+        "sha256": "8cba958aa7f6cad038153e31107e49e68d4e930697bf1ebf4b70405697fd933d",
+        "rawProviderBytesPreserved": true
+      }
+    },
+    {
+      "artifactId": "guided-A05-local-G1-v2",
+      "sourceId": "guided-A05-local-G1-v2",
+      "role": "city-1-2-chosen",
+      "url": "/preview/candidates/guided-A05-local-G1-v2/output-1.glb",
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-A05-local-G1-v2/output-1.glb",
+        "artifactId": "guided-A05-local-G1-v2",
+        "bytes": 6802836,
+        "sha256": "ff27b38733cb5dc18ec69de914b9aa51eb98e731f90282b86f0dbc3656011a1b",
+        "rawProviderBytesPreserved": true,
+        "triangles": 19180,
+        "extensionsUsed": [],
+        "hasAnimations": false
+      }
+    },
+    {
+      "artifactId": "guided-A05-local-G1-v1",
+      "sourceId": "guided-A05-local-G1-v1",
+      "role": "city-1-2-previous",
+      "url": "/preview/candidates/guided-A05-local-G1-v1/output-1.glb",
+      "glb": {
+        "artifactId": "guided-A05-local-G1-v1",
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-A05-local-G1-v1/output-1.glb",
+        "bytes": 7986740,
+        "sha256": "5894f012ff27c11ea12e75216a123f170e4b86b895f71d104d357c7f64dbb0e2",
+        "rawProviderBytesPreserved": true
+      }
+    },
+    {
+      "artifactId": "guided-C01-local-G1-v2",
+      "sourceId": "guided-C01-local-G1-v2",
+      "role": "outside-14-chosen",
+      "url": "/preview/candidates/guided-C01-local-G1-v2/output-1.glb",
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C01-local-G1-v2/output-1.glb",
+        "artifactId": "guided-C01-local-G1-v2",
+        "bytes": 7499800,
+        "sha256": "f6a22c72dcfecfcd69cd8583cae740988c225d8663310ccdf7018516e3003233",
+        "rawProviderBytesPreserved": true,
+        "triangles": 19446,
+        "extensionsUsed": [],
+        "hasAnimations": false
+      }
+    },
+    {
+      "artifactId": "architecture-C01-img-v1",
+      "sourceId": "architecture-C01-img-v1",
+      "role": "outside-14-previous",
+      "url": "/preview/candidates/architecture-C01-img-v1/output-0.glb",
+      "glb": {
+        "artifactId": "architecture-C01-img-v1",
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/architecture-C01-img-v1/output-0.glb",
+        "bytes": 8758268,
+        "sha256": "015418d1be815c6e4684c53738e3f71144e3dced57999a0267e49d81619c54e6",
+        "rawProviderBytesPreserved": true
+      }
+    },
+    {
+      "artifactId": "guided-C05-local-G1-v3",
+      "sourceId": "guided-C05-local-G1-v3",
+      "role": "outside-5-6-chosen",
+      "url": "/preview/candidates/guided-C05-local-G1-v3/output-1.glb",
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C05-local-G1-v3/output-1.glb",
+        "artifactId": "guided-C05-local-G1-v3",
+        "bytes": 8460540,
+        "sha256": "9cad0ad34bb46a4d42be7a5440a74d565ecda7faac4c9c5d25574a64dbc95447",
+        "rawProviderBytesPreserved": true,
+        "triangles": 19786,
+        "extensionsUsed": [],
+        "hasAnimations": false
+      }
+    },
+    {
+      "artifactId": "guided-C05-local-G1-v1",
+      "sourceId": "guided-C05-local-G1-v1",
+      "role": "outside-5-6-previous",
+      "url": "/preview/candidates/guided-C05-local-G1-v1/output-1.glb",
+      "glb": {
+        "artifactId": "guided-C05-local-G1-v1",
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C05-local-G1-v1/output-1.glb",
+        "bytes": 5947952,
+        "sha256": "fd956d5df1fbfddceb0aae76747054672a5cab0f26a7e55fe3b2485388e426b1",
+        "rawProviderBytesPreserved": true
+      }
+    },
+    {
+      "artifactId": "guided-E01-local-G1-v2",
+      "sourceId": "guided-E01-local-G1-v2",
+      "role": "guided-E01-local-G1-v2-chosen",
+      "url": "/preview/candidates/guided-E01-local-G1-v2/output-1.glb",
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E01-local-G1-v2/output-1.glb",
+        "artifactId": "guided-E01-local-G1-v2",
+        "bytes": 7918676,
+        "sha256": "c2036a1d3d8a8e8c4f7e96016de18e169e42fe4b0b22b947e78d04763cf5a96f",
+        "rawProviderBytesPreserved": true,
+        "triangles": 18316,
+        "extensionsUsed": [],
+        "hasAnimations": false
+      }
+    },
+    {
+      "artifactId": "guided-E01-local-G1-v1",
+      "sourceId": "guided-E01-local-G1-v1",
+      "role": "guided-E01-local-G1-v2-previous",
+      "url": "/preview/candidates/guided-E01-local-G1-v1/output-1.glb",
+      "glb": {
+        "artifactId": "guided-E01-local-G1-v1",
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E01-local-G1-v1/output-1.glb",
+        "bytes": 6646132,
+        "sha256": "8cd46b77bfe98211e77800527776a6d8f8d65583f1260c0baafb527356648718",
+        "rawProviderBytesPreserved": true
+      }
+    },
+    {
+      "artifactId": "guided-E02-local-G1-v2",
+      "sourceId": "guided-E02-local-G1-v2",
+      "role": "guided-E02-local-G1-v2-chosen",
+      "url": "/preview/candidates/guided-E02-local-G1-v2/output-1.glb",
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E02-local-G1-v2/output-1.glb",
+        "artifactId": "guided-E02-local-G1-v2",
+        "bytes": 8515556,
+        "sha256": "c28208fefa40be4d226d30683bff7f4ee17de0aaf1106986f1918ef7a9bb007b",
+        "rawProviderBytesPreserved": true,
+        "triangles": 28796,
+        "extensionsUsed": [],
+        "hasAnimations": false
+      }
+    },
+    {
+      "artifactId": "guided-E02-local-G1-v1",
+      "sourceId": "guided-E02-local-G1-v1",
+      "role": "guided-E02-local-G1-v2-previous",
+      "url": "/preview/candidates/guided-E02-local-G1-v1/output-1.glb",
+      "glb": {
+        "artifactId": "guided-E02-local-G1-v1",
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E02-local-G1-v1/output-1.glb",
+        "bytes": 7171884,
+        "sha256": "fcc9f8f1143d059d6d0084950d36ff5a2bb7e0da97828954eafc8395fd33cba8",
+        "rawProviderBytesPreserved": true
+      }
+    }
+  ],
+  "materialTone": {
+    "algorithm": "canvas/PNG baseColor 平均亮度 L（32×32 采样）；color×k=clamp(0.42/max(L,0.05),0.45,1.0)；clamp 后去饱和 10%；roughness=1/metalness=0；envMapIntensity=0.6",
+    "targetL": 0.42,
+    "modelsProcessed": 10,
+    "materialsProcessed": 10,
+    "sources": {
+      "guided-C01-local-G1-v2": {
+        "artifactId": "guided-C01-local-G1-v2",
+        "avgL": 0.3929,
+        "k": 1,
+        "targetL": 0.42,
+        "clampHit": true,
+        "materialCount": 1
+      },
+      "guided-B09-01-local-G1-v2": {
+        "artifactId": "guided-B09-01-local-G1-v2",
+        "avgL": 0.3653,
+        "k": 1,
+        "targetL": 0.42,
+        "clampHit": true,
+        "materialCount": 1
+      },
+      "C03": {
+        "artifactId": "architecture-C03-img-v1",
+        "avgL": 0.2805,
+        "k": 1,
+        "targetL": 0.42,
+        "clampHit": true,
+        "materialCount": 1
+      },
+      "guided-C05-local-G1-v3": {
+        "artifactId": "guided-C05-local-G1-v3",
+        "avgL": 0.3362,
+        "k": 1,
+        "targetL": 0.42,
+        "clampHit": true,
+        "materialCount": 1
+      },
+      "C08": {
+        "artifactId": "guided-C08-local-G1-v1",
+        "avgL": 0.4801,
+        "k": 0.8747,
+        "targetL": 0.42,
+        "clampHit": false,
+        "materialCount": 1
+      },
+      "C02": {
+        "artifactId": "guided-C02-handpainted-v2",
+        "avgL": 0.4214,
+        "k": 0.9966,
+        "targetL": 0.42,
+        "clampHit": false,
+        "materialCount": 1
+      },
+      "B09-02": {
+        "artifactId": "guided-B09-02-handpainted-v1",
+        "avgL": 0.4108,
+        "k": 1,
+        "targetL": 0.42,
+        "clampHit": true,
+        "materialCount": 1
+      },
+      "guided-A05-local-G1-v2": {
+        "artifactId": "guided-A05-local-G1-v2",
+        "avgL": 0.3861,
+        "k": 1,
+        "targetL": 0.42,
+        "clampHit": true,
+        "materialCount": 1
+      },
+      "guided-E01-local-G1-v2": {
+        "artifactId": "guided-E01-local-G1-v2",
+        "avgL": 0.4928,
+        "k": 0.8523,
+        "targetL": 0.42,
+        "clampHit": false,
+        "materialCount": 1
+      },
+      "guided-E02-local-G1-v2": {
+        "artifactId": "guided-E02-local-G1-v2",
+        "avgL": 0.4077,
+        "k": 1,
+        "targetL": 0.42,
+        "clampHit": true,
+        "materialCount": 1
+      }
+    },
+    "toneModelFlags": [],
+    "clampedModels": [
+      "guided-C01-local-G1-v2",
+      "guided-B09-01-local-G1-v2",
+      "C03",
+      "guided-C05-local-G1-v3",
+      "B09-02",
+      "guided-A05-local-G1-v2",
+      "guided-E02-local-G1-v2"
+    ]
+  },
+  "roofStats": {
+    "uvMode": "slope-basis",
+    "uHorizontalRatioExpected": ">0.98",
+    "tileRowAxis": "v（贴图瓦垄行沿 v 周期，即沿 u/檐口方向排列）",
+    "degenerateFallback": "近水平三角回退世界 x/z 投影，不整体回退",
+    "dedupe": "模型局部坐标质心 4 位小数；少量重复剔除（保留首个）不回退，重复比 >5% 或守恒失败才回退",
+    "algorithm": "三组拆分：屋面(ny>0.2 或 yc>minY+0.72H 且 ny>-0.30) → 1 tile mesh（世界 UV 0.85m）；剩余中 yc>minY+0.6H → 1 dark mesh（材质克隆 color×0.55）；其余低位保留原 mesh。守恒 原=屋面+dark+低位、质心去重、失败回退",
+    "modelsProcessed": 10,
+    "splitModels": 10,
+    "revertedModels": 0,
+    "roofTrianglesTotal": 79433,
+    "darkTrianglesTotal": 31756,
+    "lowTrianglesTotal": 85321,
+    "darkGroupsTotal": 10,
+    "trianglesTotal": 196544,
+    "drawCallDeltaTotal": 20,
+    "duplicateTrianglesTotal": 0,
+    "droppedDuplicatesTotal": 34,
+    "conservedModels": 10,
+    "sources": {
+      "guided-C01-local-G1-v2": {
+        "trianglesTotal": 19446,
+        "roofTriangles": 8863,
+        "darkTriangles": 3587,
+        "lowTriangles": 6985,
+        "droppedDuplicates": 11,
+        "duplicateTriangles": 11,
+        "duplicateRatio": 0.0009,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.862,
+        "minY": -0.433,
+        "maxY": 0.428,
+        "nearHorizontal": 1559,
+        "reason": null
+      },
+      "guided-B09-01-local-G1-v2": {
+        "trianglesTotal": 15466,
+        "roofTriangles": 7674,
+        "darkTriangles": 2879,
+        "lowTriangles": 4912,
+        "droppedDuplicates": 1,
+        "duplicateTriangles": 1,
+        "duplicateRatio": 0.0001,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.784,
+        "minY": -0.394,
+        "maxY": 0.39,
+        "nearHorizontal": 913,
+        "reason": null
+      },
+      "C03": {
+        "trianglesTotal": 18290,
+        "roofTriangles": 7659,
+        "darkTriangles": 1064,
+        "lowTriangles": 9567,
+        "droppedDuplicates": 0,
+        "duplicateTriangles": 0,
+        "duplicateRatio": 0,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.655,
+        "minY": -0.325,
+        "maxY": 0.33,
+        "nearHorizontal": 889,
+        "reason": null
+      },
+      "guided-C05-local-G1-v3": {
+        "trianglesTotal": 19786,
+        "roofTriangles": 7950,
+        "darkTriangles": 954,
+        "lowTriangles": 10881,
+        "droppedDuplicates": 1,
+        "duplicateTriangles": 1,
+        "duplicateRatio": 0.0001,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.429,
+        "minY": -0.213,
+        "maxY": 0.216,
+        "nearHorizontal": 1217,
+        "reason": null
+      },
+      "C08": {
+        "trianglesTotal": 17766,
+        "roofTriangles": 6068,
+        "darkTriangles": 1484,
+        "lowTriangles": 10211,
+        "droppedDuplicates": 3,
+        "duplicateTriangles": 3,
+        "duplicateRatio": 0.0004,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.504,
+        "minY": -0.252,
+        "maxY": 0.252,
+        "nearHorizontal": 998,
+        "reason": null
+      },
+      "C02": {
+        "trianglesTotal": 20184,
+        "roofTriangles": 6370,
+        "darkTriangles": 744,
+        "lowTriangles": 13069,
+        "droppedDuplicates": 1,
+        "duplicateTriangles": 1,
+        "duplicateRatio": 0.0001,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.637,
+        "minY": -0.319,
+        "maxY": 0.317,
+        "nearHorizontal": 1392,
+        "reason": null
+      },
+      "B09-02": {
+        "trianglesTotal": 19314,
+        "roofTriangles": 8868,
+        "darkTriangles": 4583,
+        "lowTriangles": 5862,
+        "droppedDuplicates": 1,
+        "duplicateTriangles": 1,
+        "duplicateRatio": 0.0001,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.37,
+        "minY": -0.186,
+        "maxY": 0.184,
+        "nearHorizontal": 1886,
+        "reason": null
+      },
+      "guided-A05-local-G1-v2": {
+        "trianglesTotal": 19180,
+        "roofTriangles": 8358,
+        "darkTriangles": 7350,
+        "lowTriangles": 3466,
+        "droppedDuplicates": 6,
+        "duplicateTriangles": 6,
+        "duplicateRatio": 0.0004,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.763,
+        "minY": -0.381,
+        "maxY": 0.383,
+        "nearHorizontal": 1754,
+        "reason": null
+      },
+      "guided-E01-local-G1-v2": {
+        "trianglesTotal": 18316,
+        "roofTriangles": 7537,
+        "darkTriangles": 1370,
+        "lowTriangles": 9408,
+        "droppedDuplicates": 1,
+        "duplicateTriangles": 1,
+        "duplicateRatio": 0.0001,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.61,
+        "minY": -0.301,
+        "maxY": 0.309,
+        "nearHorizontal": 1697,
+        "reason": null
+      },
+      "guided-E02-local-G1-v2": {
+        "trianglesTotal": 28796,
+        "roofTriangles": 10086,
+        "darkTriangles": 7741,
+        "lowTriangles": 10960,
+        "droppedDuplicates": 9,
+        "duplicateTriangles": 9,
+        "duplicateRatio": 0.0005,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.652,
+        "minY": -0.326,
+        "maxY": 0.326,
+        "nearHorizontal": 2216,
+        "reason": null
+      }
+    },
+    "fallbacks": []
+  },
+  "lifeScenes": {
+    "module": "modules/life-scenes.js",
+    "sha256": "17b0b5fe97aaf8599cd47f00be6eea293c8a7f5f763923cb5c61bea17465b08a",
+    "groups": 3,
+    "clusters": [
+      {
+        "id": "bridge-west",
+        "label": "虹桥西桥头摊位",
+        "x": -20,
+        "props": {
+          "stalls": 1,
+          "posts": 4,
+          "awnings": 1,
+          "crates": 2,
+          "baskets": 1,
+          "jars": 1,
+          "sacks": 1
+        },
+        "person": "person-vendor-v1"
+      },
+      {
+        "id": "bridge-east",
+        "label": "虹桥东桥头摊位",
+        "x": 20,
+        "props": {
+          "stalls": 1,
+          "posts": 4,
+          "awnings": 1,
+          "crates": 2,
+          "baskets": 1,
+          "jars": 1,
+          "sacks": 1
+        },
+        "person": "person-vendor-v1"
+      },
+      {
+        "id": "dock-unloading",
+        "label": "河边卸货",
+        "x": -40,
+        "props": {
+          "crates": 10,
+          "sacks": 5,
+          "jars": 3,
+          "baskets": 2
+        },
+        "person": "person-boatman-v1"
+      },
+      {
+        "id": "tea-shed",
+        "label": "茶棚",
+        "x": 205,
+        "props": {
+          "posts": 4,
+          "roofs": 1,
+          "benches": 2,
+          "tables": 1,
+          "teaJars": 2,
+          "banners": 1
+        },
+        "person": "person-scholar-v1"
+      }
+    ],
+    "propsMeshes": [
+      "wood",
+      "cloth",
+      "earth"
+    ],
+    "drawCallBudget": {
+      "props": 3,
+      "clones": 3,
+      "total": 6
+    },
+    "cloneMethod": "骨架安全 clone（等价 SkeletonUtils.clone）+ 独立 AnimationMixer 播 Idle、相位错开；1.75m 贴地、无 collider、castShadow=false；不进导览跳转列表",
+    "teaYaw": {
+      "before": 0,
+      "after": "π（180°）",
+      "finalYaw": 3.141592653589793,
+      "reason": "茶棚最终落位在街南侧（z≈33.8，街心在 +z），原建法布招朝南背离街心；绕中心旋转 180° 使布招/开口面向街心，书生同时转到棚北侧（街心侧）并面向茶棚"
+    },
+    "avoidance": "world.placements/collider/摊点/栏杆/驳岸；冲突沿街平移 ≤4m，仍冲突跳过并记 errors(stage=lifescene)",
+    "stats": "window.__BUILDING_EXPANSION_PREVIEW__.lifeScenes = {clusters, drawCalls, peopleClones}"
+  },
+  "guide": {
+    "mode": "导览层（6 站卡片 + focusAnchor 前往 + [ ] 切换 + 可关闭）",
+    "stations": [
+      {
+        "id": "countryside",
+        "name": "郊野",
+        "paragraph": "卷首郊野·驴队入城",
+        "desc": "据画面可见：城外土路、田块与篱笆，驴队沿路向城门方向行进。",
+        "anchorId": "outside-14",
+        "candidateId": "C01",
+        "target": {
+          "kind": "anchor"
+        }
+      },
+      {
+        "id": "dock",
+        "name": "汴河码头",
+        "paragraph": "汴河码头·舟楫往来",
+        "desc": "据画面可见：河岸泊船、码头铺面；河边卸货有木箱 10/麻袋 5/酒瓮 3/竹筐 2 与一名船工。",
+        "anchorId": "approach-9",
+        "candidateId": "B09-01",
+        "target": {
+          "kind": "anchor"
+        }
+      },
+      {
+        "id": "bridge",
+        "name": "虹桥",
+        "paragraph": "虹桥·桥上桥下",
+        "desc": "据画面可见：木拱桥横跨汴河；两端各有摊铺，西桥头有一名摊贩，桥上行人密集。",
+        "anchorId": "approach-6",
+        "candidateId": "B09-02",
+        "target": {
+          "kind": "anchor"
+        }
+      },
+      {
+        "id": "gate",
+        "name": "城门",
+        "paragraph": "城门·车马入城",
+        "desc": "据画面可见：门楼与门道，车马自城门进出，门内即街市。",
+        "anchorId": "city-1",
+        "candidateId": "A05",
+        "target": {
+          "kind": "anchor"
+        }
+      },
+      {
+        "id": "market",
+        "name": "城内街市",
+        "paragraph": "城内街市·店铺林立",
+        "desc": "据画面可见：12组摊位、20只檐口灯笼，九种市井人物货郎/船工/摊贩/妇人/书生/差役/轿夫/僧人/孩童，两人沿街行走。",
+        "anchorId": "city-15",
+        "candidateId": "C08",
+        "target": {
+          "kind": "anchor"
+        }
+      },
+      {
+        "id": "wall",
+        "name": "城墙",
+        "paragraph": "城墙·围合与防御",
+        "desc": "据画面可见：城门两侧延伸的城墙；围合段为本轮按观感程序化补全，非逐段考证。",
+        "anchorId": null,
+        "candidateId": null,
+        "target": {
+          "kind": "point",
+          "x": 206,
+          "z": 40
+        }
+      }
+    ],
+    "keyboard": {
+      "prev": "[",
+      "next": "]"
+    },
+    "stats": "window.__BUILDING_EXPANSION_PREVIEW__.guide",
+    "debugPaintRoofGroups": {
+      "colors": {
+        "roof": "#ff2d2d",
+        "dark": "#2d4dff",
+        "low": "#2dff5a"
+      },
+      "restore": "debugPaintRoofGroups(false)"
+    }
+  },
+  "roofTileTexture": {
+    "module": "modules/tile-texture.js",
+    "sha256": "2d1bcf32d323d11825f70fb0cb0a1591e559566b6d30fc3637a3a228d7631ea7",
+    "size": 512,
+    "repeatMeters": 0.85,
+    "colorBase": "#4a4a48",
+    "colorGroove": "#2e2e2c",
+    "expectedAvgL": [
+      0.28,
+      0.32
+    ],
+    "material": {
+      "color": "#ffffff",
+      "roughness": 1,
+      "metalness": 0
+    },
+    "darkGroup": {
+      "texture": "overlay-tile×0.7",
+      "factor": 0.7
+    }
+  },
+  "patches": [
+    {
+      "id": "main-install-preview",
+      "file": "dist/src/main.js",
+      "description": "在 loadPeriodAssets 之后、createWorld 之前装入候选模板，createWorld 之后收尾预览状态并独立 try/catch 挂载街道/河岸观感模块（失败只降级并写 errors）；失败不改变原版场景。",
+      "matchedExactlyOnce": true,
+      "needleOccurrencesBefore": 1,
+      "replacementOccurrences": 1,
+      "markerVerified": true
+    },
+    {
+      "id": "main-attach-camera",
+      "file": "dist/src/main.js",
+      "description": "在 nav=createNavigation(...) 之后把 camera/nav/controls 交给预览扩展，供「跳转到替换点」验收辅助设置相机；不改变游戏导航逻辑。",
+      "matchedExactlyOnce": true,
+      "needleOccurrencesBefore": 1,
+      "replacementOccurrences": 1,
+      "markerVerified": true
+    },
+    {
+      "id": "main-fog-far",
+      "file": "dist/src/main.js",
+      "description": "applyArtStyle 之后收紧雾距（默认 near 105 / far 400），参数化可回退；失败只降级保留原雾距。",
+      "matchedExactlyOnce": true,
+      "needleOccurrencesBefore": 1,
+      "replacementOccurrences": 1,
+      "markerVerified": true
+    },
+    {
+      "id": "world-dimensions-register",
+      "file": "dist/src/world.js",
+      "description": "登记候选模板的自然尺寸（供既有 houseGround/街道地面/树冠净空流程使用），不替换默认模板。",
+      "matchedExactlyOnce": true,
+      "needleOccurrencesBefore": 1,
+      "replacementOccurrences": 1,
+      "markerVerified": true
+    },
+    {
+      "id": "world-house-anchor-swap",
+      "file": "dist/src/world.js",
+      "description": "house() 仅在 reference.id 命中白名单时换模板：单锚点按原名义宽度换算 scale；组团主锚点用显式组合宽度与 X 偏移放一份模型，组团次锚点直接抑制（不重复放模型）。全部保留既有进深搜索/登记/碰撞/占位/地基流程。",
+      "matchedExactlyOnce": true,
+      "needleOccurrencesBefore": 1,
+      "replacementOccurrences": 1,
+      "markerVerified": true
+    },
+    {
+      "id": "world-street-placement-fallback",
+      "file": "dist/src/world.js",
+      "description": "街道布点若因候选进深/组团尺寸无法取得可行占位，回退原模板并记录 skip/error，不让整个场景构建失败。",
+      "matchedExactlyOnce": true,
+      "needleOccurrencesBefore": 1,
+      "replacementOccurrences": 1,
+      "markerVerified": true
+    },
+    {
+      "id": "world-enhancement-filter",
+      "file": "dist/src/world.js",
+      "description": "高阶架构增强的批量重建不认识 building_source_* 模板会抛 Unknown template；把它从增强选择集中排除，候选保持已装状态（不改增强流程本身）。",
+      "matchedExactlyOnce": true,
+      "needleOccurrencesBefore": 1,
+      "replacementOccurrences": 1,
+      "markerVerified": true
+    },
+    {
+      "id": "index-title",
+      "file": "dist/index.html",
+      "description": "标题明确这是建筑扩充候选预览，不是 r1 正式版。",
+      "matchedExactlyOnce": true,
+      "needleOccurrencesBefore": 1,
+      "replacementOccurrences": 1,
+      "markerVerified": true
+    },
+    {
+      "id": "index-style",
+      "file": "dist/index.html",
+      "description": "预览信息条/清单面板样式（只作用于 overlay 页面）。",
+      "matchedExactlyOnce": true,
+      "needleOccurrencesBefore": 1,
+      "replacementOccurrences": 1,
+      "markerVerified": true
+    },
+    {
+      "id": "index-banner",
+      "file": "dist/index.html",
+      "description": "页面出现固定的候选预览信息条与清单面板。",
+      "matchedExactlyOnce": true,
+      "needleOccurrencesBefore": 1,
+      "replacementOccurrences": 1,
+      "markerVerified": true
+    }
+  ],
+  "generatedFiles": [
+    {
+      "path": "build/main.js",
+      "bytes": 62879,
+      "sha256": "0c7bd4c336dc0218a65c636e63b366eaab1e812b43d993b546f68e99d67aaa7b"
+    },
+    {
+      "path": "build/world.js",
+      "bytes": 43967,
+      "sha256": "bcb9e8466b1b2e053d5dcfccd4931cedafe2f0a170c25b7eb09d0c90d7137948"
+    },
+    {
+      "path": "build/index.html",
+      "bytes": 20383,
+      "sha256": "a8ff5ff0c84939ce27db874894b4872838a35a8742201257e5d5ac5d2d779f44"
+    },
+    {
+      "path": "build/preview-manifest.json",
+      "bytes": 154121,
+      "sha256": "159d3e502cfb5841e8012637ec4fdef5d7d1cf0aa9e3c271e27926db87671883"
+    }
+  ],
+  "models": [
+    {
+      "sourceId": "guided-C01-local-G1-v2",
+      "templateName": "building_source_C01",
+      "artifactId": "guided-C01-local-G1-v2",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C01-local-G1-v2/output-1.glb",
+      "bytes": 7499800,
+      "sha256": "f6a22c72dcfecfcd69cd8583cae740988c225d8663310ccdf7018516e3003233"
+    },
+    {
+      "sourceId": "guided-B09-01-local-G1-v2",
+      "templateName": "building_source_B09_01",
+      "artifactId": "guided-B09-01-local-G1-v2",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-B09-01-local-G1-v2/output-1.glb",
+      "bytes": 6793064,
+      "sha256": "535165653debfc9e61fce8b183e4acd5d081fa08c1d1350caf55cc6a1968b4bd"
+    },
+    {
+      "sourceId": "C03",
+      "templateName": "building_source_C03",
+      "artifactId": "architecture-C03-img-v1",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/architecture-C03-img-v1/output-0.glb",
+      "bytes": 9689636,
+      "sha256": "9389df9215530802549031dac41bfa9208297b1ac7f5280ead772d6f3184d064"
+    },
+    {
+      "sourceId": "guided-C05-local-G1-v3",
+      "templateName": "building_source_C05",
+      "artifactId": "guided-C05-local-G1-v3",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C05-local-G1-v3/output-1.glb",
+      "bytes": 8460540,
+      "sha256": "9cad0ad34bb46a4d42be7a5440a74d565ecda7faac4c9c5d25574a64dbc95447"
+    },
+    {
+      "sourceId": "C08",
+      "templateName": "building_source_C08",
+      "artifactId": "guided-C08-local-G1-v1",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C08-local-G1-v1/output-1.glb",
+      "bytes": 6567876,
+      "sha256": "21bef72fddf45f6596182332e6f57fb19c7d8d1d28f79d2a76b25ce659b7c0af"
+    },
+    {
+      "sourceId": "C02",
+      "templateName": "building_source_C02",
+      "artifactId": "guided-C02-handpainted-v2",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C02-handpainted-v2/output-1.glb",
+      "bytes": 7339536,
+      "sha256": "ba28bc2900943724d06fc9fe65a9d83d4d03f642836b40e291e3a62e71e17671"
+    },
+    {
+      "sourceId": "B09-02",
+      "templateName": "building_source_B09_02",
+      "artifactId": "guided-B09-02-handpainted-v1",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-B09-02-handpainted-v1/output-1.glb",
+      "bytes": 6695452,
+      "sha256": "3ba9c44c8cf11f4e4d5f5d3eeb608860d14b0c39b0ebaafab21205e76a69661f"
+    },
+    {
+      "sourceId": "guided-A05-local-G1-v2",
+      "templateName": "building_source_A05",
+      "artifactId": "guided-A05-local-G1-v2",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-A05-local-G1-v2/output-1.glb",
+      "bytes": 6802836,
+      "sha256": "ff27b38733cb5dc18ec69de914b9aa51eb98e731f90282b86f0dbc3656011a1b"
+    },
+    {
+      "sourceId": "guided-E01-local-G1-v2",
+      "templateName": "building_source_E01",
+      "artifactId": "guided-E01-local-G1-v2",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E01-local-G1-v2/output-1.glb",
+      "bytes": 7918676,
+      "sha256": "c2036a1d3d8a8e8c4f7e96016de18e169e42fe4b0b22b947e78d04763cf5a96f"
+    },
+    {
+      "sourceId": "guided-E02-local-G1-v2",
+      "templateName": "building_source_E02",
+      "artifactId": "guided-E02-local-G1-v2",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E02-local-G1-v2/output-1.glb",
+      "bytes": 8515556,
+      "sha256": "c28208fefa40be4d226d30683bff7f4ee17de0aaf1106986f1918ef7a9bb007b"
+    }
+  ],
+  "anchorMap": [
+    {
+      "sourceId": "guided-C01-local-G1-v2",
+      "artifactId": "guided-C01-local-G1-v2",
+      "templateName": "building_source_C01",
+      "kind": "single",
+      "anchors": [
+        {
+          "anchorId": "outside-14",
+          "role": "primary",
+          "originalTemplate": "building_tea",
+          "originalWorldWidth": 7.9279
+        }
+      ],
+      "group": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C01-local-G1-v2/output-1.glb",
+        "bytes": 7499800,
+        "sha256": "f6a22c72dcfecfcd69cd8583cae740988c225d8663310ccdf7018516e3003233"
+      },
+      "approval": {
+        "kind": "guided",
+        "file": "output/building-expansion-20261109-v1/approved-guided-C01-v1.json",
+        "approvedAt": "2026-11-10"
+      }
+    },
+    {
+      "sourceId": "guided-B09-01-local-G1-v2",
+      "artifactId": "guided-B09-01-local-G1-v2",
+      "templateName": "building_source_B09_01",
+      "kind": "single",
+      "anchors": [
+        {
+          "anchorId": "approach-9",
+          "role": "primary",
+          "originalTemplate": "building_workshop",
+          "originalWorldWidth": 10.8889
+        }
+      ],
+      "group": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-B09-01-local-G1-v2/output-1.glb",
+        "bytes": 6793064,
+        "sha256": "535165653debfc9e61fce8b183e4acd5d081fa08c1d1350caf55cc6a1968b4bd"
+      },
+      "approval": {
+        "kind": "guided",
+        "file": "output/building-expansion-20261109-v1/approved-guided-B09-01-v2.json",
+        "approvedAt": "2026-11-10"
+      }
+    },
+    {
+      "sourceId": "C03",
+      "artifactId": "architecture-C03-img-v1",
+      "templateName": "building_source_C03",
+      "kind": "single",
+      "anchors": [
+        {
+          "anchorId": "city-18",
+          "role": "primary",
+          "originalTemplate": "building_tea",
+          "originalWorldWidth": 10.8889
+        }
+      ],
+      "group": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/architecture-C03-img-v1/output-0.glb",
+        "bytes": 9689636,
+        "sha256": "9389df9215530802549031dac41bfa9208297b1ac7f5280ead772d6f3184d064"
+      },
+      "approval": {
+        "kind": "wave",
+        "file": "output/building-expansion-20261109-v1/approved-wave05.json",
+        "approvedAt": "2026-11-09T20:17:53.746609+08:00"
+      }
+    },
+    {
+      "sourceId": "guided-C05-local-G1-v3",
+      "artifactId": "guided-C05-local-G1-v3",
+      "templateName": "building_source_C05",
+      "kind": "group",
+      "anchors": [
+        {
+          "anchorId": "outside-5",
+          "role": "primary",
+          "originalTemplate": "building_shop",
+          "originalWorldWidth": 8.962
+        },
+        {
+          "anchorId": "outside-6",
+          "role": "covered",
+          "originalTemplate": "building_shop",
+          "originalWorldWidth": 6.0321
+        }
+      ],
+      "group": {
+        "groupId": "guided-C05-local-G1-v3",
+        "primaryAnchorId": "outside-5",
+        "coveredAnchorIds": [
+          "outside-6"
+        ],
+        "worldWidth": 14.3909,
+        "spanX": [
+          87.5526,
+          101.9435
+        ],
+        "centerX": 94.7481,
+        "offsetXFromPrimary": -2.7144,
+        "derivation": "union of the existing generic-house frontage spans (nominalWidth × clamped source scale) of all catalog anchors; ONE model instance replaces all of them"
+      },
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C05-local-G1-v3/output-1.glb",
+        "bytes": 8460540,
+        "sha256": "9cad0ad34bb46a4d42be7a5440a74d565ecda7faac4c9c5d25574a64dbc95447"
+      },
+      "approval": {
+        "kind": "guided",
+        "file": "output/building-expansion-20261109-v1/approved-guided-C05-v1.json",
+        "approvedAt": "2026-11-10"
+      }
+    },
+    {
+      "sourceId": "C08",
+      "artifactId": "guided-C08-local-G1-v1",
+      "templateName": "building_source_C08",
+      "kind": "group",
+      "anchors": [
+        {
+          "anchorId": "city-15",
+          "role": "primary",
+          "originalTemplate": "building_shop",
+          "originalWorldWidth": 8
+        },
+        {
+          "anchorId": "city-16",
+          "role": "covered",
+          "originalTemplate": "building_shop",
+          "originalWorldWidth": 11.2
+        }
+      ],
+      "group": {
+        "groupId": "C08",
+        "primaryAnchorId": "city-15",
+        "coveredAnchorIds": [
+          "city-16"
+        ],
+        "worldWidth": 19.3777,
+        "spanX": [
+          275.0667,
+          294.4444
+        ],
+        "centerX": 284.7555,
+        "offsetXFromPrimary": -5.6889,
+        "derivation": "union of the existing generic-house frontage spans (nominalWidth × clamped source scale) of all catalog anchors; ONE model instance replaces all of them"
+      },
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C08-local-G1-v1/output-1.glb",
+        "bytes": 6567876,
+        "sha256": "21bef72fddf45f6596182332e6f57fb19c7d8d1d28f79d2a76b25ce659b7c0af"
+      },
+      "approval": {
+        "kind": "guided",
+        "file": "output/building-expansion-20261109-v1/approved-guided-C08-v1.json",
+        "approvedAt": "2026-11-10"
+      }
+    },
+    {
+      "sourceId": "C02",
+      "artifactId": "guided-C02-handpainted-v2",
+      "templateName": "building_source_C02",
+      "kind": "single",
+      "anchors": [
+        {
+          "anchorId": "outside-11",
+          "role": "primary",
+          "originalTemplate": "building_workshop",
+          "originalWorldWidth": 7.5833
+        }
+      ],
+      "group": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C02-handpainted-v2/output-1.glb",
+        "bytes": 7339536,
+        "sha256": "ba28bc2900943724d06fc9fe65a9d83d4d03f642836b40e291e3a62e71e17671"
+      },
+      "approval": {
+        "kind": "guided",
+        "file": "output/building-expansion-20261109-v1/approved-guided-C02-handpainted-v2.json",
+        "approvedAt": "2026-11-10"
+      }
+    },
+    {
+      "sourceId": "B09-02",
+      "artifactId": "guided-B09-02-handpainted-v1",
+      "templateName": "building_source_B09_02",
+      "kind": "single",
+      "anchors": [
+        {
+          "anchorId": "approach-6",
+          "role": "primary",
+          "originalTemplate": "building_shop",
+          "originalWorldWidth": 10.2222
+        }
+      ],
+      "group": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-B09-02-handpainted-v1/output-1.glb",
+        "bytes": 6695452,
+        "sha256": "3ba9c44c8cf11f4e4d5f5d3eeb608860d14b0c39b0ebaafab21205e76a69661f"
+      },
+      "approval": {
+        "kind": "guided",
+        "file": "output/building-expansion-20261109-v1/approved-guided-B09-02-handpainted.json",
+        "approvedAt": "2026-11-10"
+      }
+    },
+    {
+      "sourceId": "guided-A05-local-G1-v2",
+      "artifactId": "guided-A05-local-G1-v2",
+      "templateName": "building_source_A05",
+      "kind": "group",
+      "anchors": [
+        {
+          "anchorId": "city-1",
+          "role": "primary",
+          "originalTemplate": "building_workshop",
+          "originalWorldWidth": 7.5556
+        },
+        {
+          "anchorId": "city-2",
+          "role": "covered",
+          "originalTemplate": "building_shop",
+          "originalWorldWidth": 7.1111
+        }
+      ],
+      "group": {
+        "groupId": "guided-A05-local-G1-v2",
+        "primaryAnchorId": "city-1",
+        "coveredAnchorIds": [
+          "city-2"
+        ],
+        "worldWidth": 15.7777,
+        "spanX": [
+          285.5556,
+          301.3333
+        ],
+        "centerX": 293.4445,
+        "offsetXFromPrimary": -4.1111,
+        "derivation": "union of the existing generic-house frontage spans (nominalWidth × clamped source scale) of all catalog anchors; ONE model instance replaces all of them"
+      },
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-A05-local-G1-v2/output-1.glb",
+        "bytes": 6802836,
+        "sha256": "ff27b38733cb5dc18ec69de914b9aa51eb98e731f90282b86f0dbc3656011a1b"
+      },
+      "approval": {
+        "kind": "guided",
+        "file": "output/building-expansion-20261109-v1/approved-guided-A05-v1.json",
+        "approvedAt": "2026-11-10"
+      }
+    },
+    {
+      "sourceId": "guided-E01-local-G1-v2",
+      "artifactId": "guided-E01-local-G1-v2",
+      "templateName": "building_source_E01",
+      "kind": "single",
+      "anchors": [
+        {
+          "anchorId": "outside-3",
+          "role": "primary",
+          "originalTemplate": "building_workshop",
+          "originalWorldWidth": 8.445
+        }
+      ],
+      "group": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E01-local-G1-v2/output-1.glb",
+        "bytes": 7918676,
+        "sha256": "c2036a1d3d8a8e8c4f7e96016de18e169e42fe4b0b22b947e78d04763cf5a96f"
+      },
+      "approval": {
+        "kind": "guided",
+        "file": "output/building-expansion-20261109-v1/approved-guided-E01-v1.json",
+        "approvedAt": "2026-11-10"
+      }
+    },
+    {
+      "sourceId": "guided-E02-local-G1-v2",
+      "artifactId": "guided-E02-local-G1-v2",
+      "templateName": "building_source_E02",
+      "kind": "single",
+      "anchors": [
+        {
+          "anchorId": "city-25",
+          "role": "primary",
+          "originalTemplate": "building_shop",
+          "originalWorldWidth": 7.1111
+        }
+      ],
+      "group": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E02-local-G1-v2/output-1.glb",
+        "bytes": 8515556,
+        "sha256": "c28208fefa40be4d226d30683bff7f4ee17de0aaf1106986f1918ef7a9bb007b"
+      },
+      "approval": {
+        "kind": "guided",
+        "file": "output/building-expansion-20261109-v1/approved-guided-E02-v1.json",
+        "approvedAt": "2026-11-10"
+      }
+    }
+  ],
+  "anchors": [
+    {
+      "sourceId": "guided-C01-local-G1-v2",
+      "anchorId": "outside-14",
+      "role": "primary",
+      "templateName": "building_source_C01",
+      "segment": "outside",
+      "sourceImage": "full-8.jpg",
+      "visibleRoofPlan": {
+        "x": 74.71274666666667,
+        "z": 26,
+        "w": 7.927946666666667,
+        "d": 4.2,
+        "type": "hall",
+        "reference": [
+          1720,
+          465,
+          230,
+          130
+        ],
+        "nativeAnchor": [
+          14822,
+          4004
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 39,
+        "loopIndex": 39
+      },
+      "originalTemplate": "building_tea",
+      "originalNominalWidth": 12,
+      "originalScale": 0.66066,
+      "originalWorldWidth": 7.9279,
+      "spanX": [
+        70.7488,
+        78.6767
+      ],
+      "streetRegistration": "none (existing depth search resolves z)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 7.9279,
+      "predictedSingleScale": 0.99099
+    },
+    {
+      "sourceId": "guided-B09-01-local-G1-v2",
+      "anchorId": "approach-9",
+      "role": "primary",
+      "templateName": "building_source_B09_01",
+      "segment": "approach",
+      "sourceImage": "full-9.jpg",
+      "visibleRoofPlan": {
+        "x": -128.66755555555557,
+        "z": -30.22514619883041,
+        "w": 10.88888888888889,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          2420,
+          203,
+          245,
+          145
+        ],
+        "nativeAnchor": [
+          26889,
+          2254
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 56,
+        "loopIndex": 56
+      },
+      "originalTemplate": "building_workshop",
+      "originalNominalWidth": 9,
+      "originalScale": 1.20988,
+      "originalWorldWidth": 10.8889,
+      "spanX": [
+        -134.112,
+        -123.2231
+      ],
+      "streetRegistration": "none (existing depth search resolves z)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 10.8889,
+      "predictedSingleScale": 1.36111
+    },
+    {
+      "sourceId": "C03",
+      "anchorId": "city-18",
+      "role": "primary",
+      "templateName": "building_source_C03",
+      "segment": "city",
+      "sourceImage": "full-7.jpg",
+      "visibleRoofPlan": {
+        "x": 250.88888888888889,
+        "z": 62.3766081871345,
+        "w": 10.88888888888889,
+        "d": 4.2,
+        "type": "hall",
+        "reference": [
+          1870,
+          575,
+          245,
+          110
+        ],
+        "nativeAnchor": [
+          20778,
+          6385
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 16,
+        "loopIndex": 8
+      },
+      "originalTemplate": "building_tea",
+      "originalNominalWidth": 12,
+      "originalScale": 0.90741,
+      "originalWorldWidth": 10.8889,
+      "spanX": [
+        245.4444,
+        256.3333
+      ],
+      "streetRegistration": "registered lot (z may be re-resolved by existing code)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 10.8889,
+      "predictedSingleScale": 1.36111
+    },
+    {
+      "sourceId": "guided-C05-local-G1-v3",
+      "anchorId": "outside-5",
+      "role": "primary",
+      "templateName": "building_source_C05",
+      "segment": "outside",
+      "sourceImage": "full-8.jpg",
+      "visibleRoofPlan": {
+        "x": 97.46250666666667,
+        "z": -26,
+        "w": 8.962026666666667,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          1060,
+          145,
+          260,
+          150
+        ],
+        "nativeAnchor": [
+          9134,
+          1249
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 30,
+        "loopIndex": 30
+      },
+      "originalTemplate": "building_shop",
+      "originalNominalWidth": 8,
+      "originalScale": 1.12025,
+      "originalWorldWidth": 8.962,
+      "spanX": [
+        92.9815,
+        101.9435
+      ],
+      "streetRegistration": "none (existing depth search resolves z)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 8.962,
+      "predictedSingleScale": 1.12025,
+      "groupRoleNote": "places the single group model"
+    },
+    {
+      "sourceId": "guided-C05-local-G1-v3",
+      "anchorId": "outside-6",
+      "role": "covered",
+      "templateName": "building_source_C05",
+      "segment": "outside",
+      "sourceImage": "full-8.jpg",
+      "visibleRoofPlan": {
+        "x": 90.56864,
+        "z": -26,
+        "w": 6.032133333333333,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          1260,
+          143,
+          175,
+          125
+        ],
+        "nativeAnchor": [
+          10858,
+          1231
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 31,
+        "loopIndex": 31
+      },
+      "originalTemplate": "building_shop",
+      "originalNominalWidth": 8,
+      "originalScale": 0.75402,
+      "originalWorldWidth": 6.0321,
+      "spanX": [
+        87.5526,
+        93.5847
+      ],
+      "streetRegistration": "none (existing depth search resolves z)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 6.0321,
+      "predictedSingleScale": 0.75401,
+      "groupRoleNote": "suppressed: covered by the single group model placed at outside-5"
+    },
+    {
+      "sourceId": "C08",
+      "anchorId": "city-15",
+      "role": "primary",
+      "templateName": "building_source_C08",
+      "segment": "city",
+      "sourceImage": "full-7.jpg",
+      "visibleRoofPlan": {
+        "x": 290.44444444444446,
+        "z": 58.51695906432748,
+        "w": 8,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          980,
+          545,
+          180,
+          110
+        ],
+        "nativeAnchor": [
+          10889,
+          6052
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 13,
+        "loopIndex": 5
+      },
+      "originalTemplate": "building_shop",
+      "originalNominalWidth": 8,
+      "originalScale": 1,
+      "originalWorldWidth": 8,
+      "spanX": [
+        286.4444,
+        294.4444
+      ],
+      "streetRegistration": "registered lot (z may be re-resolved by existing code)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 8,
+      "predictedSingleScale": 1,
+      "groupRoleNote": "places the single group model"
+    },
+    {
+      "sourceId": "C08",
+      "anchorId": "city-16",
+      "role": "covered",
+      "templateName": "building_source_C08",
+      "segment": "city",
+      "sourceImage": "full-7.jpg",
+      "visibleRoofPlan": {
+        "x": 280.6666666666667,
+        "z": 60.44678362573099,
+        "w": 12,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          1200,
+          560,
+          280,
+          140
+        ],
+        "nativeAnchor": [
+          13333,
+          6218
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 14,
+        "loopIndex": 6
+      },
+      "originalTemplate": "building_shop",
+      "originalNominalWidth": 8,
+      "originalScale": 1.4,
+      "originalWorldWidth": 11.2,
+      "spanX": [
+        275.0667,
+        286.2667
+      ],
+      "streetRegistration": "registered lot (z may be re-resolved by existing code)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 11.2,
+      "predictedSingleScale": 1.4,
+      "groupRoleNote": "suppressed: covered by the single group model placed at city-15"
+    },
+    {
+      "sourceId": "C02",
+      "anchorId": "outside-11",
+      "role": "primary",
+      "templateName": "building_source_C02",
+      "segment": "outside",
+      "sourceImage": "full-8.jpg",
+      "visibleRoofPlan": {
+        "x": 90.74098666666667,
+        "z": 51.23333333333333,
+        "w": 7.583253333333334,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          1255,
+          700,
+          220,
+          150
+        ],
+        "nativeAnchor": [
+          10815,
+          6028
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 36,
+        "loopIndex": 36
+      },
+      "originalTemplate": "building_workshop",
+      "originalNominalWidth": 9,
+      "originalScale": 0.84258,
+      "originalWorldWidth": 7.5833,
+      "spanX": [
+        86.9494,
+        94.5326
+      ],
+      "streetRegistration": "none (existing depth search resolves z)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 7.5833,
+      "predictedSingleScale": 0.94791
+    },
+    {
+      "sourceId": "B09-02",
+      "anchorId": "approach-6",
+      "role": "primary",
+      "templateName": "building_source_B09_02",
+      "segment": "approach",
+      "sourceImage": "full-9.jpg",
+      "visibleRoofPlan": {
+        "x": -91.33422222222222,
+        "z": -38.61695906432749,
+        "w": 10.222222222222223,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          1580,
+          121,
+          230,
+          145
+        ],
+        "nativeAnchor": [
+          17556,
+          1344
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 53,
+        "loopIndex": 53
+      },
+      "originalTemplate": "building_shop",
+      "originalNominalWidth": 8,
+      "originalScale": 1.27778,
+      "originalWorldWidth": 10.2222,
+      "spanX": [
+        -96.4453,
+        -86.2231
+      ],
+      "streetRegistration": "none (existing depth search resolves z)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 10.2222,
+      "predictedSingleScale": 1.27778
+    },
+    {
+      "sourceId": "guided-A05-local-G1-v2",
+      "anchorId": "city-1",
+      "role": "primary",
+      "templateName": "building_source_A05",
+      "segment": "city",
+      "sourceImage": "full-7.jpg",
+      "visibleRoofPlan": {
+        "x": 297.55555555555554,
+        "z": 14.130994152046782,
+        "w": 7.555555555555556,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          820,
+          200,
+          170,
+          105
+        ],
+        "nativeAnchor": [
+          9111,
+          2221
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 0,
+        "loopIndex": 0
+      },
+      "originalTemplate": "building_workshop",
+      "originalNominalWidth": 9,
+      "originalScale": 0.83951,
+      "originalWorldWidth": 7.5556,
+      "spanX": [
+        293.7778,
+        301.3333
+      ],
+      "streetRegistration": "registered lot (z may be re-resolved by existing code)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 7.5556,
+      "predictedSingleScale": 0.94445,
+      "groupRoleNote": "places the single group model"
+    },
+    {
+      "sourceId": "guided-A05-local-G1-v2",
+      "anchorId": "city-2",
+      "role": "covered",
+      "templateName": "building_source_A05",
+      "segment": "city",
+      "sourceImage": "full-7.jpg",
+      "visibleRoofPlan": {
+        "x": 289.11111111111114,
+        "z": 13.487719298245613,
+        "w": 7.111111111111112,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          1010,
+          195,
+          160,
+          115
+        ],
+        "nativeAnchor": [
+          11222,
+          2165
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 1,
+        "loopIndex": 1
+      },
+      "originalTemplate": "building_shop",
+      "originalNominalWidth": 8,
+      "originalScale": 0.88889,
+      "originalWorldWidth": 7.1111,
+      "spanX": [
+        285.5556,
+        292.6667
+      ],
+      "streetRegistration": "registered lot (z may be re-resolved by existing code)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 7.1111,
+      "predictedSingleScale": 0.88889,
+      "groupRoleNote": "suppressed: covered by the single group model placed at city-1"
+    },
+    {
+      "sourceId": "guided-E01-local-G1-v2",
+      "anchorId": "outside-3",
+      "role": "primary",
+      "templateName": "building_source_E01",
+      "segment": "outside",
+      "sourceImage": "full-8.jpg",
+      "visibleRoofPlan": {
+        "x": 114.69717333333334,
+        "z": -26,
+        "w": 8.444986666666665,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          560,
+          140,
+          245,
+          160
+        ],
+        "nativeAnchor": [
+          4826,
+          1206
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 28,
+        "loopIndex": 28
+      },
+      "originalTemplate": "building_workshop",
+      "originalNominalWidth": 9,
+      "originalScale": 0.93833,
+      "originalWorldWidth": 8.445,
+      "spanX": [
+        110.4747,
+        118.9197
+      ],
+      "streetRegistration": "none (existing depth search resolves z)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 8.445,
+      "predictedSingleScale": 1.05563
+    },
+    {
+      "sourceId": "guided-E02-local-G1-v2",
+      "anchorId": "city-25",
+      "role": "primary",
+      "templateName": "building_source_E02",
+      "segment": "city",
+      "sourceImage": "full-7.jpg",
+      "visibleRoofPlan": {
+        "x": 147.33333333333334,
+        "z": -3.623391812865499,
+        "w": 7.111111111111112,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          4200,
+          62,
+          160,
+          100
+        ],
+        "nativeAnchor": [
+          46667,
+          688
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 23,
+        "loopIndex": 23
+      },
+      "originalTemplate": "building_shop",
+      "originalNominalWidth": 8,
+      "originalScale": 0.88889,
+      "originalWorldWidth": 7.1111,
+      "spanX": [
+        143.7778,
+        150.8889
+      ],
+      "streetRegistration": "none (existing depth search resolves z)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 7.1111,
+      "predictedSingleScale": 0.88889
+    }
+  ],
+  "groups": [
+    {
+      "sourceId": "guided-C05-local-G1-v3",
+      "templateName": "building_source_C05",
+      "groupId": "guided-C05-local-G1-v3",
+      "primaryAnchorId": "outside-5",
+      "coveredAnchorIds": [
+        "outside-6"
+      ],
+      "worldWidth": 14.3909,
+      "spanX": [
+        87.5526,
+        101.9435
+      ],
+      "centerX": 94.7481,
+      "offsetXFromPrimary": -2.7144,
+      "derivation": "union of the existing generic-house frontage spans (nominalWidth × clamped source scale) of all catalog anchors; ONE model instance replaces all of them"
+    },
+    {
+      "sourceId": "C08",
+      "templateName": "building_source_C08",
+      "groupId": "C08",
+      "primaryAnchorId": "city-15",
+      "coveredAnchorIds": [
+        "city-16"
+      ],
+      "worldWidth": 19.3777,
+      "spanX": [
+        275.0667,
+        294.4444
+      ],
+      "centerX": 284.7555,
+      "offsetXFromPrimary": -5.6889,
+      "derivation": "union of the existing generic-house frontage spans (nominalWidth × clamped source scale) of all catalog anchors; ONE model instance replaces all of them"
+    },
+    {
+      "sourceId": "guided-A05-local-G1-v2",
+      "templateName": "building_source_A05",
+      "groupId": "guided-A05-local-G1-v2",
+      "primaryAnchorId": "city-1",
+      "coveredAnchorIds": [
+        "city-2"
+      ],
+      "worldWidth": 15.7777,
+      "spanX": [
+        285.5556,
+        301.3333
+      ],
+      "centerX": 293.4445,
+      "offsetXFromPrimary": -4.1111,
+      "derivation": "union of the existing generic-house frontage spans (nominalWidth × clamped source scale) of all catalog anchors; ONE model instance replaces all of them"
+    }
+  ],
+  "selection": {
+    "anchorCount": 13,
+    "modelCount": 10,
+    "targetRange": [
+      9,
+      13
+    ],
+    "skippedCount": 59,
+    "skippedIds": [
+      "A02",
+      "A03",
+      "A04-img-v2",
+      "A04-v1",
+      "A05",
+      "B09-01",
+      "B09-02",
+      "B09-03",
+      "C01",
+      "C05",
+      "C08",
+      "E01",
+      "E02",
+      "E03",
+      "E05",
+      "A01",
+      "A03",
+      "A04",
+      "A04",
+      "A05",
+      "B09-01",
+      "B09-03",
+      "B09-03",
+      "B09-03",
+      "B09-06",
+      "B09-06",
+      "B09-06",
+      "C01",
+      "C02",
+      "C03",
+      "C05",
+      "C08",
+      "E01",
+      "E02",
+      "E03",
+      "E05",
+      "material-A04-local-v1",
+      "A03-local-shell-v1",
+      "A04-local-shell-v1",
+      "B09-02-local-shell-v1",
+      "A01-local-shell-v1",
+      "B09-06-local-shell-v1",
+      "C02-local-shell-v1",
+      "E03-local-shell-v1",
+      "B09-01-local-shell-v1",
+      "B09-03-local-shell-v1",
+      "A05-local-shell-v1",
+      "C01-local-shell-v1",
+      "C03-local-shell-v1",
+      "C05-local-shell-v1",
+      "C08-local-shell-v1",
+      "E01-local-shell-v1",
+      "E02-local-shell-v1",
+      "E05-local-shell-v1",
+      "A03",
+      "B09-02",
+      "C02",
+      "B09-04",
+      "B09-05"
+    ]
+  },
+  "checks": [
+    {
+      "id": "patch-targets-unique",
+      "result": "passed",
+      "detail": "每个 patch 的 needle 在 base 文件中出现次数均记录为 1"
+    },
+    {
+      "id": "derived-markers",
+      "result": "passed",
+      "detail": "派生的 main/world/index 均含预期标记（含组团抑制/组合宽度标记）"
+    },
+    {
+      "id": "anchor-in-visible-roof-plan",
+      "result": "passed",
+      "detail": "选中锚点均存在于 visibleRoofPlan，非 hero、非 compound、且属于街道布点循环"
+    },
+    {
+      "id": "catalog-anchor-match",
+      "result": "passed",
+      "detail": "每个选中来源的 catalog sourceAnchors 精确锚点数量与单锚点/组团声明一致"
+    },
+    {
+      "id": "group-covers-all-anchors",
+      "result": "passed",
+      "detail": "组团候选替换其 catalog 列出的全部锚点，主锚点放一份模型、次锚点抑制，不做多份复制"
+    },
+    {
+      "id": "source-crop-sha",
+      "result": "passed",
+      "detail": "原画 crop 实际 SHA-256 与 catalog/approval 记录一致"
+    },
+    {
+      "id": "glb-self-contained",
+      "result": "passed",
+      "detail": "候选 GLB 无外部扩展依赖（extensionsUsed 为空），可被 GLTFLoader.parseAsync 直接解析"
+    },
+    {
+      "id": "roof-face-split",
+      "result": "passed",
+      "detail": "每个替换候选按三角形拆分：几何法线 normal.y>0.45 且面积>1e-4 归屋面组（y>0.9 近水平面也归入、顶点色×0.9），屋面组换 tile 材质（roughness=1/metalness=0、世界坐标 UV 1.3m/重复），其余面保留原材质；只拆屋面三角最多的那个 mesh"
+    },
+    {
+      "id": "roof-uv-slope-basis",
+      "result": "passed",
+      "detail": "屋面 UV 按三角形坡度基向量：n=面法线 → h=normalize(n.x,0,n.z) → u=normalize(cross(worldUp,h))（水平檐口方向）→ v=normalize(cross(n,u)) 且 v.y>0；UV=(dot(p,u)/0.85, dot(p,v)/0.85)；roof.uvMode=slope-basis，不新增材质/贴图、draw call 不变"
+    },
+    {
+      "id": "roof-uv-horizontal-ratio",
+      "result": "passed",
+      "detail": "每模型抽样最多 20 个屋面三角，计算 u 与水平檐口方向 |dot|，记录 uHorizontalRatio（目标 >0.98）；state.roof.uHorizontalRatioMean 汇总；贴图瓦垄行周期沿 v，因此行沿 u/檐口方向"
+    },
+    {
+      "id": "roof-uv-degenerate-fallback",
+      "result": "passed",
+      "detail": "近水平/法线异常三角（|n.x|+|n.z|<1e-4）回退世界 x/z 投影，计入 roof.models[src].degenerateUvTriangles 与 state.roof.degenerateUvTrianglesTotal；只回退该三角，不整体回退"
+    },
+    {
+      "id": "guide-compact-bar",
+      "result": "passed",
+      "detail": "常驻紧凑导览条 #be-guide-bar 直属 body（不依赖面板）：bottom:96px、宽 680（min 560/max 720）、高 72px、深色半透明底+细边；显示站名/原画段落/一句话说明与「前往/上一站/下一站/关闭」；首次按 [ ] 或点前往时显示，关闭隐藏并标记 closed"
+    },
+    {
+      "id": "guide-bar-keyboard-sync",
+      "result": "passed",
+      "detail": "[ / ] 循环切换站点时 showGuideBar 并更新条内容（站名/段落/说明/锚点），相机会同步前往；面板关闭时导览条仍可见"
+    },
+    {
+      "id": "roof-debug-paint-nonzero",
+      "result": "passed",
+      "detail": "debugPaintRoofGroups(true)：拆分时 mesh.name=roof-tiles/roof-dark/roof-low（userData 双保险），遍历 cameraContext.scene 或 state.scene，按 userData/name/材质名匹配；材质 clone 缓存并记录原始 color/emissive；返回 {roof,dark,low,total} 并写 state.roof.debugPaint"
+    },
+    {
+      "id": "lifescene-four-clusters-placed",
+      "result": "passed",
+      "detail": "目标 4 簇全部放下（bridge-west/bridge-east/dock-unloading/tea-shed），lifeScenes.clusters.length===4、errors.length===0、peopleClones===3"
+    },
+    {
+      "id": "lifescene-conflict-relaxed",
+      "result": "passed",
+      "detail": "避让放宽：placements/colliders 只按矩形外扩 0.3m 判冲突、stallSpots 半径降到 1.0m、取消街道走廊/引道中心线判定；冲突先沿街 ±1/2/3/4m 平移，仍冲突允许 0.85x 缩放再试；全部失败才跳过，errors[].blocker 记录类型/坐标/尝试"
+    },
+    {
+      "id": "guide-bar-no-clip",
+      "result": "passed",
+      "detail": "常驻导览条高度 72→96px（min-height 96），标题单行省略、说明最多两行自动换行、按钮 flex 不裁切；680×96 内站名/段落/说明与四个按钮完整可见"
+    },
+    {
+      "id": "guide-copy-nine-people",
+      "result": "passed",
+      "detail": "导览 6 站说明补本轮内容且每条 ≤60 字：郊野（田块/篱笆与驴队入城方向）、码头（河边卸货木箱10/麻袋5/酒瓮3/竹筐2+船工）、虹桥（两端摊铺、西桥头摊贩）、街市（12组摊位/20只檐口灯笼/九种人物两人行走）；仍用“据画面可见”，不编史实"
+    },
+    {
+      "id": "lifescene-tea-yaw",
+      "result": "passed",
+      "detail": "茶棚最终落位街南侧 z≈33.8（街心 +z）：yaw 0 → π（180°），使布招/开口面向街心；书生转到棚北侧并面向茶棚；lifeScenes.teaYaw 记录 before/after/finalYaw/reason"
+    },
+    {
+      "id": "lifescene-tea-candidates",
+      "result": "passed",
+      "detail": "茶棚候选回退：①(205,+6.2) ②(218,−6.2) ③(228,+6.2) ④(238,−6.2) ⑤(196,+6.4)，每候选都跑平移/缩放逻辑，取第一个 clear；全失败才跳过并把 blocker 写进 errors；目标 4/4、errors=[]、克隆 3 人"
+    },
+    {
+      "id": "lifescene-bridge-stalls",
+      "result": "passed",
+      "detail": "虹桥两端 x≈±20 各 1 组摊位（4 木柱+cloth 布篷+木架+木箱/筐/瓮/麻袋），沿 cityStreetZ 引道街缘外，留 ≥3m 通道；各克隆 1 个摊贩站摊后（Idle）"
+    },
+    {
+      "id": "lifescene-dock-unloading",
+      "result": "passed",
+      "detail": "码头带 x=-40 岸边空地：木箱 10、麻袋 5、酒瓮 3、竹筐 2，置于 waterline 外 3.2m（离栏杆驳岸 ≥2m 通道）；克隆船工面向水面（Idle）"
+    },
+    {
+      "id": "lifescene-tea-shed",
+      "result": "passed",
+      "detail": "城内 x≈205 街缘外茶棚：4 柱+cloth 顶+2 长凳+矮桌+2 茶瓮+布招（约 4×3m），不挡主街；克隆书生于棚前（Idle）"
+    },
+    {
+      "id": "lifescene-clones-animated",
+      "result": "passed",
+      "detail": "3 个克隆人物用骨架安全 clone + 各自 AnimationMixer 播 Idle（相位 0.4/1.3/2.1 错开），1.75m 贴地、castShadow=false、无 collider；不进导览 6 站列表"
+    },
+    {
+      "id": "lifescene-drawcall-budget",
+      "result": "passed",
+      "detail": "道具按 wood/cloth/earth 合并 3 个 mesh（draw call +3），克隆人物各 1 skinned mesh（+3），总增量 ≤6（道具预算 ≤3）；所有材质复用 dist surface-textures，不新增贴图"
+    },
+    {
+      "id": "guide-six-stations",
+      "result": "passed",
+      "detail": "导览层 6 站：郊野(outside-14/C01)、汴河码头(approach-9/B09-03)、虹桥(approach-6/B09-02)、城门(city-1/A05)、城内街市(city-15/C08)、城墙(程序化段无候选)；每站卡片含站名/原画段落/≤40字据画面可见说明/依据/前往按钮，并显示“你正站在…”与已到访数"
+    },
+    {
+      "id": "guide-focus-reuses-anchor",
+      "result": "passed",
+      "detail": "5 个锚点站（郊野/码头/虹桥/城门/街市）前往复用 focusAnchor(anchorId)；城墙站用固定相机点（程序化段无候选）；到达后卡片高亮并显示“你正站在…”"
+    },
+    {
+      "id": "guide-cards-closable",
+      "result": "passed",
+      "detail": "每张导览卡片有关闭按钮，写入 state.guide.closed 并重新渲染；关闭后回到原预览信息条/面板，不弹窗"
+    },
+    {
+      "id": "roof-debug-paint-api",
+      "result": "passed",
+      "detail": "window.__BUILDING_EXPANSION_PREVIEW__.debugPaintRoofGroups(on)：true 时屋面组染红(#ff2d2d)/dark 染蓝(#2d4dff)/低位染绿(#2dff5a)（克隆材质改 color/emissive），false 恢复原材质；可反复开关、不改贴图/GLB、不持久化"
+    },
+    {
+      "id": "guide-keyboard-and-close",
+      "result": "passed",
+      "detail": "键盘 [ / ] 循环切换站点并前往，卡片有关闭按钮（state.guide.closed）；不弹窗、不阻塞；锚点站复用 focusAnchor，城墙站用相机点到固定坐标"
+    },
+    {
+      "id": "debug-paint-roof-groups",
+      "result": "passed",
+      "detail": "debugPaintRoofGroups(true/false)：按 mesh.userData.roofGroup 把屋面组染红/dark 染蓝/低位染绿（克隆材质改 color/emissive，false 恢复原材质）；不改贴图/GLB，用于定位大屋顶偏浅由哪组面主导"
+    },
+    {
+      "id": "e01-v2-chosen",
+      "result": "passed",
+      "detail": "outer-3（E01）主替换改为 guided-E01-local-G1-v2（单檐两坡+前檐连续开敞柱列）；运行时 state.placed 中 outside-3 的 sourceId 应为 guided-E01-local-G1-v2，state.e01Choice 记录"
+    },
+    {
+      "id": "e02-v2-chosen",
+      "result": "passed",
+      "detail": "city-25（E02）主替换改为 guided-E02-local-G1-v2（单檐两坡+临河挑台木栏）；运行时 state.placed 中 city-25 的 sourceId 应为 guided-E02-local-G1-v2，state.e02Choice 记录"
+    },
+    {
+      "id": "e01e02-roof-split",
+      "result": "passed",
+      "detail": "两件 v2 均走屋顶三组拆分 + overlay 瓦材质（构建期 roofStats.sources[chosen].split=true、conserved=true；运行时 roof.models[chosen].split=true），draw call 每模型 +2"
+    },
+    {
+      "id": "b0906-v2-not-adopted",
+      "result": "passed",
+      "detail": "receipt.b0906Retry={attempted:true, state:\"succeeded-but-not-adopted\", artifact:\"guided-B09-06-local-G1-v2\", reason:\"双屋脊/两栋屋顶，不符合单檐约束\"}；B09-06 默认仍 guided-B09-06-local-G1-v1"
+    },
+    {
+      "id": "c05-v3-chosen",
+      "result": "passed",
+      "detail": "outside-5/6 主替换改为 guided-C05-local-G1-v3（通长连续前廊+侧廊腰檐，瓦垄/瓦当清楚）；运行时 state.placed 中 outside-5 的 sourceId 应为 guided-C05-local-G1-v3，state.c05Choice 记录选择"
+    },
+    {
+      "id": "c05-previous-kept",
+      "result": "passed",
+      "detail": "旧 guided-C05-local-G1-v1 保留在 manifest.alternateSources 与 receipt.c05Choice.previous（SHA/字节实际读取），不参与默认替换；c05Choice.rollback 写一键回退"
+    },
+    {
+      "id": "c05-v3-roof-split",
+      "result": "passed",
+      "detail": "guided-C05-local-G1-v3 走屋顶三组拆分 + overlay 瓦材质（构建期 roofStats.sources[chosen].split=true、conserved=true；运行时 roof.models[chosen].split=true）"
+    },
+    {
+      "id": "c08-v2-not-adopted",
+      "result": "passed",
+      "detail": "receipt.c08Retry={attempted:true, state:\"succeeded-but-not-adopted\", artifact:\"guided-C08-local-G1-v2\", reason:\"左上存在脱离主体的屋面碎片\"}；C08 默认仍 guided-C08-local-G1-v1"
+    },
+    {
+      "id": "c01-retry-chosen",
+      "result": "passed",
+      "detail": "outside-14 主替换改为 guided-C01-local-G1-v2（两层楼屋，上层木栏隔扇/下层敞廊+腰檐）；运行时 state.placed 中 outside-14 的 sourceId 应为 guided-C01-local-G1-v2，state.c01Choice 记录选择"
+    },
+    {
+      "id": "c01-previous-kept",
+      "result": "passed",
+      "detail": "旧 architecture-C01-img-v1 保留在 manifest.alternateSources 与 receipt.c01Choice.previous（SHA/字节实际读取），不参与默认替换；c01Choice.rollback 写一键回退"
+    },
+    {
+      "id": "c01-roof-split",
+      "result": "passed",
+      "detail": "guided-C01-local-G1-v2 走屋顶三组拆分 + overlay 瓦材质（构建期 roofStats.sources[chosen].split=true、conserved=true；运行时 roof.models[chosen].split=true）"
+    },
+    {
+      "id": "c05-retry-failure-recorded",
+      "result": "passed",
+      "detail": "receipt.c05Retry={attempted:true, state:\"provider-terminal-failure\", status:4, charged:false}，避免以后误以为 C05 重试未做过"
+    },
+    {
+      "id": "gate-retry-chosen",
+      "result": "passed",
+      "detail": "city-1 与 city-2 主替换改为 guided-A05-local-G1-v2（单檐两坡、三开间前廊门屋，同一 sourceId 覆盖两组锚点）；运行时 state.placed 中 city-1/city-2 的 sourceId 应为 guided-A05-local-G1-v2，state.gateChoice 记录选择"
+    },
+    {
+      "id": "gate-previous-kept",
+      "result": "passed",
+      "detail": "旧 guided-A05-local-G1-v1 保留在 manifest.alternateSources（url /preview/candidates/...、SHA/字节实际读取）与 receipt.gateChoice.previous，不参与默认替换；一键回退说明已写入 gateChoice.rollback"
+    },
+    {
+      "id": "gate-roof-split",
+      "result": "passed",
+      "detail": "guided-A05-local-G1-v2 走屋顶三组拆分 + overlay 瓦材质（构建期 roofStats.sources[chosen].split=true、conserved=true；运行时 roof.models[chosen].split=true）"
+    },
+    {
+      "id": "gate-opening-clear",
+      "result": "passed",
+      "detail": "按 A05 v2 组拟合 AABB 与 street-surfaces 城墙矩形（墙厚 4.4m、门洞 z∈[27,53]）求交：门洞通行矩形 gateClear=true、无压占；南墙有贴墙叠置记录为 riskLevel 与墙段/叠置量，门洞偏移建议为 null"
+    },
+    {
+      "id": "approach9-retry-chosen",
+      "result": "passed",
+      "detail": "approach-9 主替换改为 guided-B09-01-local-G1-v2（单檐两坡）；sourceId=B09-01、锚点 approach-9，SHA 从源 GLB 实际读取；运行时 state.placed 中 approach-9 的 sourceId 应为 guided-B09-01-local-G1-v2，state.approach9Choice 记录选择"
+    },
+    {
+      "id": "approach9-alternate-kept",
+      "result": "passed",
+      "detail": "guided-B09-03-local-G1-v2（通长 7 跨前廊）作为备用/对照保留在 manifest.alternateSources（url /preview/candidates/...、SHA/字节实际读取），不参与默认替换；receipt.approach9Choice 记 chosen/alternate/reason/rollback"
+    },
+    {
+      "id": "approach9-roof-split",
+      "result": "passed",
+      "detail": "guided-B09-01-local-G1-v2 仍走屋顶三组拆分 + overlay 瓦材质（构建期 roofStats.sources[chosen].split=true，运行时 roof.models[chosen].split=true）；draw call 增量预算不变"
+    },
+    {
+      "id": "tile-texture-procedural",
+      "result": "passed",
+      "detail": "overlay 自建 512×512 DataTexture 深灰瓦（modules/tile-texture.js）：底色 #4a4a48、32px 瓦垄 + 3px 凹槽 #2e2e2c、64px 瓦块 + 2px 竖缝（隔行错缝）、上亮下暗、±6 灰度噪声；同时生成 normalMap/roughnessMap；实测 avgL≈0.285（目标 0.28–0.32）；不改 dist surface-textures.js"
+    },
+    {
+      "id": "tile-texture-dark-palette",
+      "result": "passed",
+      "detail": "深灰瓦材质 color=#ffffff、roughness=1、metalness=0、normalScale=1.1；不做 tint 压暗；dark 高位组改用同款 overlay 瓦贴图 ×0.7（替代原 AI 浅色草席贴图，避免高位仍显草席）"
+    },
+    {
+      "id": "roof-uses-new-tile",
+      "result": "passed",
+      "detail": "屋顶 tile mesh 使用 overlay 新瓦贴图（map/normalMap/roughnessMap），UV 仍世界坐标投影 0.85m；draw call 不变（只换贴图，不新增材质组/贴图文件）"
+    },
+    {
+      "id": "roof-split-all-eight",
+      "result": "passed",
+      "detail": "目标 8/8 模型 split:true、splitModels=8、revertedModels=0；build 离线统计与运行时应一致（少量重复不再回退整模型）"
+    },
+    {
+      "id": "roof-duplicates-dropped-not-reverted",
+      "result": "passed",
+      "detail": "屋面/dark 组重复三角（局部质心相同）直接剔除、保留首个，记 droppedDuplicates；仅当重复比例 >5% 或守恒不成立才回退并写 errors(stage=roof)"
+    },
+    {
+      "id": "roof-dedupe-local-space",
+      "result": "passed",
+      "detail": "去重键用模型局部坐标（mesh matrixWorld 之前）质心 4 位小数，避免不同实例/世界变换造成假重复；runtime duplicateRatio 写入 roof.models[src] 与 state.roof"
+    },
+    {
+      "id": "roof-three-group-split",
+      "result": "passed",
+      "detail": "屋面拆分 v2 三组：屋面(ny>0.2 或 yc>minY+0.72H 且 ny>-0.30) → 1 个 tile mesh；剩余中 yc>minY+0.6H → 1 个 dark mesh（原材质 clone color×0.55）；其余低位保留原 mesh；每模型 draw call ≤+2"
+    },
+    {
+      "id": "roof-eave-captured",
+      "result": "passed",
+      "detail": "檐口/屋脊白羽用高度+法线双重判定捕获（yc>minY+0.72H 且 ny>-0.30 也归屋面），C05 等长屋檐口侧面/向下三角不再留在原 AI 材质"
+    },
+    {
+      "id": "roof-dark-group-applied",
+      "result": "passed",
+      "detail": "高位剩余组用克隆材质 color×0.55 压暗（保留原贴图），不再新增贴图/材质组；stats.darkGroupsTotal 记录应用模型数"
+    },
+    {
+      "id": "roof-sum-conserved-v2",
+      "result": "passed",
+      "detail": "逐模型守恒：原三角 = 屋面 + dark + 低位（0 误差），duplicateTriangles 必须 0，失败回退原样并记 errors(stage=roof)"
+    },
+    {
+      "id": "roof-triangles-not-duplicated",
+      "result": "passed",
+      "detail": "所有屋面三角按世界质心（3 位小数）去重，运行时 duplicateTriangles 必须为 0，否则整模型回退原样并记 errors(stage=roof)；state.roof.duplicateTrianglesTotal 汇总；不使用 polygonOffset 掩盖重叠"
+    },
+    {
+      "id": "roof-all-meshes-split",
+      "result": "passed",
+      "detail": "对模型每个可拆 mesh 都拆分（normal.y>0.5、面积>2e-4），屋面三角从原 geometry 真正剔除，合并进该模型唯一 1 个 tile 屋面 mesh；其余三角留在原 mesh 保留原材质"
+    },
+    {
+      "id": "roof-sum-conserved",
+      "result": "passed",
+      "detail": "逐 mesh 守恒：原三角总数 = 剩余三角 + 屋面三角（0 误差），每个 roof.models[src] 记录 trianglesTotal/roofTriangles/remainingTriangles/duplicateTriangles/meshesSplit/drawCallDelta"
+    },
+    {
+      "id": "roof-tile-material",
+      "result": "passed",
+      "detail": "屋面组换 tile 材质（makeSurfaceTextures(\"tile\") 兜底；loadOne 阶段 world.surfaces 尚未创建，故用同款 dist surface-textures），roughness=1/metalness=0、顶点色 ×0.9（法线 y>0.9 的近水平面），不动 dist 与 GLB 原字节"
+    },
+    {
+      "id": "roof-uv-projection",
+      "result": "passed",
+      "detail": "屋面 UV 用世界坐标投影：roofMesh.matrixWorld 变换后 u=x/1.3、v=z/1.3（textureMeters≈1.3），瓦纹方向按世界 x/z 平面、不随模型缩放漂移；其余面保留原 UV"
+    },
+    {
+      "id": "roof-drawcall-budget",
+      "result": "passed",
+      "detail": "每模型最多拆 1 个 mesh，拆后原 mesh + 新瓦屋面 mesh = draw call +1；8 个候选总增量 ≤11；未拆分的模型保持原样"
+    },
+    {
+      "id": "roof-fallback-rule",
+      "result": "passed",
+      "detail": "拆出 <30 个屋面三角或拆分异常时回退原材质并记 errors(stage=roof)/state.roof.fallbacks，不降级整体；不改 GLB 原字节、不动 dist"
+    },
+    {
+      "id": "tone-match-applied",
+      "result": "passed",
+      "detail": "对 8 个替换候选的材质做 canvas 32×32 采样 baseColor 平均亮度 L，color×k=clamp(0.42/max(L,0.05),0.45,1.0)、clamp 后去饱和 10%、roughness=1/metalness=0、envMapIntensity=0.6；anchors[].materialTone={avgL,k,targetL} 与 state.tone 统计；失败只 errors(stage=tone) 不降级"
+    },
+    {
+      "id": "tone-no-dist-mutation",
+      "result": "passed",
+      "detail": "色调统一只作用于 loadOne 后候选 GLB 场景内的材质对象（运行时派生副本，material.color/metalness/roughness），不修改 dist/src 或 dist 材质；builder 前后复核 dist SHA 不变"
+    },
+    {
+      "id": "tone-shared-material-once",
+      "result": "passed",
+      "detail": "每个模型 traverse 材质时用 Set 去重，共享材质只处理一次（processed.has 跳过），避免重复乘 k 导致过度变暗"
+    },
+    {
+      "id": "material-tone-normalization",
+      "result": "passed",
+      "detail": "只对 8 个替换候选的材质做色调统一（不改 GLB 原字节、不动 dist 材质）：canvas 采样 baseColor 平均亮度 L，color×k=clamp(0.42/max(L,0.05),0.45,1.0)，clamp 后去饱和 10%，统一 roughness=1/metalness=0；共享材质用 Set 去重；anchors[].materialTone={avgL,k} 与 state.tone 统计"
+    },
+    {
+      "id": "material-tone-clamp-flags",
+      "result": "passed",
+      "detail": "k 被 clamp 到 1.0（avgL≤0.42）仍可能发白的模型记入 state.tone.toneModelFlags 与 manifest/receipt.materialTone.toneModelFlags，供人工复核（构建期离线 PNG 采样与运行时 canvas 采样同一公式）"
+    },
+    {
+      "id": "base-unchanged-after-build",
+      "result": "passed",
+      "detail": "构建结束后重新读取 dist 三个 base 文件，SHA-256 与构建开始时一致"
+    },
+    {
+      "id": "anchor-count-in-range",
+      "result": "passed",
+      "detail": "实际替换锚点数 13 落在要求的 9–13 区间"
+    },
+    {
+      "id": "jump-camera-hook",
+      "result": "passed",
+      "detail": "派生 main.js 在 nav=createNavigation(...) 之后调用 attachCamera({camera,nav,controls})；跳转面板与 focusAnchor() 只在该 hook 之后可用，未初始化/未入场景/锚点未 placed 都有显式提示"
+    },
+    {
+      "id": "jump-does-not-change-replacements",
+      "result": "passed",
+      "detail": "跳转只设置 camera.position 与 OrbitControls.target 后 controls.update()，不修改 placements/colliders/kit.templates，不改变 11/11 与 errors 上报"
+    },
+    {
+      "id": "jump-distance-fits-model",
+      "result": "passed",
+      "detail": "相机距离由当前 fitted 世界尺寸(w/d/h)与相机 fov/aspect 计算并加 1.45 倍余量，保证整栋在视野内"
+    },
+    {
+      "id": "street-paving-city-only",
+      "result": "passed",
+      "detail": "石板只铺城市街段（world.js 既有 city=x>70，沿 cityStreetZ(x) 取样到路线末端 331.5）；乡野/城外土路不覆盖，保持 landscape.js 既有 earth 街面"
+    },
+    {
+      "id": "street-y-above-ground",
+      "result": "passed",
+      "detail": "铺装 y=0.633 高于既有街面 y≈0.624 与地坪 0.626，避免 z-fighting；栏杆 y 由 bankHeight(x,z)+0.008 取岸面高度"
+    },
+    {
+      "id": "street-railings-no-collision",
+      "result": "passed",
+      "detail": "栏杆纯装饰：未调用 collision()/colliders.push，collisionsAdded=0，不参与寻路；跳过桥体 [-14,14] 与两处泊船码头区 [-56,-22]、[28,52]"
+    },
+    {
+      "id": "street-draw-calls",
+      "result": "passed",
+      "detail": "石板路 1 个合并 mesh + 木栏杆 1 个 mergeGeometries mesh = 新增 2 draw call；临时 geometry 合并后 dispose，未写 dist"
+    },
+    {
+      "id": "street-failure-degrades",
+      "result": "passed",
+      "detail": "派生 main.js 用独立 try/catch 挂载 street-surfaces 模块；失败只 console.warn + 写 window.__BUILDING_EXPANSION_PREVIEW__.errors(stage=street) 并在信息条显示，不影响游戏与 11/11 替换"
+    },
+    {
+      "id": "paving-contrast",
+      "result": "passed",
+      "detail": "城市石板强化：颜色 #9d9b96（中性偏灰）、textureMeters 2.4、normalScale 1.25，两侧各 1.0m 石砌路边石（y=0.641，高于路面 8mm）；城外/乡野 earth 土路不覆盖，形成石/土硬边界"
+    },
+    {
+      "id": "wall-encloses-city",
+      "result": "passed",
+      "detail": "城墙以城门 (200,40) 为西入口围矩形：西侧复用既有 painted_gate 城墙(z 2–26/54–78)，新建南/东/北三段（约 6m 模块重复 + 收分墙身 + 压顶 + 垛口 + 四角/门侧墩台），合并成 3 个材质 mesh（3 draw call ≤4）；墙线据 world.placements 建筑占位动态外移并写 adjustments"
+    },
+    {
+      "id": "wall-gate-passage",
+      "result": "passed",
+      "detail": "门洞 z∈[27,53]（26m）完全留空：不为该区间生成墙段/墩台；运行时 gatePassageClear 复核，若被占则抛错降级"
+    },
+    {
+      "id": "wall-collider-count",
+      "result": "passed",
+      "detail": "沿墙矩形 collider 推入 world.colliders（colliderIndex 惰性索引，可挡玩家）；运行时 stats.wall.collidersAdded 记录数量；栏杆 0 collider"
+    },
+    {
+      "id": "wall-no-overlap-with-placements",
+      "result": "passed",
+      "detail": "构建前用 world.placements 建筑占位（含 11 处替换）与既有 collider 检查墙模块；冲突模块先绕行、再矮墙并记录，运行时 placedOverlapCount 复核"
+    },
+    {
+      "id": "wall-coursing-detail",
+      "result": "passed",
+      "detail": "墙身按 6m 模块加竖向凸柱/分缝（0.42m 宽、每段起点一根）并在墙身加 3 道横向砖/夯土凸出线脚（高 2.2/4.05/5.9m，断面 0.18m），打破内侧大片平墙与近看斜缝；仍复用 wall/stone/tile 三种材质合并 3 个 mesh，不新增贴图"
+    },
+    {
+      "id": "wall-merlon-spacing",
+      "result": "passed",
+      "detail": "垛口间距由约 3.2m 改为 1.7m（目标 1.6–2.0m），垛口高 0.85→1.0m、宽 0.85m，形成连续垛墙观感"
+    },
+    {
+      "id": "wall-brick-texture",
+      "result": "passed",
+      "detail": "墙身专用程序化砖纹：512² DataTexture，8 层横向砖（0.3m/层、错缝半砖）× 4 块（0.6m/块），含轻微砖色差，同时生成 roughness 与高度差分 normal；只应用到 body 层（plinth/cap 仍 stone/tile），无外部文件，draw call 仍 3；运行时 street.wall.texture 记录 size/generationMs/reused"
+    },
+    {
+      "id": "wall-brick-uv-scale",
+      "result": "passed",
+      "detail": "墙身 UV 用世界坐标投影：横向按 2.4m 一个 repeat、纵向按同一 2.4m（8 层砖 = 0.3m/层），由 projectSurfaceUV + textureMeters=2.4 生成，墙面砖缝不随墙段长度拉伸；斜向连接段 yaw 旋转后仍按世界面投影"
+    },
+    {
+      "id": "south-wall-zigzag-reduced",
+      "result": "passed",
+      "detail": "南墙绕行步长由 2.5/4.5m 杂档统一为 6m 一档、最多两档（12m），且只向城外（-z）绕；折线处用斜接短墙连接；整条南墙外移阈值放宽为「可减少 ≥2 个阻断模块即外移 12m」（优先连续、少矮墙）"
+    },
+    {
+      "id": "wall-lowcount-le-10",
+      "result": "passed",
+      "detail": "绕行由 8m 单档扩到最多 16m（两档 8+8，优先一档），优先减少矮墙；目标 lowWallCount ≤10、raised ≤10；不达标也不强行整条南移（南移规则保持：外移后矮墙 ≤5 且更少才触发）"
+    },
+    {
+      "id": "wall-low-raised-8m2",
+      "result": "passed",
+      "detail": "仍有矮墙时高度 7.6→8.2m（与整墙 8.66m 差 0.46m），lowWalls[].raised=true；统计 wall.lowWallCount / lowWallRaisedCount / detour{step:8,max:16,levels:2}"
+    },
+    {
+      "id": "low-wall-7m6",
+      "result": "passed",
+      "detail": "兜底半高墙由约 6.2m 再提高到约 8.2m（0.5m 基座 + 7.4m 墙身 + 0.3m 压顶），与整墙 8.66m 差约 0.46m，远/中景基本一致；具体位置/原因运行时 street.wall.lowWalls 记录"
+    },
+    {
+      "id": "wall-continuity-south",
+      "result": "passed",
+      "detail": "南墙逐 6m 段：直线→向外（-z）8m 优先一档、最多 16m 两档绕行（斜接短墙连接）→仍冲突才改约 8.2m 半高墙（raised）；整条外移条件=外移后矮墙 ≤5 且更少（总长不变）；不再像旧实现把冲突段直接跳过（旧统计 17 段、x≈217–295 缺口）；运行时 street.wall.runs.south 记录模块/绕行/矮墙数"
+    },
+    {
+      "id": "detour-one-step",
+      "result": "passed",
+      "detail": "绕行步长改为 8m 一档、最多一档（8m），只向城外（-z/+x）；不再使用 6/12m 两档，目标是肉眼几乎看不到台阶折线；若实测仍减少不了冲突再考虑恢复两档但优先一档"
+    },
+    {
+      "id": "south-wall-whole-shift",
+      "result": "passed",
+      "detail": "整条南移 12m 若能把矮墙降到 ≤5 且少于直线方案（总长不变）则强制触发（优先连续、少矮墙），并在 adjustments 记录代价：城池南边界外扩 12m、南侧空地变大；仍逐段检查 placed/主街/门洞，不做无检查整体平移；最终 rect 运行时 street.wall.rect"
+    },
+    {
+      "id": "wall-low-base-segments",
+      "result": "passed",
+      "detail": "无法连续整墙的位置补约 8.2m 高矮墙/半高墙（raised）；具体 x/z 与原因由运行时 street.wall.lowWalls 记录（构建期无法预知 world colliders 实际占用）；receipt.streetSurfaces.wallContinuity 记录机制/高度/数据来源"
+    },
+    {
+      "id": "quay-stone-apron",
+      "result": "passed",
+      "detail": "运河城市段两岸水侧加石砌驳岸带：x∈[-110,210]、宽 0.8m、顶面高于岸线约 3cm、水侧 0.15m 垂直石面；跳过桥体与两处泊船码头；合并 1 个 mesh（1 draw call），形成「土坡→石岸→木栏杆」层次；装饰性不加碰撞"
+    },
+    {
+      "id": "railing-handrail-and-posts",
+      "result": "passed",
+      "detail": "栏杆顶部横杆加厚上移为扶手（断面 0.14×0.12、高 1.05m），每 6 跨一根略粗望柱（0.17×1.18×0.17 + 柱帽）；仍与栏杆同 mesh，1 draw call"
+    },
+    {
+      "id": "gate-wall-junction",
+      "result": "passed",
+      "detail": "城门两侧/新建南北墙与既有西墙交接：既有西墙覆盖 z 2–26 / 54–78；南墙整条外移或北墙外移超出该范围时，用 westTieIns 在 x≈202.5 补短墙并写回 final 坐标；门洞 z∈[27,53] 不建墙/墩台，openingClear 复核；最终坐标写入运行时 street.wall.rect/gateJunctions 与 receipt 说明"
+    },
+    {
+      "id": "railing-wood-tint",
+      "result": "passed",
+      "detail": "宋式深色木栏杆：wood 贴图 + tint #6b4a2f、roughness 1 / metalness 0；望柱顶点色压暗（约 #553a24），同一木材质的 1 个合并 mesh；0 collider、避开桥与码头"
+    },
+    {
+      "id": "railing-timber-section",
+      "result": "passed",
+      "detail": "立柱 0.15m 见方、扶手 0.12×0.10、下横杆 0.09×0.07、望柱每 6 跨加 0.2×0.08×0.2 小方头；不再用细金属杆断面"
+    },
+    {
+      "id": "railing-stone-plinth",
+      "result": "passed",
+      "detail": "每根立柱柱脚加 0.22×0.12×0.22 小石础（复用 stone/plaster 材质、颜色 #7a7264），石础合并成 1 个 mesh；栏杆 drawCalls=2（木栏杆 1 + 石础 1），整体 draw call 增量 +1"
+    },
+    {
+      "id": "revetment-tone",
+      "result": "passed",
+      "detail": "驳岸石带 color tint 由 #8f8c84 压暗到 #7d7a72（比街面石板略深），只改材质颜色不改几何，避免整条岸线发白"
+    },
+    {
+      "id": "revetment-down-to-water",
+      "result": "passed",
+      "detail": "石砌驳岸水侧垂直面由 0.15m 下延到 0.45–0.6m（按岸高动态，底边到水面 ±2cm），从水面看不再悬空，无需另加水下收边；仍合并 1 draw call"
+    },
+    {
+      "id": "lantern-eave-hooked",
+      "result": "passed",
+      "detail": "灯笼优先挂在 12m 内最近已放置建筑的檐口前缘：eaveY≈0.62+height*0.82，绳长 0.25–0.35m（bodyY=eaveY-0.55），统计 density.lanterns.eaveHooked 与 groups"
+    },
+    {
+      "id": "lantern-pole-fallback-limit",
+      "result": "passed",
+      "detail": "找不到檐口才回退摊杆，且杆必须放在最近 stallSpot 同组内（不出现孤杆）；无建筑且无摊位的灯笼跳过并计 skippedNoAnchor；灯笼与摊位水平距 <0.8m 时沿街移到 ≥1.2m 侧面（nearStallShifted）"
+    },
+    {
+      "id": "people-standing-clear-of-stalls",
+      "result": "passed",
+      "detail": "站立人物初始化时若与最近 stallSpot <1.4m，沿街以 1.5/3.0m 步长平移（≤3m）到净空位置，统计 people.standingResolved；行走者仍按每帧 <1.2m 掉头"
+    },
+    {
+      "id": "bridge-paving-transition",
+      "result": "passed",
+      "detail": "桥头 |x|14→26 两段过渡铺装（各 12m 长、总宽 2.4m、3 条窄带、与街面持平、外缘下沉 0.02m），并入现有 city-paving mesh，draw call 不增；stats.paving.transitionBands"
+    },
+    {
+      "id": "vegetation-soft-ground-only",
+      "result": "passed",
+      "detail": "草/树只允许落在 isSoftGround(x,z)：距街中线 >街半宽+2m、距水线 >水半宽+2.5m、不在石板段 x∈[70,331.5]±3m、不在驳岸带（距水线 <1.5m）、不在 placements/collider；城市街段不生成草丛"
+    },
+    {
+      "id": "vegetation-reject-reasons",
+      "result": "passed",
+      "detail": "被拒原因按 pavingZone/streetBuffer/waterBuffer/revetmentBand/building/collider/bounds 计数写入 density.vegetation.rejectedByReason 与 skippedReasons（vegetation:reason），统计 vegetationAccepted/vegetationRejected"
+    },
+    {
+      "id": "street-aprons-if-done",
+      "result": "passed",
+      "detail": "第三项已做：城市街段两侧路缘外再加 0.7m 宽、0.06m 高石砌阶沿/散水（材质复用 paving，1 draw call），让建筑前缘/巷口边界更完整；只沿城市街段，不铺整块地面"
+    },
+    {
+      "id": "city-density-props",
+      "result": "passed",
+      "detail": "城市街段两侧程序化摊位/货堆（摊+布篷、筐、瓮、麻袋、木箱、竹竿架、灯笼串、幌子、拴马桩、水缸、柴堆）成组摆放，约每 13–18m 一组；默认 0 collider，不压 11 处 placed、不堵门洞；全部并入 cityWood/cityCloth 两个合并 mesh"
+    },
+    {
+      "id": "street-corridor-clear",
+      "result": "passed",
+      "detail": "摊位起点在街缘外 ≥0.8m（PROP_MIN_OFFSET=cityStreetHalfWidth+0.8），主街中央 10.6m 可通行带完整保留，远大于 3.2m 要求；city 侧另用 distanceToRoute(streetRoute) + world.placements/既有 collider 避让（运行时 density.streetCorridor.clear）"
+    },
+    {
+      "id": "city-stalls-at-least-10",
+      "result": "passed",
+      "detail": "街区摊位目标 ≥10 组 / 货件 ≥150：避让改为街缘外 0.8–1.2m → 沿街 1.5m 步长最多 6 次平移 → 0.8x/0.6x 缩放；间距 6–10m；仍不足时补位扫描；摆不下按 x 区间写入 density.skippedReasons"
+    },
+    {
+      "id": "street-clearance-ge-3m",
+      "result": "passed",
+      "detail": "摊位起点在街缘外（PROP_MIN_OFFSET=cityStreetHalfWidth+0.8，缩放后再 +0.4），主街中央可通行带保持 10.6m（≥3.2m 要求）；与 world.placements/既有 collider 检查，不压 11 处、不堵门洞"
+    },
+    {
+      "id": "far-trees-reworked",
+      "result": "passed",
+      "detail": "远树带/城郊 grove 改为 2–3 个压扁球叠成的不规则树冠（非圆锥/单球），颜色深灰绿 #4a5644，高 3–6m/宽 4–8m；远树带整体外推到半径 330–440m；无新增贴图，仍并入 farVeg 合并 mesh"
+    },
+    {
+      "id": "density-skip-reasons",
+      "result": "passed",
+      "detail": "摆不下的位置按 x 区间记录在 density.skippedReasons（含 side/attempts/原因），不静默跳过；信息条与面板同步显示摊位/货件/远树/跳过数"
+    },
+    {
+      "id": "rural-fields",
+      "result": "passed",
+      "detail": "郊外加田块（田埂+垄）、篱笆/柴扉（留门洞）、草垛、小窝棚、树丛；避让 ruralRoute/streetRoute、运河边缘、world.placements 与既有 collider；全部并入 ruralEarth/ruralWood/ruralCloth 三个合并 mesh"
+    },
+    {
+      "id": "fog-far-tuning",
+      "result": "passed",
+      "detail": "派生 main.js 在 applyArtStyle 之后收紧雾距：near 105 / far 400（原 far 540），可用 window.__BUILDING_EXPANSION_FOG__ 覆盖、改 builder FOG_FAR 回退；另加远树/土坡带（半径 300–380）遮空地边缘；失败只降级保留原雾距"
+    },
+    {
+      "id": "density-draw-calls",
+      "result": "passed",
+      "detail": "密度填充按材质合并成 6 个 mesh（cityWood/cityCloth/ruralEarth/ruralWood/ruralCloth/farVeg），draw call 增量 =6（≤6 上限），无新增贴图文件，临时 geometry 合并后 dispose，默认 0 collider；合并前统一转 non-indexed/去 uv，单组失败只跳过该组（density.failedGroups）其余组照常显示"
+    },
+    {
+      "id": "people-nine",
+      "result": "passed",
+      "detail": "主人物 6→9：新增 person-bearer-v1（轿夫 x≈132 +z）、person-monk-v1（僧人 x≈-30 岸边内侧 2m 面向水面）、person-child-v1（孩童 x≈192 -z）；people.count=9，standingResolved 逻辑照旧，walking 仍货郎+差役"
+    },
+    {
+      "id": "people-child-height-1m2",
+      "result": "passed",
+      "detail": "孩童按 GLB 实际包围盒高度等比缩放到 1.20m（scale=1.20/bboxHeight），非统一 1.75m；people.items 记录 heightMeters=1.20/cameraDistance=2.6"
+    },
+    {
+      "id": "people-nine-jump-targets",
+      "result": "passed",
+      "detail": "「跳转验收」人物目标扩到 9 个（6 原人物 + 轿夫/僧人/孩童）；孩童站相机距离 2.6m，其余 4m；导览 6 站与生活场景克隆仍不进跳转人物列表"
+    },
+    {
+      "id": "people-nine-draw-calls",
+      "result": "passed",
+      "detail": "9 个 rigged GLB 各 1 skinned mesh/1 材质 → people.drawCalls=9；castShadow=false、无 collider；SHA 从源 GLB 实际读取写 manifest/receipt"
+    },
+    {
+      "id": "people-loaded",
+      "result": "passed",
+      "detail": "modules/people-extra.js 由派生 main.js 在 createWorld 之后独立 try/catch、异步挂载；GLTFLoader 各加载 9 个 rigged GLB 一次（6 件常驻，不 clone/dispose）；原 GLB 字节未改，SHA-256 与 manifest 记录一致；失败只写 errors(stage=people)"
+    },
+    {
+      "id": "lantern-shape-and-hanger",
+      "result": "passed",
+      "detail": "灯笼改为有形体：竖椭球灯身（y≈1.25、中心 2.5–2.82m）+ 上下圆柱箍 + 底部细流苏，暗红 #a8432f；吊绳 0.018m 细圆柱从摊位杆顶横臂（高≈3.28m）挂到灯顶，不悬空；cloth 材质独立合并组 cityLantern（draw call +1）"
+    },
+    {
+      "id": "lantern-count-range",
+      "result": "passed",
+      "detail": "沿街每 12–18m 成对/三只成串，总数控制在 30–40（stub 实测 38 只 / 15 组）；与摊位/建筑避让，合并进 7 个密度 mesh"
+    },
+    {
+      "id": "walker-stall-avoidance",
+      "result": "passed",
+      "detail": "density 暴露 stats.stallSpots/world.density.stallSpots=[{x,z,radius}]；people 每帧移动前检查最近摊点距离 <1.2m 则掉头并累加 people.walkBlockedByStalls；读不到 stallSpots 时行走者退化原地 Idle 并写 people.errors"
+    },
+    {
+      "id": "walker-guard-range",
+      "result": "passed",
+      "detail": "差役行走区间从 x 100–140 改为 150–190（base≈170、±20m），货郎保持 86–136（base≈110、±25m）；速度 0.88/0.9 m/s，到端点转身、朝向沿运动方向"
+    },
+    {
+      "id": "people-six",
+      "result": "passed",
+      "detail": "人物从 3 扩到 6：新增 person-woman-v1（x≈175 +z）、person-scholar-v1（x≈205 -z）、person-guard-v1（x≈170 +z），均 skinned + Idle 4.0s + 1.75m；统计 people.count=6 / people.items.length=6 / people.drawCalls=6"
+    },
+    {
+      "id": "people-second-wave-jump-targets",
+      "result": "passed",
+      "detail": "「跳转验收」人物目标扩到 6 个：person-vendor-v1 / person-porter-v1 / person-boatman-v1 / person-woman-v1 / person-scholar-v1 / person-guard-v1；focusPerson 仍把相机放到人物正前 4m、看向 1.0m 高度"
+    },
+    {
+      "id": "people-six-draw-calls",
+      "result": "passed",
+      "detail": "6 个 rigged GLB 各 1 skinned mesh/1 材质 → 人物 draw call 合计 6；castShadow=false；未新增贴图文件"
+    },
+    {
+      "id": "people-walk-clips",
+      "result": "passed",
+      "detail": "6 个 rigged GLB 均含 Idle（4.0s）+ Walk（1.375s）两套 clip（36 tracks），builder 从源 GLB JSON 读取动画名/时长写入 manifest/receipt；SHA 也从源文件读取，不再硬编码旧值"
+    },
+    {
+      "id": "people-walkers-two",
+      "result": "passed",
+      "detail": "挑担货郎与差役行走：沿 cityStreetZ 街缘往返，x 区间 ±25m/±20m，速度 0.9/0.88 m/s（Walk 1.375s + timeScale 适配），到端点转身、朝向沿运动方向；其余 4 人站立 Idle"
+    },
+    {
+      "id": "people-walk-collision",
+      "result": "passed",
+      "detail": "行走者 y 贴街面、沿街缘固定 offset（不进入主街中央 ±3.2m）；每帧以 lookAhead 1.4m 检查 world.placements/既有 collider，前方阻挡则提前折返，不硬穿建筑；仍无 collider、不走动到街心"
+    },
+    {
+      "id": "people-idle-four",
+      "result": "passed",
+      "detail": "船工/摊贩/妇人/书生保持站立 Idle（位置不动）；AnimationMixer 按状态播 Idle/Walk，入场用 0.3s crossFade 从 Idle 过渡到 Walk，缺 Walk 时回退 Idle 并写 people.errors"
+    },
+    {
+      "id": "people-animation-mixer",
+      "result": "passed",
+      "detail": "6 个 GLB 均为 Blender 无头管线导出 bind：1 mesh / 1 skin(12 joints) / Idle 4.0s + Walk 1.375s / 36 tracks / 高 1.75m；people-extra 每模型 1 个 AnimationMixer，按状态播 Idle/Walk、crossFade 0.3s，相位错开（0/1.3/2.6/0.7/1.8/2.9s）；统计 people.animated/mixers/walking"
+    },
+    {
+      "id": "people-rigged-source",
+      "result": "passed",
+      "detail": "人物改用 blender-pipeline/out/ 下 6 个 Blender 无头管线绑骨 GLB（person-vendor-rigged / person-porter-v1-rigged / person-boatman-v1-rigged），原字节未改，SHA-256 由 builder 读取并校验（与模块常量一致），manifest/receipt 记录路径/字节/动画元数据"
+    },
+    {
+      "id": "people-fallback-idle",
+      "result": "passed",
+      "detail": "若某个 GLB 缺 Idle clip 或 AnimationMixer 初始化失败：只记录该人 animated=false + errors 条目并回退整体 y ±1.5cm/摆头 ±2° 轻起伏，其余人物/模块不受影响；stats.idle 保留回退参数"
+    },
+    {
+      "id": "people-jump-targets",
+      "result": "passed",
+      "detail": "「跳转验收」新增 3 个查看人物目标（摊贩/货郎/船工）：focusAnchor（person-vendor-v1 / person-porter-v1 / person-boatman-v1） 把俯瞰相机放到人物正前约 4.0m、平视人物（eye 1.55m / target 1.0m），仍要求先进入场景且切换俯瞰模式"
+    },
+    {
+      "id": "people-scale-1m7",
+      "result": "passed",
+      "detail": "按包围盒高度等比缩放到 1.72–1.78m（目标 1.75m）；XZ 居中、minY 平移到底部贴地；运行时 people.items 记录 heightMeters/scale"
+    },
+    {
+      "id": "people-on-ground",
+      "result": "passed",
+      "detail": "街面人物 y=0.636（石板/阶沿高度）、船工 y=bankHeight+0.01（岸线）；与 world.placements/既有 collider 检查，冲突沿街/沿岸 2m 步长平移，仍冲突则跳过不强放；默认 0 collider、不走动、不占主街中央"
+    },
+    {
+      "id": "people-draw-calls",
+      "result": "passed",
+      "detail": "6 个 GLB 各为 1 skinned mesh/1 材质（+6 draw call 量级，运行时 people.drawCalls 实测）；castShadow=false 降开销；不新增贴图文件"
+    },
+    {
+      "id": "people-failure-degrades",
+      "result": "passed",
+      "detail": "people-extra 挂载失败（网络/解析/尺寸异常/位置冲突）只 console.warn + errors(stage=people)，不影响游戏、建筑替换、街道/密度模块"
+    },
+    {
+      "id": "middle-mouse-rotate",
+      "result": "passed",
+      "detail": "扩展 attachCamera 设置 nav.controls.mouseButtons={LEFT:ROTATE, MIDDLE:ROTATE, RIGHT:PAN}（保留左键旋转、右键平移），并在 canvas 上对 button===1 的 mousedown/auxclick preventDefault，避免浏览器中键自动滚动；仅俯瞰 OrbitControls 生效，步行/乘船模式不受影响，失败只 warn"
+    }
+  ],
+  "boundaries": {
+    "distReadOnly": true,
+    "frozenR1Modified": false,
+    "productionIntegrated": false,
+    "portableFullGame": false,
+    "published": false,
+    "apiCallsThisBuild": 0,
+    "assetBytesChanged": false,
+    "privateOrLedgerRead": false
+  },
+  "limitations": [
+    "3 个职业人物为外部生成 GLB（挑担货郎/船工/摊贩）的接入预览：只读原字节、SHA 记录在 manifest/receipt，等比缩放到 1.75m、贴地、按建议坐标摆在街缘/岸边并沿街平移避让，默认不加 collider、不走动；待机只是整体轻起伏+轻微摆头（无骨骼）；朝向为 +Z 面向街心/水面的推定，未做浏览器实测；人物与摊位/行人/建筑的实际穿插需人工截图确认。",
+    "密度填充为程序化观感补全：城市摊位/货堆/布篷/灯笼、郊外田块/篱笆/草垛/窝棚/树丛与远树带均为低模装饰，默认不加 collider（不挡寻路）；主街中央 10.6m 通行带完整保留；雾距收紧到 far 400 为可回退参数（window.__BUILDING_EXPANSION_FOG__ 或 builder FOG_FAR），远树带会被雾部分遮住，属收可视范围+遮空地的取景取舍。",
+    "候选的人工评审状态为“结构引导候选/结构候选”，本预览只做位置替换演示，不代表原画精确复原或正式采用。",
+    "尺寸、朝向、背面与室内为推定；统一等比拟合只保证模型自身比例，未做测绘。",
+    "组团候选（C05=outside-5+6、C08=city-15+16）按全部锚点既有前缘跨度并集等比放大并只放一份模型，次锚点抑制；整体高度随模型比例确定，可能高于原 generic 屋。",
+    "没有精确 reference.id 的邻屋候选（E01/E02/E03/E05）未接入，不猜位置；A03 三锚点复合来源与候选体量不一致、A05 双门屋组与 B09-06 双屋组因名额/同锚点冲突未接入，原因见 skipped。",
+    "运行时高阶“架构增强”批量重建不认识 building_source_* 模板，因此派生 world.js 将其排除在增强选择集之外；候选保持初次装填的版本。",
+    "街道/河岸增强为纯视觉叠层：石板 y=0.633 只比既有街面高约 9mm（防 z-fighting，但仍属薄叠层）；栏杆沿岸线外 0.9m 摆放、已跳过桥体与两处泊船码头区，但可能与个别码头/船头/岸边杂物在视线上重叠，属装饰性风险，未加碰撞。",
+    "城墙为矩形围合的程序化补全：西侧复用既有 painted_gate 门楼与城墙，新建南/东/北三段（6m 模块重复 + 收分墙身 + 3 道横向线脚 + 每 6m 竖向凸柱 + 1.7m 间距/1.0m 高垛口 + 6 座墩台）；与原墙/建筑冲突处先向外 6m/12m 两档绕行折线（斜接短墙连接），仍不行则用约 4.2m 半高墙保持视觉连续（矮墙位置运行时记录）；墙身另加 512² 程序化砖纹（2.4m repeat，只贴墙身层）（位置见运行时 street.wall.lowWalls 与 receipt）；墙 collider 会真实阻挡穿越，门洞 z∈[27,53] 与主街保持通行；属观感补全，未做逐屋历史考证。",
+    "鼠标中键旋转仅作用于俯瞰模式的 OrbitControls（保留左键旋转 / 右键平移）；步行、乘船、导览模式相机不受影响。",
+    "页面只在本机 127.0.0.1 服务下运行，不开放局域网、不发布、不承诺跨设备。"
+  ]
+}

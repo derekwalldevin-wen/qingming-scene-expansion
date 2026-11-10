@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "authorizedBy": "lead",
+  "region": "cn",
+  "approvedAt": "2026-11-09T19:34:00+08:00",
+  "maximumCredits": 1569,
+  "minimumAccountReserve": 0,
+  "maximumActiveTasks": 3,
+  "userAuthorization": "用户要求剩余Aholo/Lux3D积分尽量用完，约10天后到期，按清明上河图原画补建筑；本轮取消旧首批100积分上限。",
+  "balanceEvidence": "provider/private/account.json: availableCredits=1569 at 2026-11-09T19:33:57+08:00",
+  "limits": [
+    "Cumulative exact quotations/reservations for this expansion must not exceed1569; refresh current available balance per controlled batch",
+    "Only source-audited lead-approved architectural candidates, no identical paid rerolls merely to exhaust credits",
+    "No top-up, no other providers' paid APIs, no public publication or modification of frozen r1",
+    "Unknown create results retain budget and block further creates until evidence-based reconciliation"
+  ]
+}
