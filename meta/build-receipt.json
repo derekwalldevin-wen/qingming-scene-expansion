@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-receipt-v2",
-  "generatedAt": "2026-11-10T12:22:15.332Z",
+  "generatedAt": "2026-11-10T12:39:21.411Z",
   "build": {
     "node": "v24.18.0",
     "apiCalls": 0,
@@ -292,10 +292,11 @@
   },
   "people": {
     "module": "modules/people-extra.js",
-    "sha256": "598fd6d6bc9c6a84adf467a17a0ed0aff1f70fe11ec199a27e822845e26162aa",
+    "sha256": "3284f371b0bc5fd9ca1ffafc8be2cb79b8cd5697db18e582e78f481f72767b92",
     "mountPatch": "main-install-preview（createWorld 之后独立 try/catch、异步调用 installPeopleExtra；失败写 errors(stage=people) 并保留原场景）",
     "targetHeightMeters": 1.75,
     "childHeightMeters": 1.2,
+    "latestWaveHeightMeters": 1.65,
     "rigged": true,
     "animation": {
       "clips": [
@@ -322,7 +323,10 @@
         2.9,
         3.4,
         3.8,
-        4.2
+        4.2,
+        4.6,
+        5,
+        5.4
       ],
       "crossFadeSeconds": 0.3,
       "fallback": "缺 Walk 回退 Idle 并写 errors；缺 Idle 回退轻起伏",
@@ -339,7 +343,10 @@
       "person-scholar-v1",
       "person-bearer-v1",
       "person-monk-v1",
-      "person-child-v1"
+      "person-child-v1",
+      "person-boatwoman-v1",
+      "person-farmer-v1",
+      "person-watercarrier-v1"
     ],
     "jumpTargets": [
       "person-vendor-v1",
@@ -350,7 +357,10 @@
       "person-guard-v1",
       "person-bearer-v1",
       "person-monk-v1",
-      "person-child-v1"
+      "person-child-v1",
+      "person-boatwoman-v1",
+      "person-farmer-v1",
+      "person-watercarrier-v1"
     ],
     "files": [
       {
@@ -785,11 +795,155 @@
           "heightMeters": 1.2,
           "cameraDistance": 2.6
         }
+      },
+      {
+        "id": "person-boatwoman-v1",
+        "label": "船娘",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-boatwoman-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-boatwoman-v1-rigged.glb",
+        "bytes": 8253564,
+        "sha256": "e235f4eee61d6781a24021c161d1993a7afe78ec4c2836b93614afbca1586e1b",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": false
+        },
+        "phaseSeconds": 4.6,
+        "heightMeters": 1.65,
+        "cameraDistance": 4,
+        "design": {
+          "x": -48,
+          "z": "canalCenter(-48)+canalHalfWidth(-48)+2.2",
+          "y": "bankHeight+0.01",
+          "yaw": "面向水面",
+          "side": 1,
+          "bankOffset": 2.2,
+          "cameraDistance": 4
+        }
+      },
+      {
+        "id": "person-farmer-v1",
+        "label": "老农",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-farmer-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-farmer-v1-rigged.glb",
+        "bytes": 7957332,
+        "sha256": "43380debbd3c9a4ea2b1ac07f517a14a477f9af2a432431930a9339a8b29064d",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": false
+        },
+        "phaseSeconds": 5,
+        "heightMeters": 1.65,
+        "cameraDistance": 4,
+        "design": {
+          "x": -70,
+          "z": "ruralRoute 旁 offset 2.8",
+          "y": 0.62,
+          "yaw": "面向道路",
+          "side": 1,
+          "offset": 2.8,
+          "cameraDistance": 4
+        }
+      },
+      {
+        "id": "person-watercarrier-v1",
+        "label": "挑水妇人",
+        "path": "output/building-expansion-20261109-v1/blender-pipeline/out/person-watercarrier-v1-rigged.glb",
+        "url": "/preview/people-rigged/person-watercarrier-v1-rigged.glb",
+        "bytes": 8983616,
+        "sha256": "c80c842492a499a86b6b6366705942b819424e64c458a820f708b68f42d5ce22",
+        "clips": [
+          {
+            "name": "Idle",
+            "durationSeconds": 4,
+            "channels": 36
+          },
+          {
+            "name": "Walk",
+            "durationSeconds": 1.375,
+            "channels": 36
+          }
+        ],
+        "clip": {
+          "name": "Idle",
+          "durationSeconds": 4,
+          "loop": "LoopRepeat",
+          "tracks": 36,
+          "skinned": true
+        },
+        "walkClip": {
+          "name": "Walk",
+          "durationSeconds": 1.375,
+          "loop": "LoopRepeat",
+          "tracks": 36
+        },
+        "walk": {
+          "enabled": false
+        },
+        "phaseSeconds": 5.4,
+        "heightMeters": 1.65,
+        "cameraDistance": 4,
+        "design": {
+          "x": 165,
+          "z": "cityStreetZ(165)-6.2",
+          "y": 0.636,
+          "yaw": "面向街心（-z 侧）",
+          "side": -1,
+          "offset": 6.2,
+          "cameraDistance": 4
+        }
       }
     ],
     "coordinatesNote": "最终坐标/朝向/缩放以运行时 window.__BUILDING_EXPANSION_PREVIEW__.people.items 为准（构建期按建议坐标 + 沿街平移避让）；原 GLB 字节未改，SHA 见 files",
     "statsPath": "window.__BUILDING_EXPANSION_PREVIEW__.people",
-    "drawCallsNote": "每个 GLB 为 1 skinned mesh/1 材质，9 件约 +9 draw call（运行时 people.drawCalls 实测；目标 9）"
+    "drawCallsNote": "每个 GLB 为 1 skinned mesh/1 材质，12 件约 +12 draw call（运行时 people.drawCalls 实测；目标 12）"
   },
   "approach9Choice": {
     "chosen": "guided-B09-01-local-G1-v2",
@@ -2340,8 +2494,8 @@
     },
     {
       "path": "build/preview-manifest.json",
-      "bytes": 192618,
-      "sha256": "e9f890a98ffa39e433df81118e637b9b66f9844b383a34cd69dc94a1052d2190"
+      "bytes": 196876,
+      "sha256": "b77697ace8fdaf196720cc117aaaf9d7145c48ccc426e70b1f4e195e82abb8b4"
     }
   ],
   "models": [
@@ -4309,6 +4463,21 @@
       "id": "density-draw-calls",
       "result": "passed",
       "detail": "密度填充按材质合并成 6 个 mesh（cityWood/cityCloth/ruralEarth/ruralWood/ruralCloth/farVeg），draw call 增量 =6（≤6 上限），无新增贴图文件，临时 geometry 合并后 dispose，默认 0 collider；合并前统一转 non-indexed/去 uv，单组失败只跳过该组（density.failedGroups）其余组照常显示"
+    },
+    {
+      "id": "people-twelve",
+      "result": "passed",
+      "detail": "主人物 9→12：新增 person-boatwoman-v1（船娘 x≈-48 岸边内侧 2.2m 面向水面）、person-farmer-v1（老农 x≈-70 郊野土路旁 2.8m 面向道路）、person-watercarrier-v1（挑水妇人 x≈165 街缘 -6.2m 面向街心）；均 1.65m、Idle+Walk；people.count=12"
+    },
+    {
+      "id": "people-twelve-jump-targets",
+      "result": "passed",
+      "detail": "「跳转验收」人物目标扩到 12 个（新增船娘/老农/挑水妇），三人相机距离 4m；导览与生活场景克隆仍不进跳转人物列表"
+    },
+    {
+      "id": "people-twelve-draw-calls",
+      "result": "passed",
+      "detail": "12 个 rigged GLB 各 1 skinned mesh/1 材质 → people.drawCalls=12；castShadow=false、无 collider；SHA 从源 GLB 实际读取"
     },
     {
       "id": "people-nine",

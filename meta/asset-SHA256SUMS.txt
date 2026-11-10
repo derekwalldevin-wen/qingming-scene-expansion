@@ -71,11 +71,14 @@ e4676afd3b68642b4514450db84d7de1f67a02d52fcb2ed4a1df385d44fb598b  output/buildin
 761303c259f17a3c779f7b2ba19f8fc048ce25174e3650dec19c4fba440990f3  output/building-expansion-20261109-v1/provider/artifacts/architecture-E05-img-v1/output-0.glb
 b49dc0399f97bb45067c9bd5f0bbc19693bbefec7306564da33addf29c41ea74  output/building-expansion-20261109-v1/provider/artifacts/person-bearer-v1/output-1.glb
 7300a8d819c29ccb40984698f1d8c148a4403a10d71344432250ec12ffb2a855  output/building-expansion-20261109-v1/provider/artifacts/person-boatman-v1/output-1.glb
+509054b4a33318a342e21da2f4b70a8b2878a6b9c3b5678b6c488bf769289ba3  output/building-expansion-20261109-v1/provider/artifacts/person-boatwoman-v1/output-1.glb
 7d80819ec7d805e15ef9ee7de1610603809a534f7f7ea2e09ebb1ff97580bb1e  output/building-expansion-20261109-v1/provider/artifacts/person-child-v1/output-1.glb
+eb51d4f8cd3c4241947947f7ba8593ddf99340099d4f68f483b5561566a17bb2  output/building-expansion-20261109-v1/provider/artifacts/person-farmer-v1/output-1.glb
 23021ad78d430d87802cbaf173ecc4a1aaafc3628f5dcc61f8907bd0b1c40ca8  output/building-expansion-20261109-v1/provider/artifacts/person-guard-v1/output-1.glb
 4b8e3dae31d9b982f376280c56781c4c15f2f14b4eec782b6fcdddd42db35e6d  output/building-expansion-20261109-v1/provider/artifacts/person-monk-v1/output-1.glb
 5c8ffb9e0f4e0dc418fcec2105ec6bc743a9b699b6940178209b547f8aff5769  output/building-expansion-20261109-v1/provider/artifacts/person-porter-v1/output-1.glb
 7c1ebc7e5db449a581c06760bc858d8d7a8780a783b5d7aab8a0fe920bf60e4e  output/building-expansion-20261109-v1/provider/artifacts/person-scholar-v1/output-1.glb
 b711200e1f31fef142cf1799b9b0a4e61858cf8529d78355c3378e6e394d3cbf  output/building-expansion-20261109-v1/provider/artifacts/person-vendor-v1/output-1.glb
+ad5ad455d1983e4fef278c9c4a01aa5d700aa97ed800688439f471e57d978e47  output/building-expansion-20261109-v1/provider/artifacts/person-watercarrier-v1/output-1.glb
 2c0a3a964e309299d2946cdc02b0a46e5ba2450375aa051340bee9a87bf18552  output/building-expansion-20261109-v1/provider/artifacts/person-woman-v1/output-1.glb
 24a97716e169276a30aa007c8c7cb2e9e01183d97e4db3cd61ad36e57f6340ab  output/building-expansion-20261109-v1/uv-repair/A04-local-shell-uv-v2.glb
