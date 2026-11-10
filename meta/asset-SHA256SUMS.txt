@@ -7,12 +7,14 @@ ff27b38733cb5dc18ec69de914b9aa51eb98e731f90282b86f0dbc3656011a1b  output/buildin
 580da79bb3d52af097d711e47d9317ee47905770906b6c11351dd4cf82022ed6  output/building-expansion-20261109-v1/provider/artifacts/guided-B09-01-local-G1-v1/output-1.glb
 535165653debfc9e61fce8b183e4acd5d081fa08c1d1350caf55cc6a1968b4bd  output/building-expansion-20261109-v1/provider/artifacts/guided-B09-01-local-G1-v2/output-1.glb
 3ba9c44c8cf11f4e4d5f5d3eeb608860d14b0c39b0ebaafab21205e76a69661f  output/building-expansion-20261109-v1/provider/artifacts/guided-B09-02-handpainted-v1/output-1.glb
+fd86d55b507534b8b299dd001acadec356d364d428bad58de9d3105c6767a760  output/building-expansion-20261109-v1/provider/artifacts/guided-B09-02-local-G1-v2/output-1.glb
 907da2bca0e1cff0630754a0f2a7675e30dc6124b5471c0aeea1a44c22379b7c  output/building-expansion-20261109-v1/provider/artifacts/guided-B09-03-handpainted-v2/output-1.glb
 0b99e00f36007fd0c9b321a2940cbc6ef8847905d369d5328e48b165358e9803  output/building-expansion-20261109-v1/provider/artifacts/guided-B09-03-local-G1-v1/output-1.glb
 8cba958aa7f6cad038153e31107e49e68d4e930697bf1ebf4b70405697fd933d  output/building-expansion-20261109-v1/provider/artifacts/guided-B09-03-local-G1-v2/output-1.glb
 9d159953e5608142a452be19f58e1b36c53cc842f38a43034704008bc3e7e8a6  output/building-expansion-20261109-v1/provider/artifacts/guided-B09-06-handpainted-v1/output-1.glb
 db2ae5803463755b90a175c4f06846f20d1c71e0c6df380466100ba39670623f  output/building-expansion-20261109-v1/provider/artifacts/guided-B09-06-local-G1-v1/output-1.glb
 e3ee552f2e63237b55cf2d4fc9a3a292ae5e833467b91e4d2835e79019f8a198  output/building-expansion-20261109-v1/provider/artifacts/guided-B09-06-local-G1-v2/output-1.glb
+89f262af5d40d26666f57f71cb14706b045c7234eca799ea9335dab741b9f01c  output/building-expansion-20261109-v1/provider/artifacts/guided-B09-06-local-G1-v3/output-1.glb
 a08e6e231e0dc3d0c6fdc37b4a7ea0a76316ba8f28c84db32dd05f0611ccfbb1  output/building-expansion-20261109-v1/provider/artifacts/guided-C01-local-G1-v1/output-1.glb
 f6a22c72dcfecfcd69cd8583cae740988c225d8663310ccdf7018516e3003233  output/building-expansion-20261109-v1/provider/artifacts/guided-C01-local-G1-v2/output-1.glb
 ba28bc2900943724d06fc9fe65a9d83d4d03f642836b40e291e3a62e71e17671  output/building-expansion-20261109-v1/provider/artifacts/guided-C02-handpainted-v2/output-1.glb
@@ -22,6 +24,7 @@ fd956d5df1fbfddceb0aae76747054672a5cab0f26a7e55fe3b2485388e426b1  output/buildin
 9cad0ad34bb46a4d42be7a5440a74d565ecda7faac4c9c5d25574a64dbc95447  output/building-expansion-20261109-v1/provider/artifacts/guided-C05-local-G1-v3/output-1.glb
 21bef72fddf45f6596182332e6f57fb19c7d8d1d28f79d2a76b25ce659b7c0af  output/building-expansion-20261109-v1/provider/artifacts/guided-C08-local-G1-v1/output-1.glb
 516e6d7f2259f7119fa0488635588e553a50d3bd3e3f3f877e526ea8f072f438  output/building-expansion-20261109-v1/provider/artifacts/guided-C08-local-G1-v2/output-1.glb
+25e2e2276ccb0f16187cb071590649a4b7e2f4173622a52afe248751c1a651ab  output/building-expansion-20261109-v1/provider/artifacts/guided-C08-local-G1-v3/output-1.glb
 8cd46b77bfe98211e77800527776a6d8f8d65583f1260c0baafb527356648718  output/building-expansion-20261109-v1/provider/artifacts/guided-E01-local-G1-v1/output-1.glb
 c2036a1d3d8a8e8c4f7e96016de18e169e42fe4b0b22b947e78d04763cf5a96f  output/building-expansion-20261109-v1/provider/artifacts/guided-E01-local-G1-v2/output-1.glb
 fcc9f8f1143d059d6d0084950d36ff5a2bb7e0da97828954eafc8395fd33cba8  output/building-expansion-20261109-v1/provider/artifacts/guided-E02-local-G1-v1/output-1.glb
