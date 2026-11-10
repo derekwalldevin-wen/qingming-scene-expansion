@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-11-10T12:11:52.676221+00:00",
+ "builtAt": "2026-11-10T12:25:00.865327+00:00",
  "scope": "清上河图建筑扩充候选资产；独立留档，不并入冻结 r1，不对外发布",
  "honesty": {
   "notWholePainting": true,
@@ -10,10 +10,10 @@
   "severalCandidatesKnownIncomplete": true
  },
  "totals": {
-  "assets": 79,
-  "bytes": 480981172,
-  "paidTasksRepresented": 61,
-  "paidCreditsRepresented": 1107
+  "assets": 81,
+  "bytes": 502028836,
+  "paidTasksRepresented": 63,
+  "paidCreditsRepresented": 1147
  },
  "assets": [
   {
@@ -804,6 +804,48 @@
    "adoption": "candidate-only-not-integrated-into-frozen-r1"
   },
   {
+   "id": "guided-B09-06-local-G1-v4",
+   "kind": "guided-g1-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-B09-06-local-G1-v4/output-1.glb",
+   "sha256": "a0d373121b375ac4ffb5c504f7cfdc729f79e48f661fea08c7ecceb208b6dd69",
+   "bytes": 10185108,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": "B09-06",
+    "catalog": "output/building-expansion-20261109-v1/references-b/catalog.json",
+    "title": "河岸低前山面与高后山面错位双屋壳",
+    "cropPath": "output/building-expansion-20261109-v1/references-b/B09-06-native-source-crop.jpg",
+    "cropSHA256": "5e23db72d9bf7cb7d9db76072cf3957150f43e4bf014b4889bbfb86fe01f0c11",
+    "visible": [
+     "左前屋三角山面低，山面下连续短格窗带及大幅素墙",
+     "右后屋另起较高较深的三角山面，侧面见横向木框、竖格和侧向开口",
+     "两屋山面朝向大体同向，前后与左右均错开，高差明显；左侧旧crop截到边缘"
+    ],
+    "inferred": [
+     "前屋最左屋端、背面和相邻连接被画面边界遮住，以独立屋端补全",
+     "两屋独立可拆，不宣称连体或封闭院落；高度比例、纵深和米制尺寸推定"
+    ]
+   },
+   "paid": {
+    "taskId": 5962958,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": "local-source-guided-3d-render"
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
    "id": "guided-C01-local-G1-v1",
    "kind": "guided-g1-candidate",
    "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C01-local-G1-v1/output-1.glb",
@@ -1040,6 +1082,50 @@
     "inferred": [
      "输入为本地壳渲染；底部被裁切处的门墙、背面与附屋进深为推定"
     ]
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "guided-C03-local-G1-v2",
+   "kind": "guided-g1-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-C03-local-G1-v2/output-1.glb",
+   "sha256": "a3599e19d11605613e9d22999df9f9eb66b0369ca606e35f75ee2307af692503",
+   "bytes": 10862556,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": "C03",
+    "catalog": "output/building-expansion-20261109-v1/coverage-a/catalog.json",
+    "title": "城内宽山面高窗瓦屋与左侧短返屋",
+    "cropPath": "output/building-expansion-20261109-v1/coverage-a/C03-source-crop.jpg",
+    "cropSHA256": "1d5864748923a8b4be9b3c35e4e418f38323f57c67e8ae5c01c197d31eef5e13",
+    "visible": [
+     "宽山面瓦屋占画面中部，山面有中心竖柱与两侧水平梁",
+     "山面以下是横向开口/格窗带，并有明显下层前檐",
+     "左侧邻接短横向屋顶，前缘和主屋不齐；树挡其下部"
+    ],
+    "inferred": [
+     "左侧短返屋以独立可拆节点组织，不声称树后连通已证",
+     "下层被画边截断，不能断言两层楼；仅按较高一层壳补足底部",
+     "后身、背面和开间数推定",
+     "所给开间数是建模归纳，不是精确测绘。"
+    ]
+   },
+   "paid": {
+    "taskId": 5962928,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": "local-source-guided-3d-render"
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
    },
    "adoption": "candidate-only-not-integrated-into-frozen-r1"
   },
