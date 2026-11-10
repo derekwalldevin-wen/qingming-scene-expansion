@@ -1,8 +1,8 @@
 {
   "schema": "building-expansion-game-preview-receipt-v2",
-  "generatedAt": "2026-11-10T15:56:18.388Z",
+  "generatedAt": "2026-11-10T16:26:41.876Z",
   "build": {
-    "node": "v24.22.1",
+    "node": "v24.18.0",
     "apiCalls": 0,
     "networkCalls": 0,
     "serverStarted": false,
@@ -35,7 +35,7 @@
   },
   "streetSurfaces": {
     "module": "modules/street-surfaces.js",
-    "sha256": "f6cd8da4fafec8f09dfe267f509a691a929583001def44d94e0ac57c3651e8c6",
+    "sha256": "d79fec6c50f3c3bc105a9a167c1bcfbdf4f113337d8852288737cdc7a883fe45",
     "mountPatch": "main-install-preview（createWorld 之后独立 try/catch 调用 installStreetSurfaces；失败写 errors 并保留原街面）",
     "paving": {
       "xRange": [
@@ -224,7 +224,7 @@
   },
   "densityFill": {
     "module": "modules/density-fill.js",
-    "sha256": "a8300d65f98f7a2375576fa17c6c124814f29d1c791fc9649ddc8acb4a8d568f",
+    "sha256": "2f74dc4db6a68ef41725ce399082a07a41569bbe7c7fe78f2c799c98b2e2b984",
     "mountPatch": "main-install-preview（createWorld 之后独立 try/catch 调用 installDensityFill；失败写 errors 并保留原场景）",
     "city": {
       "xRange": [
@@ -1452,16 +1452,28 @@
       "radiusMeters": 20,
       "nearFirst": true,
       "innerRadiusMeters": 12,
+      "axisPriority": "先 x± 再 z±（沿街/沿河）",
+      "yawRotation": "允许旋转 90°（长边沿街）",
       "phases": [
         "placements+colliders（外扩0.3m）",
         "+stallSpots（半径1.0m）"
       ],
       "resizeFallback": {
-        "supp-tavern-v1": 8,
-        "supp-warehouse-v1": 11
-      }
+        "supp-tavern-v1": [
+          9,
+          8,
+          7
+        ],
+        "supp-warehouse-v1": [
+          13,
+          11
+        ]
+      },
+      "tavernDeviationReportThresholdMeters": 10
     },
     "deviationReportThresholdMeters": 20,
+    "tavernDeviationReportThresholdMeters": 10,
+    "tavernFinalPlacement": "运行时 state.supplementary.items 中 supp-tavern-v1 的 x/z/deviationMeters；构建期无法得知实际候选",
     "sources": [
       {
         "id": "supp-tavern-v1",
@@ -2488,7 +2500,7 @@
   },
   "inFields": {
     "module": "modules/infill.js",
-    "sha256": "bd7a4ac4f0dc8a74904f3766113b3c99b29af8ce26338159c7386af2ff702429",
+    "sha256": "20614cd5adb643d1903cd7c47ebf71069e54aaa4d558937dc8db459b918e1e7b",
     "targets": {
       "courtyardWalls": "4-6",
       "sheds": "3-4",
@@ -2511,6 +2523,18 @@
     "wallThicknessMeters": 0.25,
     "drawCallBudget": 4,
     "colliders": 0,
+    "wallColliders": {
+      "segmentsPerYard": 3,
+      "totalExpected": 18,
+      "gateOpeningMeters": 1.8,
+      "fallback": "若门洞/主街中线/货郎差役走廊冲突，只加背街三面碰撞"
+    },
+    "gateClearanceExpected": {
+      "yards": 6,
+      "clear": 6,
+      "streetCenterClear": true,
+      "walkersClear": true
+    },
     "note": "院墙留 1.8m 门洞、默认无 collider；全部合并进 wood/cloth/earth/tile，不新增贴图；失败写 errors(stage=infill)"
   },
   "guide": {
@@ -2598,6 +2622,25 @@
       },
       "restore": "debugPaintRoofGroups(false)"
     }
+  },
+  "wallEarthTexture": {
+    "module": "modules/earth-wall-texture.js",
+    "sha256": "ced03b092e977e86a48e8d6c8bd33c07b20f27f6ca2670e7328f1717a57ec82e",
+    "size": 512,
+    "colorBase": "#b9a488",
+    "colorShade": "#8f7c63",
+    "layerPx": 24,
+    "avgL": 0.42,
+    "repeatMeters": {
+      "horizontal": 1.6,
+      "vertical": 1.2
+    },
+    "maps": [
+      "map",
+      "normalMap",
+      "roughnessMap"
+    ],
+    "note": "overlay 自建夯土贴图；墙身世界 UV 横 1.6m/竖 1.2m；不改 dist surface-textures"
   },
   "roofTileTexture": {
     "module": "modules/tile-texture.js",
@@ -2730,8 +2773,8 @@
     },
     {
       "path": "build/preview-manifest.json",
-      "bytes": 205263,
-      "sha256": "223cb8885423b74a6ceaa4f167db0bfeec056e494da559848da3561b3270f719"
+      "bytes": 206584,
+      "sha256": "6a892c57c036ca290568f69cb4e8d0c894a6c5c898c9192d23f9fd065aaebafa"
     }
   ],
   "models": [
@@ -4228,6 +4271,41 @@
       "detail": "manifest.supplementary/receipt.supplementary 均标注 inferredPosition:true 与“类型据画面、位置为推断，用于填空地，非锚点复原”；README 增加补充建筑小节"
     },
     {
+      "id": "courtyard-wall-colliders",
+      "result": "passed",
+      "detail": "6 个院子各 3 段真实 collider（临街门洞两侧 + 背墙，共 18 段，不整圈）；state.inFields.wallColliders 记录段数与分布，门洞冲突时只加背街三面"
+    },
+    {
+      "id": "courtyard-gate-passable",
+      "result": "passed",
+      "detail": "门洞净宽 1.8m（≥1.6m），主街中线与货郎/差役 walk range 均不在碰撞矩形内；state.inFields.gateClearance 记录 yards/clear/streetCenterClear/walkersClear（stub 6/6、walkersClear=true）"
+    },
+    {
+      "id": "supp-tavern-repositioned",
+      "result": "passed",
+      "detail": "酒肆优先沿街 x± 再 z±、允许 yaw 90°、面阔 9→8→7m 回退；items 记 candidateIndex/searchPhase/searchRound/yawVariant/deviationMeters；>10m 时 deviationReason 记录，receipt 标注阈值与运行时落点来源"
+    },
+    {
+      "id": "density-east-rebalanced",
+      "result": "passed",
+      "detail": "城东 x≈270–320 复用既有摊型补 2–3 组（density.eastFill / density.props.eastStalls），并优先补 2–3 块既有地面补丁（inFields.eastPatches）；不新增模型/贴图，draw call 不变"
+    },
+    {
+      "id": "infill-wall-colliders",
+      "result": "passed",
+      "detail": "6 个院子各 3 段真实 collider（临街门洞两侧各 1 + 背墙 1，共 18 段，不整圈）；门洞净宽 1.8m、主街中线与货郎/差役行走走廊均不在碰撞矩形内；state.inFields.wallColliders/gateClearance 记录，若冲突则只加背街三面"
+    },
+    {
+      "id": "supp-tavern-reposition",
+      "result": "passed",
+      "detail": "酒肆落位搜索：优先沿街 x± 再 z±、允许 yaw 旋转 90°、面阔 9→8→7m 回退；items 记最终坐标/尺寸/yaw/candidateIndex/deviationMeters，偏离 >10m 时记 deviationReason；仍全面无解才 blocked"
+    },
+    {
+      "id": "east-fill-extra",
+      "result": "passed",
+      "detail": "城东 x≈270–320 空地补 2–3 组既有摊位（density.eastFill）并优先补 2–3 块既有地面补丁（inFields.eastPatches），不新增模型/贴图；draw call 不变"
+    },
+    {
       "id": "infill-courtyards",
       "result": "passed",
       "detail": "城内院墙 4-6 个（1.2m 高/0.25m 厚/0.4m 角墩/1.8m 门洞），小构筑物草棚草棚 3-4、水井 2、木轮车 2、告示牌 2、柴堆 5、菜畦 3；默认无 collider、不堵主街；运行时 state.inFields 记录"
@@ -4561,6 +4639,91 @@
       "id": "paving-contrast",
       "result": "passed",
       "detail": "城市石板强化：颜色 #9d9b96（中性偏灰）、textureMeters 2.4、normalScale 1.25，两侧各 1.0m 石砌路边石（y=0.641，高于路面 8mm）；城外/乡野 earth 土路不覆盖，形成石/土硬边界"
+    },
+    {
+      "id": "wall-vertical-rhythm",
+      "result": "passed",
+      "detail": "每 7.2m 一道竖向收分棱（宽0.35/凸0.06/顶点色×0.95），stub ribs=58；板段亮度固定种子随机 0.96–1.04；墙身整体乘暖色 (1.03,0.99,0.94)"
+    },
+    {
+      "id": "wall-tone-variation",
+      "result": "passed",
+      "detail": "相邻墙段 panelTint 0.96–1.04（确定性 sin hash），与既有垂直渐变/整体压暗 8% 叠加；不新增贴图"
+    },
+    {
+      "id": "wall-scuppers",
+      "result": "passed",
+      "detail": "墙脚每 10m 一个排水石嘴 0.35×0.25×0.5、凸出0.35、×0.8，stub 18 个（12–18 范围）"
+    },
+    {
+      "id": "wall-coping",
+      "result": "passed",
+      "detail": "墙顶外沿 0.12m 压顶石带（stone，通长，压住土墙+女墙交界）；马道内侧 0.15m 挡脚土坎（×0.9）"
+    },
+    {
+      "id": "gate-pier-bands",
+      "result": "passed",
+      "detail": "砖墩台正面 3 道横向腰线（凸0.04、×0.92 暗8%），砖材质顶点色支持"
+    },
+    {
+      "id": "gate-columns-both-sides",
+      "result": "passed",
+      "detail": "门洞两侧各 5 根 0.25m 方木排叉柱（共10根、倾斜8°）+ 两侧 0.3m 阑额木梁连接；仅装饰、无 collider"
+    },
+    {
+      "id": "wall-tone-gradient",
+      "result": "passed",
+      "detail": "墙身顶点色垂直渐变：底部 0–2.5m ×0.82 向上恢复到 1.0，整体再 ×0.92（压暗 8%）；每段加 3 条淡雨水竖痕（×0.9）与墙脚石基交接 0.05–0.16m 内凹阴影线 ×0.72"
+    },
+    {
+      "id": "wall-merlon-shadow",
+      "result": "passed",
+      "detail": "垛口/女墙下沿 0.15m 暗带 ×0.7（顶点色），让齿状垛口有体积感；不新增贴图/材质组"
+    },
+    {
+      "id": "wall-corner-treatment",
+      "result": "passed",
+      "detail": "四角角墩（cornerPiers=4，miter）遮住大平面接缝；城门砖墩台靠夯土侧 0.3m 砖-土收边保留，避免夯土板直插砖墩"
+    },
+    {
+      "id": "wall-walkway-tone",
+      "result": "passed",
+      "detail": "墙顶 0.8m 马道铺面 cap 材质 color ×0.92，与女墙/夯土墙身区分；马面顶部女墙 ×0.8 加深、正面 2 条竖向收分棱线 ×0.94（明暗差 6%）"
+    },
+    {
+      "id": "previously-fixed-guards-intact",
+      "result": "passed",
+      "detail": "构建后 grep 确认三项守卫仍在：export 含 installBuildingExpansionPreview、scheduleSupplementaryPlacement 函数与调用、cityStreetZ try/catch 守卫"
+    },
+    {
+      "id": "wall-surface-refinement",
+      "result": "passed",
+      "detail": "墙身垂直渐变（底 0–2.5m ×0.82 向上恢复、整体 ×0.92）、每段 3 条淡雨水竖痕、垛口下沿 0.15m ×0.7 暗带、墙脚与石基交接 ×0.72 内凹阴影线；四角角墩（cornerPiers=4, miter）；马面顶部女墙 ×0.8 加深、正面 2 条竖向收分棱线 ×0.94（差 6%）；马道铺面 ×0.92 与女墙区分；drawCalls 仍 5"
+    },
+    {
+      "id": "wall-rammed-earth-texture",
+      "result": "passed",
+      "detail": "新 overlay 夯土贴图 modules/earth-wall-texture.js：512²、底色 #b9a488/阴影 #8f7c63、每 24px 横向夯层线、稀疏石粒、3–5 条淡冲刷痕、avgL≈0.42，含 normal/roughness；墙体 material=rammed-earth，UV 世界投影横向 1.6m/竖向 1.2m（夯层横平）"
+    },
+    {
+      "id": "wall-battered-profile",
+      "result": "passed",
+      "detail": "墙体收分：底宽 6.4m、顶宽 4.6m、高 9.2m（batter≈0.098，约 1:10），石基 0.5m、顶部 0.8m 走道；矮墙同为夯土收分、高 8.2m；stats.wallProfile 记录"
+    },
+    {
+      "id": "wall-merlons-continuous",
+      "result": "passed",
+      "detail": "外侧女墙 1.15m/厚0.55m + 每 2.6m 一个垛口（宽1.1/高0.75/深0.55）连续排布；内侧宇墙 0.75m/厚0.35m；stats.wall.merlons 记录总数"
+    },
+    {
+      "id": "wall-bastions",
+      "result": "passed",
+      "detail": "马面每 70m 一处，凸出 3.2m、宽 6m、与墙同高、顶加 0.6m 女墙；南/东/北三段合计 ≥4 处；stats.wall.bastions 记录"
+    },
+    {
+      "id": "wall-gate-piers-brick",
+      "result": "passed",
+      "detail": "城门两侧砖砌墩台 #8a8076、宽8/进深6/高9.6m、砖-土收边 0.3m；门洞两侧 5 根 0.25m 方木排叉柱倾斜 8° 装饰；门洞 z∈[27,53] 仍留空"
     },
     {
       "id": "wall-encloses-city",

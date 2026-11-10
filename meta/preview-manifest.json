@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-manifest-v2",
-  "generatedAt": "2026-11-10T15:56:18.387Z",
+  "generatedAt": "2026-11-10T16:26:41.872Z",
   "generator": "output/building-expansion-20261109-v1/integration-preview/build_preview.mjs",
   "game": {
     "title": "梦回汴京",
@@ -1548,16 +1548,28 @@
       "radiusMeters": 20,
       "nearFirst": true,
       "innerRadiusMeters": 12,
+      "axisPriority": "先 x± 再 z±（沿街/沿河）",
+      "yawRotation": "允许旋转 90°（长边沿街）",
       "phases": [
         "placements+colliders（外扩0.3m）",
         "+stallSpots（半径1.0m）"
       ],
       "resizeFallback": {
-        "supp-tavern-v1": 8,
-        "supp-warehouse-v1": 11
-      }
+        "supp-tavern-v1": [
+          9,
+          8,
+          7
+        ],
+        "supp-warehouse-v1": [
+          13,
+          11
+        ]
+      },
+      "tavernDeviationReportThresholdMeters": 10
     },
     "deviationReportThresholdMeters": 20,
+    "tavernDeviationReportThresholdMeters": 10,
+    "tavernFinalPlacement": "运行时 state.supplementary.items 中 supp-tavern-v1 的 x/z/deviationMeters；构建期无法得知实际候选",
     "sources": [
       {
         "id": "supp-tavern-v1",
@@ -2584,7 +2596,7 @@
   },
   "inFields": {
     "module": "modules/infill.js",
-    "sha256": "bd7a4ac4f0dc8a74904f3766113b3c99b29af8ce26338159c7386af2ff702429",
+    "sha256": "20614cd5adb643d1903cd7c47ebf71069e54aaa4d558937dc8db459b918e1e7b",
     "targets": {
       "courtyardWalls": "4-6",
       "sheds": "3-4",
@@ -2607,6 +2619,18 @@
     "wallThicknessMeters": 0.25,
     "drawCallBudget": 4,
     "colliders": 0,
+    "wallColliders": {
+      "segmentsPerYard": 3,
+      "totalExpected": 18,
+      "gateOpeningMeters": 1.8,
+      "fallback": "若门洞/主街中线/货郎差役走廊冲突，只加背街三面碰撞"
+    },
+    "gateClearanceExpected": {
+      "yards": 6,
+      "clear": 6,
+      "streetCenterClear": true,
+      "walkersClear": true
+    },
     "note": "院墙留 1.8m 门洞、默认无 collider；全部合并进 wood/cloth/earth/tile，不新增贴图；失败写 errors(stage=infill)"
   },
   "guide": {
@@ -2681,6 +2705,25 @@
       },
       "note": "只改 color/emissive + 克隆材质，不改贴图/GLB"
     }
+  },
+  "wallEarthTexture": {
+    "module": "modules/earth-wall-texture.js",
+    "sha256": "ced03b092e977e86a48e8d6c8bd33c07b20f27f6ca2670e7328f1717a57ec82e",
+    "size": 512,
+    "colorBase": "#b9a488",
+    "colorShade": "#8f7c63",
+    "layerPx": 24,
+    "avgL": 0.42,
+    "repeatMeters": {
+      "horizontal": 1.6,
+      "vertical": 1.2
+    },
+    "maps": [
+      "map",
+      "normalMap",
+      "roughnessMap"
+    ],
+    "note": "overlay 自建夯土贴图；墙身世界 UV 横 1.6m/竖 1.2m；不改 dist surface-textures"
   },
   "roofTileTexture": {
     "module": "modules/tile-texture.js",
