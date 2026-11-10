@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-receipt-v2",
-  "generatedAt": "2026-11-10T09:52:22.326Z",
+  "generatedAt": "2026-11-10T11:53:21.275Z",
   "build": {
     "node": "v24.18.0",
     "apiCalls": 0,
@@ -1066,6 +1066,80 @@
       "note": "郊野/城内密度摊位为运行时随机放置，静态 2D 判断不能覆盖摊位细部；具体穿插需 headless 截图确认"
     }
   },
+  "e03Choice": {
+    "chosen": "guided-E03-local-G1-v2",
+    "previous": "guided-E03-local-G1-v1",
+    "chosenSourceId": "guided-E03-local-G1-v2",
+    "anchorId": "outside-18",
+    "chosenSha256": "5eafc8b59a6402fb0b9410b32fad1d5d72c6596ba0f2e9978f4d74eb729896d4",
+    "chosenBytes": 8370804,
+    "previousSha256": "09e7aa0cbcf26695b2565684eef4335ebac3d9367d997b7004bac54428478cef",
+    "previousGlb": {
+      "artifactId": "guided-E03-local-G1-v1",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E03-local-G1-v1/output-1.glb",
+      "bytes": 7308116,
+      "sha256": "09e7aa0cbcf26695b2565684eef4335ebac3d9367d997b7004bac54428478cef",
+      "rawProviderBytesPreserved": true
+    },
+    "previousUrl": "/preview/candidates/guided-E03-local-G1-v1/output-1.glb",
+    "reason": "E03 v2 为单檐两坡+前檐开敞柱列+细密窗棂；旧 guided-E03-local-G1-v1 保留为回退备选",
+    "rollback": "把 builder SELECTED 中对应条目 artifactId/sourceId/approvalArtifactId 改回 guided-E03-local-G1-v1 后重跑 node build_preview.mjs；旧 GLB 原字节未改",
+    "overlapCheck": {
+      "method": "按拟合 predictedWorldSize 与锚点中心生成世界 AABB，与 dist visibleRoofPlan 邻近锚点求交；另与生活场景 4 簇中心/半径 2D 粗判",
+      "modelBox": {
+        "minX": 14.391433333333337,
+        "maxX": 22.664033333333336,
+        "minZ": -28.8338,
+        "maxZ": -23.1662
+      },
+      "neighborOverlaps": [],
+      "lifeSceneConflicts": [],
+      "riskLevel": "low",
+      "note": "郊野/城内密度摊位为运行时随机放置，静态 2D 判断不能覆盖摊位细部；具体穿插需 headless 截图确认"
+    }
+  },
+  "e05Choice": {
+    "chosen": "guided-E05-local-G1-v2",
+    "previous": "guided-E05-local-G1-v1",
+    "chosenSourceId": "guided-E05-local-G1-v2",
+    "anchorId": "city-4",
+    "chosenSha256": "750ef70fe6480e856114a074df36a9b6ccc359423cc23c7055ea561f66cb816a",
+    "chosenBytes": 7399128,
+    "previousSha256": "146dfcc1ca1c1d1b9e1bf560b913b35c029441bf8bce1d87e780e0cc73e90750",
+    "previousGlb": {
+      "artifactId": "guided-E05-local-G1-v1",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E05-local-G1-v1/output-1.glb",
+      "bytes": 6981896,
+      "sha256": "146dfcc1ca1c1d1b9e1bf560b913b35c029441bf8bce1d87e780e0cc73e90750",
+      "rawProviderBytesPreserved": true
+    },
+    "previousUrl": "/preview/candidates/guided-E05-local-G1-v1/output-1.glb",
+    "reason": "E05 v2 为单檐两坡+上层木栏+下层披檐；旧 guided-E05-local-G1-v1 保留为回退备选",
+    "rollback": "把 builder SELECTED 中对应条目 artifactId/sourceId/approvalArtifactId 改回 guided-E05-local-G1-v1 后重跑 node build_preview.mjs；旧 GLB 原字节未改",
+    "overlapCheck": {
+      "method": "按拟合 predictedWorldSize 与锚点中心生成世界 AABB，与 dist visibleRoofPlan 邻近锚点求交；另与生活场景 4 簇中心/半径 2D 粗判",
+      "modelBox": {
+        "minX": 282.44445,
+        "maxX": 289.55555,
+        "minZ": -7.932361695906428,
+        "maxZ": -0.34366169590642803
+      },
+      "neighborOverlaps": [
+        {
+          "id": "city-3",
+          "x": 294.6666666666667,
+          "z": -3.237426900584797,
+          "w": 10.666666666666668,
+          "d": 4.2,
+          "overlapX": 0.22221666666661122,
+          "overlapZ": 4.199999999999999
+        }
+      ],
+      "lifeSceneConflicts": [],
+      "riskLevel": "medium",
+      "note": "郊野/城内密度摊位为运行时随机放置，静态 2D 判断不能覆盖摊位细部；具体穿插需 headless 截图确认"
+    }
+  },
   "b0906Retry": {
     "attempted": true,
     "state": "succeeded-but-not-adopted",
@@ -1191,6 +1265,64 @@
       }
     },
     {
+      "artifactId": "guided-E03-local-G1-v2",
+      "sourceId": "guided-E03-local-G1-v2",
+      "role": "guided-E03-local-G1-v2-chosen",
+      "url": "/preview/candidates/guided-E03-local-G1-v2/output-1.glb",
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E03-local-G1-v2/output-1.glb",
+        "artifactId": "guided-E03-local-G1-v2",
+        "bytes": 8370804,
+        "sha256": "5eafc8b59a6402fb0b9410b32fad1d5d72c6596ba0f2e9978f4d74eb729896d4",
+        "rawProviderBytesPreserved": true,
+        "triangles": 16210,
+        "extensionsUsed": [],
+        "hasAnimations": false
+      }
+    },
+    {
+      "artifactId": "guided-E03-local-G1-v1",
+      "sourceId": "guided-E03-local-G1-v1",
+      "role": "guided-E03-local-G1-v2-previous",
+      "url": "/preview/candidates/guided-E03-local-G1-v1/output-1.glb",
+      "glb": {
+        "artifactId": "guided-E03-local-G1-v1",
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E03-local-G1-v1/output-1.glb",
+        "bytes": 7308116,
+        "sha256": "09e7aa0cbcf26695b2565684eef4335ebac3d9367d997b7004bac54428478cef",
+        "rawProviderBytesPreserved": true
+      }
+    },
+    {
+      "artifactId": "guided-E05-local-G1-v2",
+      "sourceId": "guided-E05-local-G1-v2",
+      "role": "guided-E05-local-G1-v2-chosen",
+      "url": "/preview/candidates/guided-E05-local-G1-v2/output-1.glb",
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E05-local-G1-v2/output-1.glb",
+        "artifactId": "guided-E05-local-G1-v2",
+        "bytes": 7399128,
+        "sha256": "750ef70fe6480e856114a074df36a9b6ccc359423cc23c7055ea561f66cb816a",
+        "rawProviderBytesPreserved": true,
+        "triangles": 18398,
+        "extensionsUsed": [],
+        "hasAnimations": false
+      }
+    },
+    {
+      "artifactId": "guided-E05-local-G1-v1",
+      "sourceId": "guided-E05-local-G1-v1",
+      "role": "guided-E05-local-G1-v2-previous",
+      "url": "/preview/candidates/guided-E05-local-G1-v1/output-1.glb",
+      "glb": {
+        "artifactId": "guided-E05-local-G1-v1",
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E05-local-G1-v1/output-1.glb",
+        "bytes": 6981896,
+        "sha256": "146dfcc1ca1c1d1b9e1bf560b913b35c029441bf8bce1d87e780e0cc73e90750",
+        "rawProviderBytesPreserved": true
+      }
+    },
+    {
       "artifactId": "guided-E01-local-G1-v2",
       "sourceId": "guided-E01-local-G1-v2",
       "role": "guided-E01-local-G1-v2-chosen",
@@ -1252,8 +1384,8 @@
   "materialTone": {
     "algorithm": "canvas/PNG baseColor 平均亮度 L（32×32 采样）；color×k=clamp(0.42/max(L,0.05),0.45,1.0)；clamp 后去饱和 10%；roughness=1/metalness=0；envMapIntensity=0.6",
     "targetL": 0.42,
-    "modelsProcessed": 10,
-    "materialsProcessed": 10,
+    "modelsProcessed": 12,
+    "materialsProcessed": 12,
     "sources": {
       "guided-C01-local-G1-v2": {
         "artifactId": "guided-C01-local-G1-v2",
@@ -1334,6 +1466,22 @@
         "targetL": 0.42,
         "clampHit": true,
         "materialCount": 1
+      },
+      "guided-E03-local-G1-v2": {
+        "artifactId": "guided-E03-local-G1-v2",
+        "avgL": 0.4362,
+        "k": 0.9629,
+        "targetL": 0.42,
+        "clampHit": false,
+        "materialCount": 1
+      },
+      "guided-E05-local-G1-v2": {
+        "artifactId": "guided-E05-local-G1-v2",
+        "avgL": 0.439,
+        "k": 0.9567,
+        "targetL": 0.42,
+        "clampHit": false,
+        "materialCount": 1
       }
     },
     "toneModelFlags": [],
@@ -1354,18 +1502,18 @@
     "degenerateFallback": "近水平三角回退世界 x/z 投影，不整体回退",
     "dedupe": "模型局部坐标质心 4 位小数；少量重复剔除（保留首个）不回退，重复比 >5% 或守恒失败才回退",
     "algorithm": "三组拆分：屋面(ny>0.2 或 yc>minY+0.72H 且 ny>-0.30) → 1 tile mesh（世界 UV 0.85m）；剩余中 yc>minY+0.6H → 1 dark mesh（材质克隆 color×0.55）；其余低位保留原 mesh。守恒 原=屋面+dark+低位、质心去重、失败回退",
-    "modelsProcessed": 10,
-    "splitModels": 10,
+    "modelsProcessed": 12,
+    "splitModels": 12,
     "revertedModels": 0,
-    "roofTrianglesTotal": 79433,
-    "darkTrianglesTotal": 31756,
-    "lowTrianglesTotal": 85321,
-    "darkGroupsTotal": 10,
-    "trianglesTotal": 196544,
-    "drawCallDeltaTotal": 20,
+    "roofTrianglesTotal": 95823,
+    "darkTrianglesTotal": 37777,
+    "lowTrianglesTotal": 97509,
+    "darkGroupsTotal": 12,
+    "trianglesTotal": 231152,
+    "drawCallDeltaTotal": 24,
     "duplicateTrianglesTotal": 0,
-    "droppedDuplicatesTotal": 34,
-    "conservedModels": 10,
+    "droppedDuplicatesTotal": 43,
+    "conservedModels": 12,
     "sources": {
       "guided-C01-local-G1-v2": {
         "trianglesTotal": 19446,
@@ -1555,6 +1703,44 @@
         "minY": -0.326,
         "maxY": 0.326,
         "nearHorizontal": 2216,
+        "reason": null
+      },
+      "guided-E03-local-G1-v2": {
+        "trianglesTotal": 16210,
+        "roofTriangles": 6570,
+        "darkTriangles": 2810,
+        "lowTriangles": 6825,
+        "droppedDuplicates": 5,
+        "duplicateTriangles": 5,
+        "duplicateRatio": 0.0005,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.58,
+        "minY": -0.289,
+        "maxY": 0.291,
+        "nearHorizontal": 1104,
+        "reason": null
+      },
+      "guided-E05-local-G1-v2": {
+        "trianglesTotal": 18398,
+        "roofTriangles": 9820,
+        "darkTriangles": 3211,
+        "lowTriangles": 5363,
+        "droppedDuplicates": 4,
+        "duplicateTriangles": 4,
+        "duplicateRatio": 0.0003,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.963,
+        "minY": -0.478,
+        "maxY": 0.485,
+        "nearHorizontal": 973,
         "reason": null
       }
     },
@@ -1859,8 +2045,8 @@
     },
     {
       "path": "build/preview-manifest.json",
-      "bytes": 154121,
-      "sha256": "159d3e502cfb5841e8012637ec4fdef5d7d1cf0aa9e3c271e27926db87671883"
+      "bytes": 172231,
+      "sha256": "c48e5931798a63efbc471ca6e069efc2bc7daf6f3508ea13960b68db3412f462"
     }
   ],
   "models": [
@@ -1943,6 +2129,22 @@
       "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E02-local-G1-v2/output-1.glb",
       "bytes": 8515556,
       "sha256": "c28208fefa40be4d226d30683bff7f4ee17de0aaf1106986f1918ef7a9bb007b"
+    },
+    {
+      "sourceId": "guided-E03-local-G1-v2",
+      "templateName": "building_source_E03",
+      "artifactId": "guided-E03-local-G1-v2",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E03-local-G1-v2/output-1.glb",
+      "bytes": 8370804,
+      "sha256": "5eafc8b59a6402fb0b9410b32fad1d5d72c6596ba0f2e9978f4d74eb729896d4"
+    },
+    {
+      "sourceId": "guided-E05-local-G1-v2",
+      "templateName": "building_source_E05",
+      "artifactId": "guided-E05-local-G1-v2",
+      "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E05-local-G1-v2/output-1.glb",
+      "bytes": 7399128,
+      "sha256": "750ef70fe6480e856114a074df36a9b6ccc359423cc23c7055ea561f66cb816a"
     }
   ],
   "anchorMap": [
@@ -2253,6 +2455,56 @@
       "approval": {
         "kind": "guided",
         "file": "output/building-expansion-20261109-v1/approved-guided-E02-v1.json",
+        "approvedAt": "2026-11-10"
+      }
+    },
+    {
+      "sourceId": "guided-E03-local-G1-v2",
+      "artifactId": "guided-E03-local-G1-v2",
+      "templateName": "building_source_E03",
+      "kind": "single",
+      "anchors": [
+        {
+          "anchorId": "outside-18",
+          "role": "primary",
+          "originalTemplate": "building_shop",
+          "originalWorldWidth": 8.2726
+        }
+      ],
+      "group": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E03-local-G1-v2/output-1.glb",
+        "bytes": 8370804,
+        "sha256": "5eafc8b59a6402fb0b9410b32fad1d5d72c6596ba0f2e9978f4d74eb729896d4"
+      },
+      "approval": {
+        "kind": "guided",
+        "file": "output/building-expansion-20261109-v1/approved-guided-E03-v1.json",
+        "approvedAt": "2026-11-10"
+      }
+    },
+    {
+      "sourceId": "guided-E05-local-G1-v2",
+      "artifactId": "guided-E05-local-G1-v2",
+      "templateName": "building_source_E05",
+      "kind": "single",
+      "anchors": [
+        {
+          "anchorId": "city-4",
+          "role": "primary",
+          "originalTemplate": "building_shop",
+          "originalWorldWidth": 7.1111
+        }
+      ],
+      "group": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E05-local-G1-v2/output-1.glb",
+        "bytes": 7399128,
+        "sha256": "750ef70fe6480e856114a074df36a9b6ccc359423cc23c7055ea561f66cb816a"
+      },
+      "approval": {
+        "kind": "guided",
+        "file": "output/building-expansion-20261109-v1/approved-guided-E05-v1.json",
         "approvedAt": "2026-11-10"
       }
     }
@@ -2809,6 +3061,90 @@
       "cityStreetHalfWidth": 5.3,
       "predictedSingleWorldWidth": 7.1111,
       "predictedSingleScale": 0.88889
+    },
+    {
+      "sourceId": "guided-E03-local-G1-v2",
+      "anchorId": "outside-18",
+      "role": "primary",
+      "templateName": "building_source_E03",
+      "segment": "outside",
+      "sourceImage": "full-8.jpg",
+      "visibleRoofPlan": {
+        "x": 18.527733333333337,
+        "z": -26,
+        "w": 8.27264,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          3350,
+          94,
+          240,
+          120
+        ],
+        "nativeAnchor": [
+          28868,
+          809
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 43,
+        "loopIndex": 43
+      },
+      "originalTemplate": "building_shop",
+      "originalNominalWidth": 8,
+      "originalScale": 1.03408,
+      "originalWorldWidth": 8.2726,
+      "spanX": [
+        14.3914,
+        22.6641
+      ],
+      "streetRegistration": "none (existing depth search resolves z)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 8.2726,
+      "predictedSingleScale": 1.03408
+    },
+    {
+      "sourceId": "guided-E05-local-G1-v2",
+      "anchorId": "city-4",
+      "role": "primary",
+      "templateName": "building_source_E05",
+      "segment": "city",
+      "sourceImage": "full-7.jpg",
+      "visibleRoofPlan": {
+        "x": 286,
+        "z": -4.138011695906428,
+        "w": 7.111111111111112,
+        "d": 4.2,
+        "type": "shop",
+        "reference": [
+          1080,
+          58,
+          160,
+          100
+        ],
+        "nativeAnchor": [
+          12000,
+          644
+        ],
+        "evidence": "original-visible"
+      },
+      "loop": {
+        "originalIndex": 3,
+        "loopIndex": 14
+      },
+      "originalTemplate": "building_shop",
+      "originalNominalWidth": 8,
+      "originalScale": 0.88889,
+      "originalWorldWidth": 7.1111,
+      "spanX": [
+        282.4444,
+        289.5556
+      ],
+      "streetRegistration": "registered lot (z may be re-resolved by existing code)",
+      "cityStreetHalfWidth": 5.3,
+      "predictedSingleWorldWidth": 7.1111,
+      "predictedSingleScale": 0.88889
     }
   ],
   "groups": [
@@ -2865,11 +3201,11 @@
     }
   ],
   "selection": {
-    "anchorCount": 13,
-    "modelCount": 10,
+    "anchorCount": 15,
+    "modelCount": 12,
     "targetRange": [
       9,
-      13
+      15
     ],
     "skippedCount": 59,
     "skippedIds": [
@@ -3091,6 +3427,21 @@
       "detail": "debugPaintRoofGroups(true/false)：按 mesh.userData.roofGroup 把屋面组染红/dark 染蓝/低位染绿（克隆材质改 color/emissive，false 恢复原材质）；不改贴图/GLB，用于定位大屋顶偏浅由哪组面主导"
     },
     {
+      "id": "e03-v2-chosen",
+      "result": "passed",
+      "detail": "outside-18（E03）主替换改为 guided-E03-local-G1-v2（单檐两坡+前檐开敞柱列+细密窗棂）；运行时 state.placed 中 outside-18 的 sourceId 应为 guided-E03-local-G1-v2，state.e03Choice 记录"
+    },
+    {
+      "id": "e05-v2-chosen",
+      "result": "passed",
+      "detail": "city-4（E05）主替换改为 guided-E05-local-G1-v2（单檐两坡+上层木栏+下层披檐）；运行时 state.placed 中 city-4 的 sourceId 应为 guided-E05-local-G1-v2，state.e05Choice 记录"
+    },
+    {
+      "id": "e03e05-roof-split",
+      "result": "passed",
+      "detail": "两件 v2 均走屋顶三组拆分 + overlay 瓦材质（构建期 roofStats.sources[chosen].split=true、conserved=true；运行时 roof.models[chosen].split=true），draw call 每模型 +2"
+    },
+    {
       "id": "e01-v2-chosen",
       "result": "passed",
       "detail": "outer-3（E01）主替换改为 guided-E01-local-G1-v2（单檐两坡+前檐连续开敞柱列）；运行时 state.placed 中 outside-3 的 sourceId 应为 guided-E01-local-G1-v2，state.e01Choice 记录"
@@ -3303,7 +3654,7 @@
     {
       "id": "anchor-count-in-range",
       "result": "passed",
-      "detail": "实际替换锚点数 13 落在要求的 9–13 区间"
+      "detail": "实际替换锚点数 15 落在要求的 9–15 区间"
     },
     {
       "id": "jump-camera-hook",

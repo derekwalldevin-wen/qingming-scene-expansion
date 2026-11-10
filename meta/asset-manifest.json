@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-11-10T09:56:04.331063+00:00",
+ "builtAt": "2026-11-10T11:54:17.946655+00:00",
  "scope": "清上河图建筑扩充候选资产；独立留档，不并入冻结 r1，不对外发布",
  "honesty": {
   "notWholePainting": true,
@@ -10,9 +10,9 @@
   "severalCandidatesKnownIncomplete": true
  },
  "totals": {
-  "assets": 74,
-  "bytes": 433349672,
-  "paidTasksRepresented": 56,
+  "assets": 76,
+  "bytes": 449119604,
+  "paidTasksRepresented": 58,
   "paidCreditsRepresented": 1007
  },
  "assets": [
@@ -1380,6 +1380,48 @@
    "adoption": "candidate-only-not-integrated-into-frozen-r1"
   },
   {
+   "id": "guided-E03-local-G1-v2",
+   "kind": "guided-g1-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E03-local-G1-v2/output-1.glb",
+   "sha256": "5eafc8b59a6402fb0b9410b32fad1d5d72c6596ba0f2e9978f4d74eb729896d4",
+   "bytes": 8370804,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": "E03",
+    "catalog": "output/building-expansion-20261109-v1/coverage-more/catalog.json",
+    "title": "远岸低长四坡屋：前窄檐柱框与开闭混排立面",
+    "cropPath": "output/building-expansion-20261109-v1/coverage-more/E03-source-crop.jpg",
+    "cropSHA256": "c222f8c3cf31b0ab3c4c6dfeb1ff131bd2427a48e957ba1c8f78005c1ead6e99",
+    "visible": [
+     "河岸长屋自身的低横脊、宽坡及端部斜坡可辨，不是上沿背景那片截断屋顶",
+     "面向河岸的长边连续外柱框与窄挑檐可见，立面部分封板部分宽开口",
+     "端部素墙与格栏/门洞有别，前侧木框呈连续长向结构"
+    ],
+    "inferred": [
+     "前框内有若干疑似桌/货架，不当作房体必须构件",
+     "精确开间按四开间归纳，背面和内部推定；不据岸边位置定建筑经营身份"
+    ]
+   },
+   "paid": {
+    "taskId": 5917482,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": null,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": "local-source-guided-3d-render"
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
    "id": "guided-E05-local-G1-v1",
    "kind": "guided-g1-candidate",
    "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E05-local-G1-v1/output-1.glb",
@@ -1425,6 +1467,49 @@
     "inferred": [
      "输入为本地壳渲染非原画；层高、背面与柱跨为推定"
     ]
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "guided-E05-local-G1-v2",
+   "kind": "guided-g1-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/guided-E05-local-G1-v2/output-1.glb",
+   "sha256": "750ef70fe6480e856114a074df36a9b6ccc359423cc23c7055ea561f66cb816a",
+   "bytes": 7399128,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": "E05",
+    "catalog": "output/building-expansion-20261109-v1/coverage-more/catalog.json",
+    "title": "城内前山面高屋：上层格窗与下层低檐敞口",
+    "cropPath": "output/building-expansion-20261109-v1/coverage-more/E05-source-crop.jpg",
+    "cropSHA256": "1ed190a1f4635442fd1377d9c4a1cb8f2725ac2534eb265720b82dc9f5fd866b",
+    "visible": [
+     "右侧主体山面峰顶、斜瓦坡、前方两道相错檐口可见，非左边素门屋",
+     "主屋檐下是高位连续木格窗带，下方低檐遮盖地面层敞口，柱脚/地面在原图内",
+     "右侧屋身被树干/枝条挡住，后坡不完整，但正面主体高低层级可辨"
+    ],
+    "inferred": [
+     "按上下两层完整壳归纳：上层格窗，下层檐柱开口；精确楼板标高及内部层数是建模解释，不是测绘结论",
+     "右后树挡面及背面简洁补齐，不能虚构连院",
+     "不含左邻已批准A05门屋、后排截顶长屋和其招牌"
+    ]
+   },
+   "paid": {
+    "taskId": 5917588,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": null,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": "local-source-guided-3d-render"
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
    },
    "adoption": "candidate-only-not-integrated-into-frozen-r1"
   },

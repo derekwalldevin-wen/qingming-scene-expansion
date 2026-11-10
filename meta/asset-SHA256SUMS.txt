@@ -27,7 +27,9 @@ c2036a1d3d8a8e8c4f7e96016de18e169e42fe4b0b22b947e78d04763cf5a96f  output/buildin
 fcc9f8f1143d059d6d0084950d36ff5a2bb7e0da97828954eafc8395fd33cba8  output/building-expansion-20261109-v1/provider/artifacts/guided-E02-local-G1-v1/output-1.glb
 c28208fefa40be4d226d30683bff7f4ee17de0aaf1106986f1918ef7a9bb007b  output/building-expansion-20261109-v1/provider/artifacts/guided-E02-local-G1-v2/output-1.glb
 09e7aa0cbcf26695b2565684eef4335ebac3d9367d997b7004bac54428478cef  output/building-expansion-20261109-v1/provider/artifacts/guided-E03-local-G1-v1/output-1.glb
+5eafc8b59a6402fb0b9410b32fad1d5d72c6596ba0f2e9978f4d74eb729896d4  output/building-expansion-20261109-v1/provider/artifacts/guided-E03-local-G1-v2/output-1.glb
 146dfcc1ca1c1d1b9e1bf560b913b35c029441bf8bce1d87e780e0cc73e90750  output/building-expansion-20261109-v1/provider/artifacts/guided-E05-local-G1-v1/output-1.glb
+750ef70fe6480e856114a074df36a9b6ccc359423cc23c7055ea561f66cb816a  output/building-expansion-20261109-v1/provider/artifacts/guided-E05-local-G1-v2/output-1.glb
 7c660d4763c6a69aa5728f38a92cc20bb516d74c7fd4af1a6638d2140be0545a  output/building-expansion-20261109-v1/local-shells-more/A01-local-shell-v1.glb
 1d1a001b52bf488a8029415f7bd0d5470b1245d864c93bc31c630e41a3b523c6  output/building-expansion-20261109-v1/local-shells/A03-local-shell-v1.glb
 f28d56501babff692194750a089b942ef1ad5a242b682578e01bec3d1dec8a69  output/building-expansion-20261109-v1/local-shells/A04-local-shell-v1.glb
