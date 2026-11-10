@@ -1,5 +1,7 @@
 # 清明上河图 · 三维场景扩充（对外快照）
 
+**仓库地址：https://github.com/derekwalldevin-wen/qingming-scene-expansion**
+
 这是「清明上河图建筑扩充与整体场景」项目的**发布用快照**：只含文档、截图、报表与可追溯元数据。
 **不含** GLB 模型、资产 zip、离线预览大 HTML（那些体积过大，见 `docs/进度与交接.md` 的说明）。
 
