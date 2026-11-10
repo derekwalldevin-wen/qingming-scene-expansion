@@ -81,4 +81,6 @@ eb51d4f8cd3c4241947947f7ba8593ddf99340099d4f68f483b5561566a17bb2  output/buildin
 b711200e1f31fef142cf1799b9b0a4e61858cf8529d78355c3378e6e394d3cbf  output/building-expansion-20261109-v1/provider/artifacts/person-vendor-v1/output-1.glb
 ad5ad455d1983e4fef278c9c4a01aa5d700aa97ed800688439f471e57d978e47  output/building-expansion-20261109-v1/provider/artifacts/person-watercarrier-v1/output-1.glb
 2c0a3a964e309299d2946cdc02b0a46e5ba2450375aa051340bee9a87bf18552  output/building-expansion-20261109-v1/provider/artifacts/person-woman-v1/output-1.glb
+b2c4f3bf0f992d84702e918fba2a637eb999e2dc40df1e9c6ca2671dc33d3beb  output/building-expansion-20261109-v1/provider/artifacts/supp-tavern-v1/output-1.glb
+318d72ee68759a5a961123bd32c3e163f11b40209a83225e46366ebd4c6f682d  output/building-expansion-20261109-v1/provider/artifacts/supp-warehouse-v1/output-1.glb
 24a97716e169276a30aa007c8c7cb2e9e01183d97e4db3cd61ad36e57f6340ab  output/building-expansion-20261109-v1/uv-repair/A04-local-shell-uv-v2.glb

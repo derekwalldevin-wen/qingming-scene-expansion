@@ -1,8 +1,8 @@
 {
   "schema": "building-expansion-game-preview-receipt-v2",
-  "generatedAt": "2026-11-10T12:39:21.411Z",
+  "generatedAt": "2026-11-10T15:56:18.388Z",
   "build": {
-    "node": "v24.18.0",
+    "node": "v24.22.1",
     "apiCalls": 0,
     "networkCalls": 0,
     "serverStarted": false,
@@ -1443,6 +1443,177 @@
     "reason": "单檐单脊达成（第 3 次重试），前檐通长连续柱列",
     "state": "adopted"
   },
+  "supplementary": {
+    "count": 2,
+    "inferredPosition": true,
+    "reason": "原画中常见建筑类型，位置为推断，用于填充空置地块，非锚点精确复原",
+    "search": {
+      "gridStepMeters": 2,
+      "radiusMeters": 20,
+      "nearFirst": true,
+      "innerRadiusMeters": 12,
+      "phases": [
+        "placements+colliders（外扩0.3m）",
+        "+stallSpots（半径1.0m）"
+      ],
+      "resizeFallback": {
+        "supp-tavern-v1": 8,
+        "supp-warehouse-v1": 11
+      }
+    },
+    "deviationReportThresholdMeters": 20,
+    "sources": [
+      {
+        "id": "supp-tavern-v1",
+        "sourceId": "supp-tavern-v1",
+        "artifactId": "supp-tavern-v1",
+        "templateName": "building_supplementary_tavern",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "原画中常见的两层临街酒肆类型；位置为推断，用于填充城内东段空置地块，非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-tavern-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-tavern-v1/output-1.glb",
+          "bytes": 11351620,
+          "sha256": "b2c4f3bf0f992d84702e918fba2a637eb999e2dc40df1e9c6ca2671dc33d3beb",
+          "rawProviderBytesPreserved": true,
+          "triangles": 27134,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            1.0085,
+            1.0036,
+            0.6255
+          ],
+          "uniformScale": 7.932573,
+          "width": 8,
+          "depth": 4.9618,
+          "height": 7.9611
+        },
+        "target": {
+          "x": 252,
+          "z": 22,
+          "yaw": "面向街心",
+          "axis": "x",
+          "shiftRange": 10,
+          "groundY": 0.636,
+          "targetWidthMeters": 9,
+          "targetScale": 1.125
+        },
+        "predictedWorldSize": {
+          "width": 9,
+          "depth": 5.582,
+          "height": 8.956
+        },
+        "materialTone": {
+          "avgL": 0.4914,
+          "k": 0.8547,
+          "clampHit": false,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 27134,
+          "roofTriangles": 12252,
+          "darkTriangles": 7357,
+          "lowTriangles": 7443,
+          "droppedDuplicates": 82,
+          "duplicateTriangles": 82,
+          "duplicateRatio": 0.0042,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 1.004,
+          "minY": -0.501,
+          "maxY": 0.503,
+          "nearHorizontal": 2012,
+          "reason": null
+        }
+      },
+      {
+        "id": "supp-warehouse-v1",
+        "sourceId": "supp-warehouse-v1",
+        "artifactId": "supp-warehouse-v1",
+        "templateName": "building_supplementary_warehouse",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "原画中常见的单层长仓房类型；位置为推断，用于填充汴河北岸码头附近空置地块，非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-warehouse-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-warehouse-v1/output-1.glb",
+          "bytes": 10725256,
+          "sha256": "318d72ee68759a5a961123bd32c3e163f11b40209a83225e46366ebd4c6f682d",
+          "rawProviderBytesPreserved": true,
+          "triangles": 25230,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            1.0043,
+            0.4287,
+            0.6475
+          ],
+          "uniformScale": 7.965747,
+          "width": 8,
+          "depth": 5.1578,
+          "height": 3.4149
+        },
+        "target": {
+          "x": -64,
+          "z": 4,
+          "yaw": "仓门朝岸（-z）",
+          "axis": "x",
+          "shiftRange": 10,
+          "groundY": 0.62,
+          "targetWidthMeters": 13,
+          "targetScale": 1.625
+        },
+        "predictedWorldSize": {
+          "width": 13,
+          "depth": 8.381,
+          "height": 5.549
+        },
+        "materialTone": {
+          "avgL": 0.4147,
+          "k": 1,
+          "clampHit": true,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 25230,
+          "roofTriangles": 11252,
+          "darkTriangles": 8069,
+          "lowTriangles": 5698,
+          "droppedDuplicates": 211,
+          "duplicateTriangles": 211,
+          "duplicateRatio": 0.0108,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 0.429,
+          "minY": -0.214,
+          "maxY": 0.214,
+          "nearHorizontal": 2156,
+          "reason": null
+        }
+      }
+    ],
+    "statsPath": "window.__BUILDING_EXPANSION_PREVIEW__.supplementary"
+  },
   "alternateSources": [
     {
       "artifactId": "guided-B09-01-local-G1-v2",
@@ -1933,17 +2104,17 @@
     "dedupe": "模型局部坐标质心 4 位小数；少量重复剔除（保留首个）不回退，重复比 >5% 或守恒失败才回退",
     "algorithm": "三组拆分：屋面(ny>0.2 或 yc>minY+0.72H 且 ny>-0.30) → 1 tile mesh（世界 UV 0.85m）；剩余中 yc>minY+0.6H → 1 dark mesh（材质克隆 color×0.55）；其余低位保留原 mesh。守恒 原=屋面+dark+低位、质心去重、失败回退",
     "modelsProcessed": 13,
-    "splitModels": 13,
+    "splitModels": 15,
     "revertedModels": 0,
-    "roofTrianglesTotal": 108536,
-    "darkTrianglesTotal": 46912,
-    "lowTrianglesTotal": 104451,
-    "darkGroupsTotal": 13,
-    "trianglesTotal": 260052,
-    "drawCallDeltaTotal": 26,
+    "roofTrianglesTotal": 132040,
+    "darkTrianglesTotal": 62338,
+    "lowTrianglesTotal": 117592,
+    "darkGroupsTotal": 15,
+    "trianglesTotal": 312416,
+    "drawCallDeltaTotal": 30,
     "duplicateTrianglesTotal": 0,
-    "droppedDuplicatesTotal": 153,
-    "conservedModels": 13,
+    "droppedDuplicatesTotal": 446,
+    "conservedModels": 15,
     "sources": {
       "guided-C01-local-G1-v2": {
         "trianglesTotal": 19446,
@@ -2191,6 +2362,44 @@
         "maxY": 0.485,
         "nearHorizontal": 973,
         "reason": null
+      },
+      "supp-tavern-v1": {
+        "trianglesTotal": 27134,
+        "roofTriangles": 12252,
+        "darkTriangles": 7357,
+        "lowTriangles": 7443,
+        "droppedDuplicates": 82,
+        "duplicateTriangles": 82,
+        "duplicateRatio": 0.0042,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 1.004,
+        "minY": -0.501,
+        "maxY": 0.503,
+        "nearHorizontal": 2012,
+        "reason": null
+      },
+      "supp-warehouse-v1": {
+        "trianglesTotal": 25230,
+        "roofTriangles": 11252,
+        "darkTriangles": 8069,
+        "lowTriangles": 5698,
+        "droppedDuplicates": 211,
+        "duplicateTriangles": 211,
+        "duplicateRatio": 0.0108,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.429,
+        "minY": -0.214,
+        "maxY": 0.214,
+        "nearHorizontal": 2156,
+        "reason": null
       }
     },
     "fallbacks": []
@@ -2276,6 +2485,33 @@
     },
     "avoidance": "world.placements/collider/摊点/栏杆/驳岸；冲突沿街平移 ≤4m，仍冲突跳过并记 errors(stage=lifescene)",
     "stats": "window.__BUILDING_EXPANSION_PREVIEW__.lifeScenes = {clusters, drawCalls, peopleClones}"
+  },
+  "inFields": {
+    "module": "modules/infill.js",
+    "sha256": "bd7a4ac4f0dc8a74904f3766113b3c99b29af8ce26338159c7386af2ff702429",
+    "targets": {
+      "courtyardWalls": "4-6",
+      "sheds": "3-4",
+      "wells": 2,
+      "carts": 2,
+      "boards": 2,
+      "woodpiles": 5,
+      "gardenBeds": 3,
+      "boats": "3-4",
+      "mooringPosts": 6,
+      "stairs": 2,
+      "netRacks": 2,
+      "reeds": 6,
+      "groundPatches": "8-12",
+      "farmhouses": 2,
+      "paths": 2
+    },
+    "gateOpeningMeters": 1.8,
+    "wallHeightMeters": 1.2,
+    "wallThicknessMeters": 0.25,
+    "drawCallBudget": 4,
+    "colliders": 0,
+    "note": "院墙留 1.8m 门洞、默认无 collider；全部合并进 wood/cloth/earth/tile，不新增贴图；失败写 errors(stage=infill)"
   },
   "guide": {
     "mode": "导览层（6 站卡片 + focusAnchor 前往 + [ ] 切换 + 可关闭）",
@@ -2479,8 +2715,8 @@
   "generatedFiles": [
     {
       "path": "build/main.js",
-      "bytes": 62879,
-      "sha256": "0c7bd4c336dc0218a65c636e63b366eaab1e812b43d993b546f68e99d67aaa7b"
+      "bytes": 63433,
+      "sha256": "fd25854e6524f5c64fa5435c7631b48420cb6b8150cb247c673c1ca46bb64ad0"
     },
     {
       "path": "build/world.js",
@@ -2494,8 +2730,8 @@
     },
     {
       "path": "build/preview-manifest.json",
-      "bytes": 196876,
-      "sha256": "b77697ace8fdaf196720cc117aaaf9d7145c48ccc426e70b1f4e195e82abb8b4"
+      "bytes": 205263,
+      "sha256": "223cb8885423b74a6ceaa4f167db0bfeec056e494da559848da3561b3270f719"
     }
   ],
   "models": [
@@ -3731,7 +3967,7 @@
       9,
       16
     ],
-    "skippedCount": 63,
+    "skippedCount": 65,
     "skippedIds": [
       "A02",
       "A03",
@@ -3774,6 +4010,8 @@
       "E03",
       "E05",
       "material-A04-local-v1",
+      "supp-tavern-v1",
+      "supp-warehouse-v1",
       "A03-local-shell-v1",
       "A04-local-shell-v1",
       "B09-02-local-shell-v1",
@@ -3953,6 +4191,66 @@
       "id": "debug-paint-roof-groups",
       "result": "passed",
       "detail": "debugPaintRoofGroups(true/false)：按 mesh.userData.roofGroup 把屋面组染红/dark 染蓝/低位染绿（克隆材质改 color/emissive，false 恢复原材质）；不改贴图/GLB，用于定位大屋顶偏浅由哪组面主导"
+    },
+    {
+      "id": "supp-search-widened",
+      "result": "passed",
+      "detail": "补充建筑放置搜索：从目标点起按 2m 步长在 ±20m 网格先近后远，先避 placements/collider（矩形外扩0.3m），无解再避 stallSpots（半径1.0m）；items 记 candidateIndex/searchRound/searchPhase/offset"
+    },
+    {
+      "id": "supp-resize-fallback",
+      "result": "passed",
+      "detail": "12m 内无空位时尺寸回退再搜：酒肆 9→8m、仓房 13→11m；items 记最终 size 与 searchRound=resized"
+    },
+    {
+      "id": "supp-both-placed-or-report",
+      "result": "passed",
+      "detail": "两件都放下则 items[] 记录最终坐标/尺寸/yaw/候选序号；完全放不下才写 blocked[]（blocker+尝试次数）与 errors(stage=supplementary)；落点偏离目标 >20m 记 deviationMeters/reason，receipt 阈值 20m"
+    },
+    {
+      "id": "supp-tavern-placed",
+      "result": "passed",
+      "detail": "supp-tavern-v1 作为 supplementary 类别接入（不占锚点），目标城内 x≈252/z≈22、yaw 面向街心；fit 宽约 9m，沿街 ±10m 避让；inferredPosition=true 与理由写入 manifest/receipt"
+    },
+    {
+      "id": "supp-warehouse-placed",
+      "result": "passed",
+      "detail": "supp-warehouse-v1 作为 supplementary 类别接入，目标河岸 x≈-64/z≈4、长边沿河、仓门朝岸；fit 长约 13m，沿河 ±10m 避让；inferredPosition=true 与理由写入 manifest/receipt"
+    },
+    {
+      "id": "supp-roof-split",
+      "result": "passed",
+      "detail": "两件补充建筑走既有屋顶三组拆分 + overlay 瓦材质/色调统一，每件 draw call +2；运行时 roof.models[artifactId].split=true 且写 state.supplementary.items[].roofSplit"
+    },
+    {
+      "id": "supp-position-inferred-flagged",
+      "result": "passed",
+      "detail": "manifest.supplementary/receipt.supplementary 均标注 inferredPosition:true 与“类型据画面、位置为推断，用于填空地，非锚点复原”；README 增加补充建筑小节"
+    },
+    {
+      "id": "infill-courtyards",
+      "result": "passed",
+      "detail": "城内院墙 4-6 个（1.2m 高/0.25m 厚/0.4m 角墩/1.8m 门洞），小构筑物草棚草棚 3-4、水井 2、木轮车 2、告示牌 2、柴堆 5、菜畦 3；默认无 collider、不堵主街；运行时 state.inFields 记录"
+    },
+    {
+      "id": "infill-riverside",
+      "result": "passed",
+      "detail": "河岸泊船 3-4（6-8m 木壳+布篷，停驳岸外水面）、系缆桩 6、石阶 2、渔网架 2、芦苇 6；不压驳岸/栏杆；仍合并同一材质桶"
+    },
+    {
+      "id": "infill-ground-patches",
+      "result": "passed",
+      "detail": "地面质感补丁 8-12（3-8m 扁平椭圆，略高地面 0.005m 防 z-fighting），避开主街中轴与建筑占位"
+    },
+    {
+      "id": "infill-farmhouses",
+      "result": "passed",
+      "detail": "郊野农舍 2（4×3m 土墙草顶柴扉）+ 田间小路 2；避让田块/树丛/道路"
+    },
+    {
+      "id": "infill-drawcall-budget",
+      "result": "passed",
+      "detail": "全部合并进 wood/cloth/earth/tile 最多 4 个材质 mesh，draw call 增量 ≤5；不新增贴图/材质组；默认无 collider"
     },
     {
       "id": "c03-v2-chosen",

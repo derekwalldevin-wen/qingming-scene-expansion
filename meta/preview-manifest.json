@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-manifest-v2",
-  "generatedAt": "2026-11-10T12:39:21.410Z",
+  "generatedAt": "2026-11-10T15:56:18.387Z",
   "generator": "output/building-expansion-20261109-v1/integration-preview/build_preview.mjs",
   "game": {
     "title": "梦回汴京",
@@ -1539,6 +1539,177 @@
     "reason": "单檐单脊达成（第 3 次重试），前檐通长连续柱列",
     "state": "adopted"
   },
+  "supplementary": {
+    "count": 2,
+    "inferredPosition": true,
+    "reason": "原画中常见建筑类型，位置为推断，用于填充空置地块，非锚点精确复原",
+    "search": {
+      "gridStepMeters": 2,
+      "radiusMeters": 20,
+      "nearFirst": true,
+      "innerRadiusMeters": 12,
+      "phases": [
+        "placements+colliders（外扩0.3m）",
+        "+stallSpots（半径1.0m）"
+      ],
+      "resizeFallback": {
+        "supp-tavern-v1": 8,
+        "supp-warehouse-v1": 11
+      }
+    },
+    "deviationReportThresholdMeters": 20,
+    "sources": [
+      {
+        "id": "supp-tavern-v1",
+        "sourceId": "supp-tavern-v1",
+        "artifactId": "supp-tavern-v1",
+        "templateName": "building_supplementary_tavern",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "原画中常见的两层临街酒肆类型；位置为推断，用于填充城内东段空置地块，非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-tavern-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-tavern-v1/output-1.glb",
+          "bytes": 11351620,
+          "sha256": "b2c4f3bf0f992d84702e918fba2a637eb999e2dc40df1e9c6ca2671dc33d3beb",
+          "rawProviderBytesPreserved": true,
+          "triangles": 27134,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            1.0085,
+            1.0036,
+            0.6255
+          ],
+          "uniformScale": 7.932573,
+          "width": 8,
+          "depth": 4.9618,
+          "height": 7.9611
+        },
+        "target": {
+          "x": 252,
+          "z": 22,
+          "yaw": "面向街心",
+          "axis": "x",
+          "shiftRange": 10,
+          "groundY": 0.636,
+          "targetWidthMeters": 9,
+          "targetScale": 1.125
+        },
+        "predictedWorldSize": {
+          "width": 9,
+          "depth": 5.582,
+          "height": 8.956
+        },
+        "materialTone": {
+          "avgL": 0.4914,
+          "k": 0.8547,
+          "clampHit": false,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 27134,
+          "roofTriangles": 12252,
+          "darkTriangles": 7357,
+          "lowTriangles": 7443,
+          "droppedDuplicates": 82,
+          "duplicateTriangles": 82,
+          "duplicateRatio": 0.0042,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 1.004,
+          "minY": -0.501,
+          "maxY": 0.503,
+          "nearHorizontal": 2012,
+          "reason": null
+        }
+      },
+      {
+        "id": "supp-warehouse-v1",
+        "sourceId": "supp-warehouse-v1",
+        "artifactId": "supp-warehouse-v1",
+        "templateName": "building_supplementary_warehouse",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "原画中常见的单层长仓房类型；位置为推断，用于填充汴河北岸码头附近空置地块，非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-warehouse-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-warehouse-v1/output-1.glb",
+          "bytes": 10725256,
+          "sha256": "318d72ee68759a5a961123bd32c3e163f11b40209a83225e46366ebd4c6f682d",
+          "rawProviderBytesPreserved": true,
+          "triangles": 25230,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            1.0043,
+            0.4287,
+            0.6475
+          ],
+          "uniformScale": 7.965747,
+          "width": 8,
+          "depth": 5.1578,
+          "height": 3.4149
+        },
+        "target": {
+          "x": -64,
+          "z": 4,
+          "yaw": "仓门朝岸（-z）",
+          "axis": "x",
+          "shiftRange": 10,
+          "groundY": 0.62,
+          "targetWidthMeters": 13,
+          "targetScale": 1.625
+        },
+        "predictedWorldSize": {
+          "width": 13,
+          "depth": 8.381,
+          "height": 5.549
+        },
+        "materialTone": {
+          "avgL": 0.4147,
+          "k": 1,
+          "clampHit": true,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 25230,
+          "roofTriangles": 11252,
+          "darkTriangles": 8069,
+          "lowTriangles": 5698,
+          "droppedDuplicates": 211,
+          "duplicateTriangles": 211,
+          "duplicateRatio": 0.0108,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 0.429,
+          "minY": -0.214,
+          "maxY": 0.214,
+          "nearHorizontal": 2156,
+          "reason": null
+        }
+      }
+    ],
+    "statsPath": "window.__BUILDING_EXPANSION_PREVIEW__.supplementary"
+  },
   "alternateSources": [
     {
       "artifactId": "guided-B09-01-local-G1-v2",
@@ -2029,17 +2200,17 @@
     "dedupe": "模型局部坐标质心 4 位小数；少量重复剔除（保留首个）不回退，重复比 >5% 或守恒失败才回退",
     "algorithm": "三组拆分：屋面(ny>0.2 或 yc>minY+0.72H 且 ny>-0.30) → 1 tile mesh（世界 UV 0.85m）；剩余中 yc>minY+0.6H → 1 dark mesh（材质克隆 color×0.55）；其余低位保留原 mesh。守恒 原=屋面+dark+低位、质心去重、失败回退",
     "modelsProcessed": 13,
-    "splitModels": 13,
+    "splitModels": 15,
     "revertedModels": 0,
-    "roofTrianglesTotal": 108536,
-    "darkTrianglesTotal": 46912,
-    "lowTrianglesTotal": 104451,
-    "darkGroupsTotal": 13,
-    "trianglesTotal": 260052,
-    "drawCallDeltaTotal": 26,
+    "roofTrianglesTotal": 132040,
+    "darkTrianglesTotal": 62338,
+    "lowTrianglesTotal": 117592,
+    "darkGroupsTotal": 15,
+    "trianglesTotal": 312416,
+    "drawCallDeltaTotal": 30,
     "duplicateTrianglesTotal": 0,
-    "droppedDuplicatesTotal": 153,
-    "conservedModels": 13,
+    "droppedDuplicatesTotal": 446,
+    "conservedModels": 15,
     "sources": {
       "guided-C01-local-G1-v2": {
         "trianglesTotal": 19446,
@@ -2287,6 +2458,44 @@
         "maxY": 0.485,
         "nearHorizontal": 973,
         "reason": null
+      },
+      "supp-tavern-v1": {
+        "trianglesTotal": 27134,
+        "roofTriangles": 12252,
+        "darkTriangles": 7357,
+        "lowTriangles": 7443,
+        "droppedDuplicates": 82,
+        "duplicateTriangles": 82,
+        "duplicateRatio": 0.0042,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 1.004,
+        "minY": -0.501,
+        "maxY": 0.503,
+        "nearHorizontal": 2012,
+        "reason": null
+      },
+      "supp-warehouse-v1": {
+        "trianglesTotal": 25230,
+        "roofTriangles": 11252,
+        "darkTriangles": 8069,
+        "lowTriangles": 5698,
+        "droppedDuplicates": 211,
+        "duplicateTriangles": 211,
+        "duplicateRatio": 0.0108,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.429,
+        "minY": -0.214,
+        "maxY": 0.214,
+        "nearHorizontal": 2156,
+        "reason": null
       }
     },
     "fallbacks": []
@@ -2372,6 +2581,33 @@
     },
     "avoidance": "world.placements/collider/摊点/栏杆/驳岸；冲突沿街平移 ≤4m，仍冲突跳过并记 errors(stage=lifescene)",
     "stats": "window.__BUILDING_EXPANSION_PREVIEW__.lifeScenes = {clusters, drawCalls, peopleClones}"
+  },
+  "inFields": {
+    "module": "modules/infill.js",
+    "sha256": "bd7a4ac4f0dc8a74904f3766113b3c99b29af8ce26338159c7386af2ff702429",
+    "targets": {
+      "courtyardWalls": "4-6",
+      "sheds": "3-4",
+      "wells": 2,
+      "carts": 2,
+      "boards": 2,
+      "woodpiles": 5,
+      "gardenBeds": 3,
+      "boats": "3-4",
+      "mooringPosts": 6,
+      "stairs": 2,
+      "netRacks": 2,
+      "reeds": 6,
+      "groundPatches": "8-12",
+      "farmhouses": 2,
+      "paths": 2
+    },
+    "gateOpeningMeters": 1.8,
+    "wallHeightMeters": 1.2,
+    "wallThicknessMeters": 0.25,
+    "drawCallBudget": 4,
+    "colliders": 0,
+    "note": "院墙留 1.8m 门洞、默认无 collider；全部合并进 wood/cloth/earth/tile，不新增贴图；失败写 errors(stage=infill)"
   },
   "guide": {
     "mode": "导览层（不弹窗、0 积分）：6 站卡片 + 前往（复用 focusAnchor/相机）+ [ ] 切换 + 卡片可关闭",
@@ -5242,6 +5478,32 @@
         "path": "output/building-expansion-20261109-v1/provider/artifacts/material-A04-local-v1/output-1.glb",
         "bytes": 1540400,
         "sha256": "496303fb3ca096c7d96254c3d66c9e4fd4e4c06937064fba7c2887d12d4b864f"
+      }
+    },
+    {
+      "sourceId": "supp-tavern-v1",
+      "artifactId": "supp-tavern-v1",
+      "reason": "已有下载 GLB，但来源锚点/精确性/名额不满足本轮白名单，未替换",
+      "reviewStatus": null,
+      "approvalKind": null,
+      "approvalFile": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-tavern-v1/output-1.glb",
+        "bytes": 11351620,
+        "sha256": "b2c4f3bf0f992d84702e918fba2a637eb999e2dc40df1e9c6ca2671dc33d3beb"
+      }
+    },
+    {
+      "sourceId": "supp-warehouse-v1",
+      "artifactId": "supp-warehouse-v1",
+      "reason": "已有下载 GLB，但来源锚点/精确性/名额不满足本轮白名单，未替换",
+      "reviewStatus": null,
+      "approvalKind": null,
+      "approvalFile": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-warehouse-v1/output-1.glb",
+        "bytes": 10725256,
+        "sha256": "318d72ee68759a5a961123bd32c3e163f11b40209a83225e46366ebd4c6f682d"
       }
     },
     {

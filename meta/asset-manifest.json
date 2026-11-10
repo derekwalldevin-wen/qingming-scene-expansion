@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-11-10T12:41:57.110820+00:00",
+ "builtAt": "2026-11-10T15:58:58.128524+00:00",
  "scope": "清上河图建筑扩充候选资产；独立留档，不并入冻结 r1，不对外发布",
  "honesty": {
   "notWholePainting": true,
@@ -10,10 +10,10 @@
   "severalCandidatesKnownIncomplete": true
  },
  "totals": {
-  "assets": 84,
-  "bytes": 535130320,
-  "paidTasksRepresented": 66,
-  "paidCreditsRepresented": 1207
+  "assets": 86,
+  "bytes": 557207196,
+  "paidTasksRepresented": 68,
+  "paidCreditsRepresented": 1247
  },
  "assets": [
   {
@@ -3614,6 +3614,76 @@
    },
    "paid": {
     "taskId": 5730800,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "supp-tavern-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-tavern-v1/output-1.glb",
+   "sha256": "b2c4f3bf0f992d84702e918fba2a637eb999e2dc40df1e9c6ca2671dc33d3beb",
+   "bytes": 11351620,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6031331,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "supp-warehouse-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-warehouse-v1/output-1.glb",
+   "sha256": "318d72ee68759a5a961123bd32c3e163f11b40209a83225e46366ebd4c6f682d",
+   "bytes": 10725256,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6031336,
     "operation": "text-to-3d",
     "state": "downloaded",
     "quotedCredits": 20,
