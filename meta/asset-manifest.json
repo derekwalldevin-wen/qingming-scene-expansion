@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-11-11T07:44:48.786106+00:00",
+ "builtAt": "2026-11-11T08:04:16.352482+00:00",
  "scope": "清上河图建筑扩充候选资产；独立留档，不并入冻结 r1，不对外发布",
  "honesty": {
   "notWholePainting": true,
@@ -10,10 +10,10 @@
   "severalCandidatesKnownIncomplete": true
  },
  "totals": {
-  "assets": 97,
-  "bytes": 666490548,
-  "paidTasksRepresented": 79,
-  "paidCreditsRepresented": 1467
+  "assets": 98,
+  "bytes": 676664044,
+  "paidTasksRepresented": 80,
+  "paidCreditsRepresented": 1487
  },
  "assets": [
   {
@@ -3719,6 +3719,41 @@
    },
    "paid": {
     "taskId": 6380500,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "supp-inn-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-inn-v1/output-1.glb",
+   "sha256": "0e2c86acc2ad02e943dd1a29c34deceaa6efd057bd7da164a930b49e63fd066d",
+   "bytes": 10173496,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6382955,
     "operation": "text-to-3d",
     "state": "downloaded",
     "quotedCredits": 20,

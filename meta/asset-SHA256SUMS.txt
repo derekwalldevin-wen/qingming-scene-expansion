@@ -84,6 +84,7 @@ ad5ad455d1983e4fef278c9c4a01aa5d700aa97ed800688439f471e57d978e47  output/buildin
 d9866b203c6bfcf79393815f552c8720b84b4fe2e9d030dd838324519984101c  output/building-expansion-20261109-v1/provider/artifacts/supp-fanlou-v1/output-1.glb
 4f637391dd7292b65d7c4c75afa8463e3a1b225a1ffea6bcd96b8744ac9920d2  output/building-expansion-20261109-v1/provider/artifacts/supp-house-a-v1/output-1.glb
 eba9e64c2923bca939e7dd1c0cb3982dde7576da07c197abd5ca0beac7bf8428  output/building-expansion-20261109-v1/provider/artifacts/supp-house-b-v1/output-1.glb
+0e2c86acc2ad02e943dd1a29c34deceaa6efd057bd7da164a930b49e63fd066d  output/building-expansion-20261109-v1/provider/artifacts/supp-inn-v1/output-1.glb
 77fdef1e4c4c928f312b57299180a89547408a79febf719192578ae48486535b  output/building-expansion-20261109-v1/provider/artifacts/supp-office-v1/output-1.glb
 38adde0f9853b671f44f0e7ce9825c655af159f88a764c5af4c13feef89b6ec6  output/building-expansion-20261109-v1/provider/artifacts/supp-pagoda-v1/output-1.glb
 62dba85e27cda666cb91a0c3bb9d92e143395ba088bd3679226201a877086126  output/building-expansion-20261109-v1/provider/artifacts/supp-school-v1/output-1.glb

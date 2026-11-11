@@ -3,15 +3,24 @@
   "authorizedBy": "lead",
   "region": "cn",
   "approvedAt": "2026-11-09T19:34:00+08:00",
-  "maximumCredits": 1569,
+  "reauthorizedAt": "2026-11-11T15:50:00+08:00",
+  "maximumCredits": 1586,
   "minimumAccountReserve": 0,
   "maximumActiveTasks": 3,
-  "userAuthorization": "用户要求剩余Aholo/Lux3D积分尽量用完，约10天后到期，按清明上河图原画补建筑；本轮取消旧首批100积分上限。",
-  "balanceEvidence": "provider/private/account.json: availableCredits=1569 at 2026-11-09T19:33:57+08:00",
+  "userAuthorization": "用户要求剩余Aholo/Lux3D积分尽量用完，约10天后到期，按清明上河图原画补建筑；本轮取消旧首批100积分上限。2026-11-11 用户批准第二梯队 6 件（民居群/茶坊/学塾/香药铺/脚店/浴堂），并同意把授权上限从 1569 放宽到 1586。",
+  "balanceEvidence": "provider/private/account.json: availableCredits=23 at 2026-11-11T15:44:47+08:00; exactSettledCredits=1546; committed(reserved)=1566",
   "limits": [
-    "Cumulative exact quotations/reservations for this expansion must not exceed1569; refresh current available balance per controlled batch",
+    "Cumulative exact quotations/reservations for this expansion must not exceed 1586; refresh current available balance per controlled batch",
+    "The +17 headroom over the original 1569 balance exists because one early candidate (guided-C05-local-G1-v2) failed at the provider with NO charge but its 20-credit reservation is retained by the no-auto-refund policy. Actual settled spend after the final (6th) second-tier item is expected to be 1566, which stays within the original 1569 balance.",
     "Only source-audited lead-approved architectural candidates, no identical paid rerolls merely to exhaust credits",
     "No top-up, no other providers' paid APIs, no public publication or modification of frozen r1",
     "Unknown create results retain budget and block further creates until evidence-based reconciliation"
-  ]
+  ],
+  "authorizationDelta": {
+    "previousMaximumCredits": 1569,
+    "newMaximumCredits": 1586,
+    "reason": "用户批准第 6 件（脚店）；20 积分为 C05 v2 未扣费失败的保守预留，实际结算不超过最初预算 1569",
+    "approvedBy": "user",
+    "approvalQuote": "A"
+  }
 }
