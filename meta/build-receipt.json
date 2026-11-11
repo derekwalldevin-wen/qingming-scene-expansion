@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-receipt-v2",
-  "generatedAt": "2026-11-11T06:01:44.052Z",
+  "generatedAt": "2026-11-11T06:09:05.910Z",
   "build": {
     "node": "v24.18.0",
     "apiCalls": 0,
@@ -32,7 +32,9 @@
     "exportInstallsPreview": true,
     "scheduleSupplementaryPlacementDefined": true,
     "scheduleSupplementaryPlacementCalled": true,
-    "cityStreetZTryCatch": true
+    "cityStreetZTryCatch": true,
+    "debugSupplementaryBoundsPreserved": true,
+    "isPagodaConstPreserved": true
   },
   "distIntegrity": {
     "checkedAfterBuild": true,
@@ -41,7 +43,7 @@
   },
   "streetSurfaces": {
     "module": "modules/street-surfaces.js",
-    "sha256": "ddcef2a3459be99d7aa7731b3de3e547b889c9fd90510e1466ebf17b5ef9ac45",
+    "sha256": "161bc5ab84485e81e8a7fc47757aa7fb8ab3d984d1afa58110863077bedc92a7",
     "mountPatch": "main-install-preview（createWorld 之后独立 try/catch 调用 installStreetSurfaces；失败写 errors 并保留原街面）",
     "paving": {
       "xRange": [
@@ -3426,7 +3428,7 @@
     {
       "path": "build/preview-manifest.json",
       "bytes": 229930,
-      "sha256": "c40bca084647d6e3d1a646312c0cbcb4672c3436b703087f07d2f9d08beea9b6"
+      "sha256": "cf672348586ea35499ec4c27751890e00469538ec8e7e6df9b75883d42a2c923"
     }
   ],
   "models": [
@@ -4907,6 +4909,21 @@
       "id": "supp-both-placed-or-report",
       "result": "passed",
       "detail": "两件都放下则 items[] 记录最终坐标/尺寸/yaw/候选序号；完全放不下才写 blocked[]（blocker+尝试次数）与 errors(stage=supplementary)；落点偏离目标 >20m 记 deviationMeters/reason，receipt 阈值 20m"
+    },
+    {
+      "id": "pagoda-clear-procedural",
+      "result": "passed",
+      "detail": "塔落地后删除 footprint 内程序化 collider（保留 buildingExpansionWall/wall 城墙与锚点范围），完全落在塔内的程序化 mesh 移除、合并桶记 meshesKept；landmarks.pagoda.clearedProcedural={collidersRemoved,meshesRemoved,colliders,keptColliders}"
+    },
+    {
+      "id": "moat-continuous",
+      "result": "passed",
+      "detail": "护城河改连续 U 形沟槽：外坡/内坡1:2、底宽22、深1.6、顶宽28.4；按墙段转折分3段（≤8），沟底×0.75、两坡×0.92/×1.08，沟底加 #5a6a6b 薄水面；stats.moat.continuous/water 记录"
+    },
+    {
+      "id": "barbican-moved-or-squared",
+      "result": "passed",
+      "detail": "瓮城中心沿-x外移4m至(196,40)、弧线收紧110°–250°、9段减为8段并用2D AABB 检测 clippedSegments；stub clipped=0，未触发矩形回退"
     },
     {
       "id": "pagoda-keep-original-material",
