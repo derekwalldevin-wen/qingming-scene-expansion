@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-receipt-v2",
-  "generatedAt": "2026-11-11T00:22:46.982Z",
+  "generatedAt": "2026-11-11T01:58:54.689Z",
   "build": {
     "node": "v24.18.0",
     "apiCalls": 0,
@@ -35,7 +35,7 @@
   },
   "streetSurfaces": {
     "module": "modules/street-surfaces.js",
-    "sha256": "89be3d6ed14ef93f12e7d2685731d984377fe36a64be6b9586091a8011997a6a",
+    "sha256": "da5622eec873f5bb4e73bd234824079c3e2fc14ba47bde6bcf26b35a4f4f5b21",
     "mountPatch": "main-install-preview（createWorld 之后独立 try/catch 调用 installStreetSurfaces；失败写 errors 并保留原街面）",
     "paving": {
       "xRange": [
@@ -2774,7 +2774,7 @@
     {
       "path": "build/preview-manifest.json",
       "bytes": 206584,
-      "sha256": "6bb4b92ac688760ae5255ee014d4adb6162b9f50a16f0dddfaaf387bf745fd15"
+      "sha256": "9a053bbdcedbc0517400c27334f011fcdf7442f6d8c62c8dfd00b881b0a3b3f8"
     }
   ],
   "models": [
@@ -4669,6 +4669,36 @@
       "id": "gate-columns-both-sides",
       "result": "passed",
       "detail": "门洞两侧各 5 根 0.25m 方木排叉柱（共10根、倾斜8°）+ 两侧 0.3m 阑额木梁连接；仅装饰、无 collider"
+    },
+    {
+      "id": "wall-batter-1to9",
+      "result": "passed",
+      "detail": "收分改为底 8.2m/顶 6.0m/高 9.2m（batter≈0.1196≈1:8.36），马道净宽≥5.0m；石基外扩0.3m/高0.65m；矮墙底7.0/顶5.0、高8.2m；马面宽6.4m、凸出3.2m"
+    },
+    {
+      "id": "defenses-colliders",
+      "result": "passed",
+      "detail": "5 座战棚 + 3 座敌楼各加 2D collider（深2.4m，只占马道内侧≤40%，留≥3.6m 通道）；stats.defenseColliders=8、battleShedColliderCount/watchtowerColliderCount 记录"
+    },
+    {
+      "id": "wall-stairs",
+      "result": "passed",
+      "detail": "城门内侧登城台阶 x≈208.5、z 30–52、宽2.4m、每级0.18m、55 级升至墙顶；石砖并入 stone 桶，两侧扶墙 collider×2 + 台阶顶观景平台 collider；receipt/state 记录起止坐标"
+    },
+    {
+      "id": "wall-walkable-decision",
+      "result": "passed",
+      "detail": "马道判定：world.floor 是 dist 地面高度查询，overlay 包裹会影响寻路/相机且无法本地验证 → 不硬改；walkable={supported:false,mode:\"platform-only\",ramp:null,reason:\"马道暂不可行走，需要改 dist 地面高度，超出本约束\"}；台阶顶设观景平台"
+    },
+    {
+      "id": "merlon-end-caps",
+      "result": "passed",
+      "detail": "每墙段垛口以完整垛墙开始/结束，段端加 0.55m 宽半垛收头（stub merlonEndCaps=116）；东墙 merlon 相位错开半周期 1.3m，避免转角大洞"
+    },
+    {
+      "id": "previously-fixed-guards-intact",
+      "result": "passed",
+      "detail": "构建后 grep 确认 export 含 installBuildingExpansionPreview、scheduleSupplementaryPlacement 函数与调用、cityStreetZ try/catch 守卫"
     },
     {
       "id": "wall-thicker-profile",
