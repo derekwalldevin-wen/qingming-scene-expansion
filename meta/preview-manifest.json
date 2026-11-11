@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-manifest-v2",
-  "generatedAt": "2026-11-11T05:19:07.538Z",
+  "generatedAt": "2026-11-11T05:40:48.005Z",
   "generator": "output/building-expansion-20261109-v1/integration-preview/build_preview.mjs",
   "game": {
     "title": "梦回汴京",
@@ -1757,12 +1757,12 @@
           "height": 12.7423
         },
         "target": {
-          "x": 300,
-          "z": 58,
+          "x": 302,
+          "z": 57,
           "yaw": "塔身朝南",
           "yawDegrees": null,
           "axis": "x",
-          "shiftRange": 15,
+          "shiftRange": 12,
           "groundY": 0.62,
           "targetWidthMeters": 21.974,
           "targetHeightMeters": 35,
@@ -1833,12 +1833,12 @@
           "height": 5.3631
         },
         "target": {
-          "x": 150,
-          "z": 60,
+          "x": 286,
+          "z": 46,
           "yaw": "面向街心",
           "yawDegrees": null,
           "axis": "x",
-          "shiftRange": 15,
+          "shiftRange": 10,
           "groundY": 0.62,
           "targetWidthMeters": 22,
           "targetHeightMeters": null,
@@ -2184,7 +2184,7 @@
   },
   "fills": {
     "module": "modules/fills.js",
-    "sha256": "1e0913fa1c432a4b71befe40e17c4f8f081745e0b6fde60790396db96a1d5f5e",
+    "sha256": "356ad9a6b6e41d2b9e90e5e7cd188319dbde7bf3cb1c51a00b9bad2d9d991722",
     "targets": {
       "railingsBays": "河道全长 −110…210m @2.4m",
       "alleys": "3–4 条 3m 石板巷",
@@ -2199,6 +2199,28 @@
     "note": "程序化巷道/步道/护栏/墙根与背街民居/城东小院；并入 wood/cloth/earth/tile/paving，无 collider"
   },
   "landmarks": {
+    "repositioned": {
+      "pagoda": {
+        "from": [
+          112,
+          29
+        ],
+        "to": [
+          302,
+          57
+        ]
+      },
+      "temple": {
+        "from": [
+          112,
+          29
+        ],
+        "to": [
+          286,
+          46
+        ]
+      }
+    },
     "ids": [
       "supp-pagoda-v1",
       "supp-temple-v1",
@@ -3199,7 +3221,7 @@
   },
   "inFields": {
     "module": "modules/infill.js",
-    "sha256": "20614cd5adb643d1903cd7c47ebf71069e54aaa4d558937dc8db459b918e1e7b",
+    "sha256": "cd82edac665c6d375c28fb507370117e18e96feca06dbb0af19aabb51a58dfef",
     "targets": {
       "courtyardWalls": "4-6",
       "sheds": "3-4",

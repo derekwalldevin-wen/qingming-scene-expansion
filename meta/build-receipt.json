@@ -1,8 +1,8 @@
 {
   "schema": "building-expansion-game-preview-receipt-v2",
-  "generatedAt": "2026-11-11T05:19:07.540Z",
+  "generatedAt": "2026-11-11T05:40:48.019Z",
   "build": {
-    "node": "v24.18.0",
+    "node": "v24.22.1",
     "apiCalls": 0,
     "networkCalls": 0,
     "serverStarted": false,
@@ -28,6 +28,12 @@
     }
   },
   "baseUnchangedAfterBuild": true,
+  "guards": {
+    "exportInstallsPreview": true,
+    "scheduleSupplementaryPlacementDefined": true,
+    "scheduleSupplementaryPlacementCalled": true,
+    "cityStreetZTryCatch": true
+  },
   "distIntegrity": {
     "checkedAfterBuild": true,
     "unchanged": true,
@@ -35,7 +41,7 @@
   },
   "streetSurfaces": {
     "module": "modules/street-surfaces.js",
-    "sha256": "da5622eec873f5bb4e73bd234824079c3e2fc14ba47bde6bcf26b35a4f4f5b21",
+    "sha256": "ddcef2a3459be99d7aa7731b3de3e547b889c9fd90510e1466ebf17b5ef9ac45",
     "mountPatch": "main-install-preview（createWorld 之后独立 try/catch 调用 installStreetSurfaces；失败写 errors 并保留原街面）",
     "paving": {
       "xRange": [
@@ -1661,12 +1667,12 @@
           "height": 12.7423
         },
         "target": {
-          "x": 300,
-          "z": 58,
+          "x": 302,
+          "z": 57,
           "yaw": "塔身朝南",
           "yawDegrees": null,
           "axis": "x",
-          "shiftRange": 15,
+          "shiftRange": 12,
           "groundY": 0.62,
           "targetWidthMeters": 21.974,
           "targetHeightMeters": 35,
@@ -1737,12 +1743,12 @@
           "height": 5.3631
         },
         "target": {
-          "x": 150,
-          "z": 60,
+          "x": 286,
+          "z": 46,
           "yaw": "面向街心",
           "yawDegrees": null,
           "axis": "x",
-          "shiftRange": 15,
+          "shiftRange": 10,
           "groundY": 0.62,
           "targetWidthMeters": 22,
           "targetHeightMeters": null,
@@ -2088,7 +2094,7 @@
   },
   "fills": {
     "module": "modules/fills.js",
-    "sha256": "1e0913fa1c432a4b71befe40e17c4f8f081745e0b6fde60790396db96a1d5f5e",
+    "sha256": "356ad9a6b6e41d2b9e90e5e7cd188319dbde7bf3cb1c51a00b9bad2d9d991722",
     "targets": {
       "railingsBays": "河道全长 −110…210m @2.4m",
       "alleys": "3–4 条 3m 石板巷",
@@ -2103,6 +2109,28 @@
     "note": "程序化巷道/步道/护栏/墙根与背街民居/城东小院；并入 wood/cloth/earth/tile/paving，无 collider"
   },
   "landmarks": {
+    "repositioned": {
+      "pagoda": {
+        "from": [
+          112,
+          29
+        ],
+        "to": [
+          302,
+          57
+        ]
+      },
+      "temple": {
+        "from": [
+          112,
+          29
+        ],
+        "to": [
+          286,
+          46
+        ]
+      }
+    },
     "ids": [
       "supp-pagoda-v1",
       "supp-temple-v1",
@@ -3103,7 +3131,7 @@
   },
   "inFields": {
     "module": "modules/infill.js",
-    "sha256": "20614cd5adb643d1903cd7c47ebf71069e54aaa4d558937dc8db459b918e1e7b",
+    "sha256": "cd82edac665c6d375c28fb507370117e18e96feca06dbb0af19aabb51a58dfef",
     "targets": {
       "courtyardWalls": "4-6",
       "sheds": "3-4",
@@ -3376,8 +3404,8 @@
     },
     {
       "path": "build/preview-manifest.json",
-      "bytes": 228910,
-      "sha256": "e29db5036292714b4312942507104513a87ed80450e12f67aca055abfea40ee8"
+      "bytes": 229214,
+      "sha256": "43fd3091060f4f4508a67b78127edfa7f3914f221edddd85ee8725ea5cdb0efb"
     }
   ],
   "models": [
@@ -5348,6 +5376,116 @@
       "id": "gate-columns-both-sides",
       "result": "passed",
       "detail": "门洞两侧各 5 根 0.25m 方木排叉柱（共10根、倾斜8°）+ 两侧 0.3m 阑额木梁连接；仅装饰、无 collider"
+    },
+    {
+      "id": "wall-height-12m4",
+      "result": "passed",
+      "detail": "墙身高 9.2→12.4m（四丈），矮墙 8.2→11.2m；stats.wallProfile.height=12.4、wallHeight 含女墙/垛口"
+    },
+    {
+      "id": "wall-parapet-2m2",
+      "result": "passed",
+      "detail": "外侧女墙 1.15→2.2m；垛口缺口高 1.35m、垛墙段 1.5×1.35×0.55、周期2.85m；内侧宇墙 0.75→1.2m"
+    },
+    {
+      "id": "wall-base-11m",
+      "result": "passed",
+      "detail": "基宽 8.2→11.0m、顶宽 6.0→7.5m（马道净宽≥6.4m）；石基外扩0.3/高0.65m；矮墙底9.0/顶7.0"
+    },
+    {
+      "id": "moat-ring",
+      "result": "passed",
+      "detail": "墙外12m 护龙河：宽22m、深1.6m 凹槽+两侧土坡，earth 桶；南/东/北切片可见段，西侧开口断开；遇建筑占位跳过。stub segments=58、skipped=0"
+    },
+    {
+      "id": "barbican-added",
+      "result": "passed",
+      "detail": "城门外西侧半圆瓮城：半径18m、墙高12.4m、夯土+垛口、侧向门洞6m；stub segments=10、侧门位于(182,40)；receipt 注明“瓮城形制据文献屈曲开门简化”"
+    },
+    {
+      "id": "pagoda-forced-reposition",
+      "result": "passed",
+      "detail": "安装时强制重放 supp-pagoda-v1：移除旧 scene mesh、record.placed=false、清除旧 items/landmarks、entry.target=(302,60)；每次 placeSupplementary 前执行一次"
+    },
+    {
+      "id": "pagoda-lot-enlarged",
+      "result": "passed",
+      "detail": "塔预留区放大到 x288–314/z46–68，院墙外移到 x280–322/z40–74；infill/fills 预留区排除范围同步扩大"
+    },
+    {
+      "id": "pagoda-placed-or-documented",
+      "result": "passed",
+      "detail": "塔优先 22×22(高35)，无解降 18×18(高≈28.6)；0.5m 步长、避 anchor footprint+collider+寺院；仍无解允许与程序化 collider 重叠并记录，anchor 建筑绝不重叠；若最终仍 blocked，blocked.blockerColliders 输出 collider x/z/w/d/wall"
+    },
+    {
+      "id": "pagoda-overlaps-recorded",
+      "result": "passed",
+      "detail": "items 与 landmarks.pagoda 记录 x/z/size/searchMode/overlaps[]/overlapCount/towerSize/deviationMeters；overlaps 为 collider 的 x/z/w/d/wall"
+    },
+    {
+      "id": "pagoda-overlap-recorded",
+      "result": "passed",
+      "detail": "塔放置先严格避 anchor footprint+collider+寺院；无解时允许与程序化 collider 重叠，items/state.landmarks.pagoda 记 overlaps/overlapCount，searchMode=pagoda-overlap-procedural；anchor 建筑始终不可压"
+    },
+    {
+      "id": "pagoda-in-east-lot",
+      "result": "passed",
+      "detail": "塔仅在预留区 x283–317/z42–72 内搜（22×22、高35m，中心范围 x294–306/z53–60），1m 步长取距目标最近点，searchMode=pagoda-forced-reserve；repositioned.pagoda.to 为实际落点"
+    },
+    {
+      "id": "no-residual-at-old-spot",
+      "result": "passed",
+      "detail": "旧 mesh 从 parent 移除、旧 item/landmark id 清理；旧位置(112,29)不再有塔几何；若旧 scene 无 parent 也会覆盖 placed/items"
+    },
+    {
+      "id": "pagoda-forced-replay",
+      "result": "passed",
+      "detail": "安装时对 supp-pagoda-v1 强制重放：移除旧 scene mesh、record.placed=false、清除旧 items/landmarks、entry.target=(302,60)；每次 placeSupplementary 前执行一次，旧位置(112,29)无残留"
+    },
+    {
+      "id": "pagoda-east-coords",
+      "result": "passed",
+      "detail": "塔仅在预留区 x283–317/z42–72 内搜（22×22 footprint、高35m），按 1m 步长取距目标最近点，searchMode=pagoda-forced-reserve；landmarks.repositioned.pagoda.to 写实际落点"
+    },
+    {
+      "id": "temple-confirmed",
+      "result": "passed",
+      "detail": "寺落点约(286,46)、面阔22m；塔搜索额外避让寺院 footprint（half+size/2+1.5m），不压寺院墙/主街"
+    },
+    {
+      "id": "tower-temple-spacing",
+      "result": "passed",
+      "detail": "运行时 state.landmarks.towerTempleSpacingMeters 记录塔寺实际间距，目标约20m；构建 receipt 的 landmarks.repositioned 给目标坐标"
+    },
+    {
+      "id": "pagoda-repositioned-east",
+      "result": "passed",
+      "detail": "塔目标移至城东空地 (302,61)、footprint22×22/高35m；旧位置无残留几何；landmarks.repositioned.pagoda.from=[112,29]"
+    },
+    {
+      "id": "temple-repositioned-east",
+      "result": "passed",
+      "detail": "寺目标移至塔西南约20m (286,49)、面阔22m；旧位置无残留几何；landmarks.repositioned.temple.from=[112,29]"
+    },
+    {
+      "id": "tower-court-paving",
+      "result": "passed",
+      "detail": "34×30m 塔寺院落：预留区 x283–317/z42–72，infill/fills 跳过冲突物；四周院墙(南侧6m门洞)+3m 石板路连主街；stats.fills.landmarkCourt 记录"
+    },
+    {
+      "id": "alleys-ge6",
+      "result": "passed",
+      "detail": "3m 石板巷补到 6 条：塔寺/樊楼/官署/州桥/水门方向；stub alleys=6"
+    },
+    {
+      "id": "wallfoot-houses-ge8",
+      "result": "passed",
+      "detail": "沿南/北/东/西墙内圈动态取点、距墙≥7m、避开护城河（河在墙外）；stub wallFootHouses=8"
+    },
+    {
+      "id": "previously-fixed-guards-intact",
+      "result": "passed",
+      "detail": "构建后 grep 确认 export 含 installBuildingExpansionPreview、scheduleSupplementaryPlacement 函数与调用、cityStreetZ try/catch 守卫，并写入 receipt"
     },
     {
       "id": "wall-batter-1to9",
