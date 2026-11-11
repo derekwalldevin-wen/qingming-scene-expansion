@@ -81,6 +81,12 @@ eb51d4f8cd3c4241947947f7ba8593ddf99340099d4f68f483b5561566a17bb2  output/buildin
 b711200e1f31fef142cf1799b9b0a4e61858cf8529d78355c3378e6e394d3cbf  output/building-expansion-20261109-v1/provider/artifacts/person-vendor-v1/output-1.glb
 ad5ad455d1983e4fef278c9c4a01aa5d700aa97ed800688439f471e57d978e47  output/building-expansion-20261109-v1/provider/artifacts/person-watercarrier-v1/output-1.glb
 2c0a3a964e309299d2946cdc02b0a46e5ba2450375aa051340bee9a87bf18552  output/building-expansion-20261109-v1/provider/artifacts/person-woman-v1/output-1.glb
+d9866b203c6bfcf79393815f552c8720b84b4fe2e9d030dd838324519984101c  output/building-expansion-20261109-v1/provider/artifacts/supp-fanlou-v1/output-1.glb
+77fdef1e4c4c928f312b57299180a89547408a79febf719192578ae48486535b  output/building-expansion-20261109-v1/provider/artifacts/supp-office-v1/output-1.glb
+38adde0f9853b671f44f0e7ce9825c655af159f88a764c5af4c13feef89b6ec6  output/building-expansion-20261109-v1/provider/artifacts/supp-pagoda-v1/output-1.glb
 b2c4f3bf0f992d84702e918fba2a637eb999e2dc40df1e9c6ca2671dc33d3beb  output/building-expansion-20261109-v1/provider/artifacts/supp-tavern-v1/output-1.glb
+7a0b8a5e074f0923aff6f84b55ddc8812192e89812546f36a64a8192f2a56ffa  output/building-expansion-20261109-v1/provider/artifacts/supp-temple-v1/output-1.glb
 318d72ee68759a5a961123bd32c3e163f11b40209a83225e46366ebd4c6f682d  output/building-expansion-20261109-v1/provider/artifacts/supp-warehouse-v1/output-1.glb
+f8f1573513e8277fea8aed96a58dc95e7e3b79762be942f79f2f858fbf64d750  output/building-expansion-20261109-v1/provider/artifacts/supp-watergate-v1/output-1.glb
+1c4470ad907801e91c0daf414713d1ef1250b89826a07c8101a0fbe66dd75dbc  output/building-expansion-20261109-v1/provider/artifacts/supp-zhouqiao-v1/output-1.glb
 24a97716e169276a30aa007c8c7cb2e9e01183d97e4db3cd61ad36e57f6340ab  output/building-expansion-20261109-v1/uv-repair/A04-local-shell-uv-v2.glb

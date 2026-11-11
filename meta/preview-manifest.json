@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-manifest-v2",
-  "generatedAt": "2026-11-11T01:58:54.686Z",
+  "generatedAt": "2026-11-11T05:19:07.538Z",
   "generator": "output/building-expansion-20261109-v1/integration-preview/build_preview.mjs",
   "game": {
     "title": "梦回汴京",
@@ -1540,7 +1540,7 @@
     "state": "adopted"
   },
   "supplementary": {
-    "count": 2,
+    "count": 8,
     "inferredPosition": true,
     "reason": "原画中常见建筑类型，位置为推断，用于填充空置地块，非锚点精确复原",
     "search": {
@@ -1608,10 +1608,12 @@
           "x": 252,
           "z": 22,
           "yaw": "面向街心",
+          "yawDegrees": null,
           "axis": "x",
           "shiftRange": 10,
           "groundY": 0.636,
           "targetWidthMeters": 9,
+          "targetHeightMeters": null,
           "targetScale": 1.125
         },
         "predictedWorldSize": {
@@ -1682,10 +1684,12 @@
           "x": -64,
           "z": 4,
           "yaw": "仓门朝岸（-z）",
+          "yawDegrees": null,
           "axis": "x",
           "shiftRange": 10,
           "groundY": 0.62,
           "targetWidthMeters": 13,
+          "targetHeightMeters": null,
           "targetScale": 1.625
         },
         "predictedWorldSize": {
@@ -1718,9 +1722,494 @@
           "nearHorizontal": 2156,
           "reason": null
         }
+      },
+      {
+        "id": "supp-pagoda-v1",
+        "sourceId": "supp-pagoda-v1",
+        "artifactId": "supp-pagoda-v1",
+        "templateName": "building_supplementary_pagoda",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "开宝寺塔类地标；类型据原画/北宋城防地标推断，位置为推断（城内北侧空地），非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-pagoda-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-pagoda-v1/output-1.glb",
+          "bytes": 12866536,
+          "sha256": "38adde0f9853b671f44f0e7ce9825c655af159f88a764c5af4c13feef89b6ec6",
+          "rawProviderBytesPreserved": true,
+          "triangles": 24456,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            0.6235,
+            0.9931,
+            0.6056
+          ],
+          "uniformScale": 12.830794,
+          "width": 8,
+          "depth": 7.7703,
+          "height": 12.7423
+        },
+        "target": {
+          "x": 300,
+          "z": 58,
+          "yaw": "塔身朝南",
+          "yawDegrees": null,
+          "axis": "x",
+          "shiftRange": 15,
+          "groundY": 0.62,
+          "targetWidthMeters": 21.974,
+          "targetHeightMeters": 35,
+          "targetScale": 2.746756864930193
+        },
+        "predictedWorldSize": {
+          "width": 21.974,
+          "depth": 21.343,
+          "height": 35
+        },
+        "materialTone": {
+          "avgL": 0.4125,
+          "k": 1,
+          "clampHit": true,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 24456,
+          "roofTriangles": 8315,
+          "darkTriangles": 2927,
+          "lowTriangles": 13211,
+          "droppedDuplicates": 3,
+          "duplicateTriangles": 3,
+          "duplicateRatio": 0.0003,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 0.993,
+          "minY": -0.502,
+          "maxY": 0.491,
+          "nearHorizontal": 2673,
+          "reason": null
+        }
+      },
+      {
+        "id": "supp-temple-v1",
+        "sourceId": "supp-temple-v1",
+        "artifactId": "supp-temple-v1",
+        "templateName": "building_supplementary_temple",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "大相国寺大殿类地标；类型据原画/文献推断，位置为推断，用于填充城北空地，非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-temple-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-temple-v1/output-1.glb",
+          "bytes": 11125680,
+          "sha256": "7a0b8a5e074f0923aff6f84b55ddc8812192e89812546f36a64a8192f2a56ffa",
+          "rawProviderBytesPreserved": true,
+          "triangles": 22178,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            1.0045,
+            0.6734,
+            0.7211
+          ],
+          "uniformScale": 7.964161,
+          "width": 8,
+          "depth": 5.743,
+          "height": 5.3631
+        },
+        "target": {
+          "x": 150,
+          "z": 60,
+          "yaw": "面向街心",
+          "yawDegrees": null,
+          "axis": "x",
+          "shiftRange": 15,
+          "groundY": 0.62,
+          "targetWidthMeters": 22,
+          "targetHeightMeters": null,
+          "targetScale": 2.75
+        },
+        "predictedWorldSize": {
+          "width": 22,
+          "depth": 15.793,
+          "height": 14.749
+        },
+        "materialTone": {
+          "avgL": 0.3889,
+          "k": 1,
+          "clampHit": true,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 22178,
+          "roofTriangles": 10044,
+          "darkTriangles": 1489,
+          "lowTriangles": 10645,
+          "droppedDuplicates": 0,
+          "duplicateTriangles": 0,
+          "duplicateRatio": 0,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 0.673,
+          "minY": -0.335,
+          "maxY": 0.338,
+          "nearHorizontal": 2487,
+          "reason": null
+        }
+      },
+      {
+        "id": "supp-fanlou-v1",
+        "sourceId": "supp-fanlou-v1",
+        "artifactId": "supp-fanlou-v1",
+        "templateName": "building_supplementary_fanlou",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "樊楼类三层酒楼地标；类型据原画/文献推断，位置为推断（主街旁），非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-fanlou-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-fanlou-v1/output-1.glb",
+          "bytes": 12251204,
+          "sha256": "d9866b203c6bfcf79393815f552c8720b84b4fe2e9d030dd838324519984101c",
+          "rawProviderBytesPreserved": true,
+          "triangles": 19848,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            0.9023,
+            1.0023,
+            0.7156
+          ],
+          "uniformScale": 8.866231,
+          "width": 8,
+          "depth": 6.3447,
+          "height": 8.8866
+        },
+        "target": {
+          "x": 250,
+          "z": 42,
+          "yaw": "面向街心",
+          "yawDegrees": null,
+          "axis": "x",
+          "shiftRange": 15,
+          "groundY": 0.636,
+          "targetWidthMeters": 14,
+          "targetHeightMeters": null,
+          "targetScale": 1.75
+        },
+        "predictedWorldSize": {
+          "width": 14,
+          "depth": 11.103,
+          "height": 15.552
+        },
+        "materialTone": {
+          "avgL": 0.3719,
+          "k": 1,
+          "clampHit": true,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 19848,
+          "roofTriangles": 7167,
+          "darkTriangles": 917,
+          "lowTriangles": 11762,
+          "droppedDuplicates": 2,
+          "duplicateTriangles": 2,
+          "duplicateRatio": 0.0002,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 1.002,
+          "minY": -0.497,
+          "maxY": 0.505,
+          "nearHorizontal": 1864,
+          "reason": null
+        }
+      },
+      {
+        "id": "supp-zhouqiao-v1",
+        "sourceId": "supp-zhouqiao-v1",
+        "artifactId": "supp-zhouqiao-v1",
+        "templateName": "building_supplementary_zhouqiao",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "州桥类石拱桥地标；位置按汴河与城内大街交会处推断（x≈208, z≈0），非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-zhouqiao-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-zhouqiao-v1/output-1.glb",
+          "bytes": 7873100,
+          "sha256": "1c4470ad907801e91c0daf414713d1ef1250b89826a07c8101a0fbe66dd75dbc",
+          "rawProviderBytesPreserved": true,
+          "triangles": 25944,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            1.0039,
+            0.3196,
+            0.3141
+          ],
+          "uniformScale": 7.968921,
+          "width": 8,
+          "depth": 2.503,
+          "height": 2.5469
+        },
+        "target": {
+          "x": 208,
+          "z": 0,
+          "yaw": "桥面跨河",
+          "yawDegrees": 90,
+          "axis": "x",
+          "shiftRange": 10,
+          "groundY": 0.55,
+          "targetWidthMeters": 14,
+          "targetHeightMeters": null,
+          "targetScale": 1.75
+        },
+        "predictedWorldSize": {
+          "width": 14,
+          "depth": 4.38,
+          "height": 4.457
+        },
+        "materialTone": {
+          "avgL": 0.669,
+          "k": 0.6278,
+          "clampHit": false,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 25944,
+          "roofTriangles": 8640,
+          "darkTriangles": 3187,
+          "lowTriangles": 14116,
+          "droppedDuplicates": 1,
+          "duplicateTriangles": 1,
+          "duplicateRatio": 0.0001,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 0.32,
+          "minY": -0.158,
+          "maxY": 0.161,
+          "nearHorizontal": 2113,
+          "reason": null
+        }
+      },
+      {
+        "id": "supp-watergate-v1",
+        "sourceId": "supp-watergate-v1",
+        "artifactId": "supp-watergate-v1",
+        "templateName": "building_supplementary_watergate",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "汴河水门地标；按 canal 与城墙交点判断：当前 canal(z≈0) 与城墙矩形(z≥10) 不相交，按任务说明置于城南墙外河段的“水关段”，非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-watergate-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-watergate-v1/output-1.glb",
+          "bytes": 8118336,
+          "sha256": "f8f1573513e8277fea8aed96a58dc95e7e3b79762be942f79f2f858fbf64d750",
+          "rawProviderBytesPreserved": true,
+          "triangles": 17444,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            1.004,
+            0.7375,
+            0.6918
+          ],
+          "uniformScale": 7.968127,
+          "width": 8,
+          "depth": 5.5124,
+          "height": 5.8765
+        },
+        "target": {
+          "x": 200,
+          "z": 8,
+          "yaw": "水关朝南",
+          "yawDegrees": null,
+          "axis": "x",
+          "shiftRange": 10,
+          "groundY": 0.55,
+          "targetWidthMeters": 12,
+          "targetHeightMeters": null,
+          "targetScale": 1.5
+        },
+        "predictedWorldSize": {
+          "width": 12,
+          "depth": 8.269,
+          "height": 8.815
+        },
+        "materialTone": {
+          "avgL": 0.484,
+          "k": 0.8677,
+          "clampHit": false,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 17444,
+          "roofTriangles": 6257,
+          "darkTriangles": 2793,
+          "lowTriangles": 8394,
+          "droppedDuplicates": 0,
+          "duplicateTriangles": 0,
+          "duplicateRatio": 0,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 0.737,
+          "minY": -0.37,
+          "maxY": 0.368,
+          "nearHorizontal": 1312,
+          "reason": null
+        }
+      },
+      {
+        "id": "supp-office-v1",
+        "sourceId": "supp-office-v1",
+        "artifactId": "supp-office-v1",
+        "templateName": "building_supplementary_office",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "开封府衙门类官署地标；类型据原画/文献推断，位置为推断（城门内侧），非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-office-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-office-v1/output-1.glb",
+          "bytes": 9588016,
+          "sha256": "77fdef1e4c4c928f312b57299180a89547408a79febf719192578ae48486535b",
+          "rawProviderBytesPreserved": true,
+          "triangles": 28824,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            1.0073,
+            0.8827,
+            0.6721
+          ],
+          "uniformScale": 7.942023,
+          "width": 8,
+          "depth": 5.3378,
+          "height": 7.0104
+        },
+        "target": {
+          "x": 215,
+          "z": 45,
+          "yaw": "面向街心",
+          "yawDegrees": null,
+          "axis": "x",
+          "shiftRange": 15,
+          "groundY": 0.636,
+          "targetWidthMeters": 12,
+          "targetHeightMeters": null,
+          "targetScale": 1.5
+        },
+        "predictedWorldSize": {
+          "width": 12,
+          "depth": 8.007,
+          "height": 10.516
+        },
+        "materialTone": {
+          "avgL": 0.4547,
+          "k": 0.9237,
+          "clampHit": false,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 28824,
+          "roofTriangles": 10788,
+          "darkTriangles": 7837,
+          "lowTriangles": 10188,
+          "droppedDuplicates": 11,
+          "duplicateTriangles": 11,
+          "duplicateRatio": 0.0006,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 0.883,
+          "minY": -0.44,
+          "maxY": 0.443,
+          "nearHorizontal": 1717,
+          "reason": null
+        }
       }
     ],
     "statsPath": "window.__BUILDING_EXPANSION_PREVIEW__.supplementary"
+  },
+  "fills": {
+    "module": "modules/fills.js",
+    "sha256": "1e0913fa1c432a4b71befe40e17c4f8f081745e0b6fde60790396db96a1d5f5e",
+    "targets": {
+      "railingsBays": "河道全长 −110…210m @2.4m",
+      "alleys": "3–4 条 3m 石板巷",
+      "riversidePaths": "两岸 2.2m 步道",
+      "ruralPaths": 2,
+      "wallFootHouses": "6–10",
+      "backstreetHouses": "8–10",
+      "eastCourtyards": "4–6"
+    },
+    "drawCallBudget": 6,
+    "colliders": 0,
+    "note": "程序化巷道/步道/护栏/墙根与背街民居/城东小院；并入 wood/cloth/earth/tile/paving，无 collider"
+  },
+  "landmarks": {
+    "ids": [
+      "supp-pagoda-v1",
+      "supp-temple-v1",
+      "supp-fanlou-v1",
+      "supp-zhouqiao-v1",
+      "supp-watergate-v1",
+      "supp-office-v1"
+    ],
+    "count": 6,
+    "inferredPosition": true,
+    "note": "6 件地标走 supplementary 机制；塔高约35m、寺面阔22m、樊楼14×12m、州桥14m、水门12m（城南水关段）、官署12m；位置均推断"
   },
   "alternateSources": [
     {
@@ -2212,17 +2701,17 @@
     "dedupe": "模型局部坐标质心 4 位小数；少量重复剔除（保留首个）不回退，重复比 >5% 或守恒失败才回退",
     "algorithm": "三组拆分：屋面(ny>0.2 或 yc>minY+0.72H 且 ny>-0.30) → 1 tile mesh（世界 UV 0.85m）；剩余中 yc>minY+0.6H → 1 dark mesh（材质克隆 color×0.55）；其余低位保留原 mesh。守恒 原=屋面+dark+低位、质心去重、失败回退",
     "modelsProcessed": 13,
-    "splitModels": 15,
+    "splitModels": 21,
     "revertedModels": 0,
-    "roofTrianglesTotal": 132040,
-    "darkTrianglesTotal": 62338,
-    "lowTrianglesTotal": 117592,
-    "darkGroupsTotal": 15,
-    "trianglesTotal": 312416,
-    "drawCallDeltaTotal": 30,
+    "roofTrianglesTotal": 183251,
+    "darkTrianglesTotal": 81488,
+    "lowTrianglesTotal": 185908,
+    "darkGroupsTotal": 21,
+    "trianglesTotal": 451110,
+    "drawCallDeltaTotal": 42,
     "duplicateTrianglesTotal": 0,
-    "droppedDuplicatesTotal": 446,
-    "conservedModels": 15,
+    "droppedDuplicatesTotal": 463,
+    "conservedModels": 21,
     "sources": {
       "guided-C01-local-G1-v2": {
         "trianglesTotal": 19446,
@@ -2507,6 +2996,120 @@
         "minY": -0.214,
         "maxY": 0.214,
         "nearHorizontal": 2156,
+        "reason": null
+      },
+      "supp-pagoda-v1": {
+        "trianglesTotal": 24456,
+        "roofTriangles": 8315,
+        "darkTriangles": 2927,
+        "lowTriangles": 13211,
+        "droppedDuplicates": 3,
+        "duplicateTriangles": 3,
+        "duplicateRatio": 0.0003,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.993,
+        "minY": -0.502,
+        "maxY": 0.491,
+        "nearHorizontal": 2673,
+        "reason": null
+      },
+      "supp-temple-v1": {
+        "trianglesTotal": 22178,
+        "roofTriangles": 10044,
+        "darkTriangles": 1489,
+        "lowTriangles": 10645,
+        "droppedDuplicates": 0,
+        "duplicateTriangles": 0,
+        "duplicateRatio": 0,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.673,
+        "minY": -0.335,
+        "maxY": 0.338,
+        "nearHorizontal": 2487,
+        "reason": null
+      },
+      "supp-fanlou-v1": {
+        "trianglesTotal": 19848,
+        "roofTriangles": 7167,
+        "darkTriangles": 917,
+        "lowTriangles": 11762,
+        "droppedDuplicates": 2,
+        "duplicateTriangles": 2,
+        "duplicateRatio": 0.0002,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 1.002,
+        "minY": -0.497,
+        "maxY": 0.505,
+        "nearHorizontal": 1864,
+        "reason": null
+      },
+      "supp-zhouqiao-v1": {
+        "trianglesTotal": 25944,
+        "roofTriangles": 8640,
+        "darkTriangles": 3187,
+        "lowTriangles": 14116,
+        "droppedDuplicates": 1,
+        "duplicateTriangles": 1,
+        "duplicateRatio": 0.0001,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.32,
+        "minY": -0.158,
+        "maxY": 0.161,
+        "nearHorizontal": 2113,
+        "reason": null
+      },
+      "supp-watergate-v1": {
+        "trianglesTotal": 17444,
+        "roofTriangles": 6257,
+        "darkTriangles": 2793,
+        "lowTriangles": 8394,
+        "droppedDuplicates": 0,
+        "duplicateTriangles": 0,
+        "duplicateRatio": 0,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.737,
+        "minY": -0.37,
+        "maxY": 0.368,
+        "nearHorizontal": 1312,
+        "reason": null
+      },
+      "supp-office-v1": {
+        "trianglesTotal": 28824,
+        "roofTriangles": 10788,
+        "darkTriangles": 7837,
+        "lowTriangles": 10188,
+        "droppedDuplicates": 11,
+        "duplicateTriangles": 11,
+        "duplicateRatio": 0.0006,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.883,
+        "minY": -0.44,
+        "maxY": 0.443,
+        "nearHorizontal": 1717,
         "reason": null
       }
     },
@@ -5524,6 +6127,45 @@
       }
     },
     {
+      "sourceId": "supp-fanlou-v1",
+      "artifactId": "supp-fanlou-v1",
+      "reason": "已有下载 GLB，但来源锚点/精确性/名额不满足本轮白名单，未替换",
+      "reviewStatus": null,
+      "approvalKind": null,
+      "approvalFile": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-fanlou-v1/output-1.glb",
+        "bytes": 12251204,
+        "sha256": "d9866b203c6bfcf79393815f552c8720b84b4fe2e9d030dd838324519984101c"
+      }
+    },
+    {
+      "sourceId": "supp-office-v1",
+      "artifactId": "supp-office-v1",
+      "reason": "已有下载 GLB，但来源锚点/精确性/名额不满足本轮白名单，未替换",
+      "reviewStatus": null,
+      "approvalKind": null,
+      "approvalFile": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-office-v1/output-1.glb",
+        "bytes": 9588016,
+        "sha256": "77fdef1e4c4c928f312b57299180a89547408a79febf719192578ae48486535b"
+      }
+    },
+    {
+      "sourceId": "supp-pagoda-v1",
+      "artifactId": "supp-pagoda-v1",
+      "reason": "已有下载 GLB，但来源锚点/精确性/名额不满足本轮白名单，未替换",
+      "reviewStatus": null,
+      "approvalKind": null,
+      "approvalFile": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-pagoda-v1/output-1.glb",
+        "bytes": 12866536,
+        "sha256": "38adde0f9853b671f44f0e7ce9825c655af159f88a764c5af4c13feef89b6ec6"
+      }
+    },
+    {
       "sourceId": "supp-tavern-v1",
       "artifactId": "supp-tavern-v1",
       "reason": "已有下载 GLB，但来源锚点/精确性/名额不满足本轮白名单，未替换",
@@ -5537,6 +6179,19 @@
       }
     },
     {
+      "sourceId": "supp-temple-v1",
+      "artifactId": "supp-temple-v1",
+      "reason": "已有下载 GLB，但来源锚点/精确性/名额不满足本轮白名单，未替换",
+      "reviewStatus": null,
+      "approvalKind": null,
+      "approvalFile": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-temple-v1/output-1.glb",
+        "bytes": 11125680,
+        "sha256": "7a0b8a5e074f0923aff6f84b55ddc8812192e89812546f36a64a8192f2a56ffa"
+      }
+    },
+    {
       "sourceId": "supp-warehouse-v1",
       "artifactId": "supp-warehouse-v1",
       "reason": "已有下载 GLB，但来源锚点/精确性/名额不满足本轮白名单，未替换",
@@ -5547,6 +6202,32 @@
         "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-warehouse-v1/output-1.glb",
         "bytes": 10725256,
         "sha256": "318d72ee68759a5a961123bd32c3e163f11b40209a83225e46366ebd4c6f682d"
+      }
+    },
+    {
+      "sourceId": "supp-watergate-v1",
+      "artifactId": "supp-watergate-v1",
+      "reason": "已有下载 GLB，但来源锚点/精确性/名额不满足本轮白名单，未替换",
+      "reviewStatus": null,
+      "approvalKind": null,
+      "approvalFile": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-watergate-v1/output-1.glb",
+        "bytes": 8118336,
+        "sha256": "f8f1573513e8277fea8aed96a58dc95e7e3b79762be942f79f2f858fbf64d750"
+      }
+    },
+    {
+      "sourceId": "supp-zhouqiao-v1",
+      "artifactId": "supp-zhouqiao-v1",
+      "reason": "已有下载 GLB，但来源锚点/精确性/名额不满足本轮白名单，未替换",
+      "reviewStatus": null,
+      "approvalKind": null,
+      "approvalFile": null,
+      "glb": {
+        "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-zhouqiao-v1/output-1.glb",
+        "bytes": 7873100,
+        "sha256": "1c4470ad907801e91c0daf414713d1ef1250b89826a07c8101a0fbe66dd75dbc"
       }
     },
     {

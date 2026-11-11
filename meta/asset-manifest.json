@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-11-10T15:58:58.128524+00:00",
+ "builtAt": "2026-11-11T05:22:03.892904+00:00",
  "scope": "清上河图建筑扩充候选资产；独立留档，不并入冻结 r1，不对外发布",
  "honesty": {
   "notWholePainting": true,
@@ -10,10 +10,10 @@
   "severalCandidatesKnownIncomplete": true
  },
  "totals": {
-  "assets": 86,
-  "bytes": 557207196,
-  "paidTasksRepresented": 68,
-  "paidCreditsRepresented": 1247
+  "assets": 92,
+  "bytes": 619030068,
+  "paidTasksRepresented": 74,
+  "paidCreditsRepresented": 1367
  },
  "assets": [
   {
@@ -3629,6 +3629,111 @@
    "adoption": "candidate-only-not-integrated-into-frozen-r1"
   },
   {
+   "id": "supp-fanlou-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-fanlou-v1/output-1.glb",
+   "sha256": "d9866b203c6bfcf79393815f552c8720b84b4fe2e9d030dd838324519984101c",
+   "bytes": 12251204,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6370130,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "supp-office-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-office-v1/output-1.glb",
+   "sha256": "77fdef1e4c4c928f312b57299180a89547408a79febf719192578ae48486535b",
+   "bytes": 9588016,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6370844,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "supp-pagoda-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-pagoda-v1/output-1.glb",
+   "sha256": "38adde0f9853b671f44f0e7ce9825c655af159f88a764c5af4c13feef89b6ec6",
+   "bytes": 12866536,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6370115,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
    "id": "supp-tavern-v1",
    "kind": "text-or-image-to-3d-candidate",
    "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-tavern-v1/output-1.glb",
@@ -3664,6 +3769,41 @@
    "adoption": "candidate-only-not-integrated-into-frozen-r1"
   },
   {
+   "id": "supp-temple-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-temple-v1/output-1.glb",
+   "sha256": "7a0b8a5e074f0923aff6f84b55ddc8812192e89812546f36a64a8192f2a56ffa",
+   "bytes": 11125680,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6370124,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
    "id": "supp-warehouse-v1",
    "kind": "text-or-image-to-3d-candidate",
    "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-warehouse-v1/output-1.glb",
@@ -3684,6 +3824,76 @@
    },
    "paid": {
     "taskId": 6031336,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "supp-watergate-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-watergate-v1/output-1.glb",
+   "sha256": "f8f1573513e8277fea8aed96a58dc95e7e3b79762be942f79f2f858fbf64d750",
+   "bytes": 8118336,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6370838,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "supp-zhouqiao-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-zhouqiao-v1/output-1.glb",
+   "sha256": "1c4470ad907801e91c0daf414713d1ef1250b89826a07c8101a0fbe66dd75dbc",
+   "bytes": 7873100,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6370833,
     "operation": "text-to-3d",
     "state": "downloaded",
     "quotedCredits": 20,
