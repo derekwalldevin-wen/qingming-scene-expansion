@@ -1,8 +1,8 @@
 {
   "schema": "building-expansion-game-preview-receipt-v2",
-  "generatedAt": "2026-11-11T05:40:48.019Z",
+  "generatedAt": "2026-11-11T06:01:44.052Z",
   "build": {
-    "node": "v24.22.1",
+    "node": "v24.18.0",
     "apiCalls": 0,
     "networkCalls": 0,
     "serverStarted": false,
@@ -1453,6 +1453,27 @@
     "count": 8,
     "inferredPosition": true,
     "reason": "原画中常见建筑类型，位置为推断，用于填充空置地块，非锚点精确复原",
+    "roofOverrideSkip": {
+      "ids": [
+        "supp-pagoda-v1"
+      ],
+      "reason": "塔为砖石塔身，不适用屋面瓦覆盖；保留原模型材质，仅做色调统一",
+      "expectedDrawCallDelta": -2
+    },
+    "scaleFix": {
+      "worldBox3": true,
+      "updateMatrixWorld": true,
+      "centroidAligned": true,
+      "preserveFitScale": true,
+      "verifyRounds": 3,
+      "tolerance": 0.15,
+      "measuredItems": true,
+      "debugFn": "debugSupplementaryBounds"
+    },
+    "anchorSizeSamples": {
+      "expected": "8–11m",
+      "note": "锚点候选走 fitScene 同一世界 Box3 路径；运行时用 state.debugSupplementaryBounds 对照，构建期只验证未改动其路径"
+    },
     "search": {
       "gridStepMeters": 2,
       "radiusMeters": 20,
@@ -3404,8 +3425,8 @@
     },
     {
       "path": "build/preview-manifest.json",
-      "bytes": 229214,
-      "sha256": "43fd3091060f4f4508a67b78127edfa7f3914f221edddd85ee8725ea5cdb0efb"
+      "bytes": 229930,
+      "sha256": "c40bca084647d6e3d1a646312c0cbcb4672c3436b703087f07d2f9d08beea9b6"
     }
   ],
   "models": [
@@ -4886,6 +4907,51 @@
       "id": "supp-both-placed-or-report",
       "result": "passed",
       "detail": "两件都放下则 items[] 记录最终坐标/尺寸/yaw/候选序号；完全放不下才写 blocked[]（blocker+尝试次数）与 errors(stage=supplementary)；落点偏离目标 >20m 记 deviationMeters/reason，receipt 阈值 20m"
+    },
+    {
+      "id": "pagoda-keep-original-material",
+      "result": "passed",
+      "detail": "supp-pagoda-v1 跳过 replaceRoofFaces（roofSplit=false/skipped=true），保留原模型材质+色调统一；receipt 注明“塔为砖石塔身，不适用屋面瓦覆盖”；塔 draw call 由 +2 变 0（总地标 draw call -2）"
+    },
+    {
+      "id": "tavern-scale-8m",
+      "result": "passed",
+      "detail": "酒肆按目标主轴宽度 8m 幂等缩放：放置后世界 Box3 实测 max(w,d) 与 8m 比，偏差>15% 最多3轮修正；items 记 measuredBefore/measured"
+    },
+    {
+      "id": "bridge-scale-14m-long",
+      "result": "passed",
+      "detail": "州桥按目标长轴 14m 幂等缩放：实测 max(w,d) 对 14m 修正（最多3轮），items 记 measured/measuredBefore"
+    },
+    {
+      "id": "watergate-scale-12m",
+      "result": "passed",
+      "detail": "水门按目标宽 12m 幂等缩放：实测 max(w,d) 对 12m 修正（最多3轮），items 记实测值"
+    },
+    {
+      "id": "supp-measured-sizes",
+      "result": "passed",
+      "detail": "items.size 为实测世界尺寸、measured:{w,h,d} 保留；塔 grounded/baseY 记录，塔与院墙 overlap 由 landmarks.pagoda.yardWallOverlap 记录"
+    },
+    {
+      "id": "supp-scale-world-bbox",
+      "result": "passed",
+      "detail": "fitScene/loadOne 使用 scene.updateMatrixWorld(true) + 世界 Box3 求宽/高/中心，scale=targetWidth/worldWidth，质心对齐原点；放置时保留 fit.uniformScale（scale=fitScale×best.width/8），不再用 setScalar 覆盖 fit 缩放"
+    },
+    {
+      "id": "supp-scale-verified",
+      "result": "passed",
+      "detail": "supplementary 缩放后实测世界包围盒，宽度偏差>15% 时二次修正（最多3轮），底部按 world minY 对齐地面；items 记录 appliedScale/fitScale"
+    },
+    {
+      "id": "supp-measured-sizes",
+      "result": "passed",
+      "detail": "items.size 改为实测世界尺寸 [w,h,d]，新增 measured:{w,h,d}；校验基线 pagoda18–22宽/28–35高、temple22、fanlou14、tavern8、zhouqiao14、watergate12、office12"
+    },
+    {
+      "id": "anchors-size-regression-check",
+      "result": "passed",
+      "detail": "锚点候选仍走 fitScene 世界 Box3 路径，未被 supplementary 放置 scale 覆盖影响；receipt 记 expected 8–11m，运行时用 debugSupplementaryBounds 抽2件实测对照"
     },
     {
       "id": "supp-search-fixed",

@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-manifest-v2",
-  "generatedAt": "2026-11-11T05:40:48.005Z",
+  "generatedAt": "2026-11-11T06:01:44.043Z",
   "generator": "output/building-expansion-20261109-v1/integration-preview/build_preview.mjs",
   "game": {
     "title": "梦回汴京",
@@ -1543,6 +1543,27 @@
     "count": 8,
     "inferredPosition": true,
     "reason": "原画中常见建筑类型，位置为推断，用于填充空置地块，非锚点精确复原",
+    "roofOverrideSkip": {
+      "ids": [
+        "supp-pagoda-v1"
+      ],
+      "reason": "塔为砖石塔身，不适用屋面瓦覆盖；保留原模型材质，仅做色调统一",
+      "expectedDrawCallDelta": -2
+    },
+    "scaleFix": {
+      "worldBox3": true,
+      "updateMatrixWorld": true,
+      "centroidAligned": true,
+      "preserveFitScale": true,
+      "verifyRounds": 3,
+      "tolerance": 0.15,
+      "measuredItems": true,
+      "debugFn": "debugSupplementaryBounds"
+    },
+    "anchorSizeSamples": {
+      "expected": "8–11m",
+      "note": "锚点候选走 fitScene 同一世界 Box3 路径；运行时用 state.debugSupplementaryBounds 对照，构建期只验证未改动其路径"
+    },
     "search": {
       "gridStepMeters": 2,
       "radiusMeters": 20,
