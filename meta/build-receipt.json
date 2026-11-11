@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-receipt-v2",
-  "generatedAt": "2026-11-11T06:09:05.910Z",
+  "generatedAt": "2026-11-11T06:21:09.223Z",
   "build": {
     "node": "v24.18.0",
     "apiCalls": 0,
@@ -43,7 +43,7 @@
   },
   "streetSurfaces": {
     "module": "modules/street-surfaces.js",
-    "sha256": "161bc5ab84485e81e8a7fc47757aa7fb8ab3d984d1afa58110863077bedc92a7",
+    "sha256": "91f57c558be56707742621f64569237ac1cee80050a30b8983bbc9fc17346a11",
     "mountPatch": "main-install-preview（createWorld 之后独立 try/catch 调用 installStreetSurfaces；失败写 errors 并保留原街面）",
     "paving": {
       "xRange": [
@@ -3428,7 +3428,7 @@
     {
       "path": "build/preview-manifest.json",
       "bytes": 229930,
-      "sha256": "cf672348586ea35499ec4c27751890e00469538ec8e7e6df9b75883d42a2c923"
+      "sha256": "ea71bc15b1f6633b682b7200992b23f11b5e0676d2c4f9884996cd049a38a611"
     }
   ],
   "models": [
@@ -4919,6 +4919,31 @@
       "id": "moat-continuous",
       "result": "passed",
       "detail": "护城河改连续 U 形沟槽：外坡/内坡1:2、底宽22、深1.6、顶宽28.4；按墙段转折分3段（≤8），沟底×0.75、两坡×0.92/×1.08，沟底加 #5a6a6b 薄水面；stats.moat.continuous/water 记录"
+    },
+    {
+      "id": "barbican-clean-or-dropped",
+      "result": "passed",
+      "detail": "瓮城逐段 2D AABB：相交段不生成几何；可用段<3 时整体 dropped=true、reason=“与既有城门/城墙持续相交，为避免穿模整体移除”、attempts/clipped 全部记录；可用≥3 时才渲染并记 rendered"
+    },
+    {
+      "id": "barbican-no-clipped-geometry",
+      "result": "passed",
+      "detail": "只对 usable 段 addWallModule，clipped 段零几何；barbican.clipped/clippedSegments 记录清单，stats.barbican.rendered 为实际渲染段数"
+    },
+    {
+      "id": "barbican-rectangular",
+      "result": "passed",
+      "detail": "瓮城改为矩形：外侧墙12m（x=186、距主墙外14m）、两侧墙各14m（z34/z46）、高12.4m、夯土+垛口，侧向门洞6m；不推2D collider以免压主门洞，逐段做2D AABB；stats.barbican.shape=rectangular/outerWidth12/depth14/segments6/clippedSegments0；receipt 注明“矩形瓮城为屈曲开门的简化形制”"
+    },
+    {
+      "id": "barbican-clipped-zero",
+      "result": "passed",
+      "detail": "矩形瓮城每段放置前与既有 collider/building footprint 做 2D AABB；stub clippedSegments=0，clipped=[]；相交段会缩短/跳过并记录"
+    },
+    {
+      "id": "moat-road-openings",
+      "result": "passed",
+      "detail": "护城河 gaps：主门洞外道路 x182（西侧开口）、州桥/码头延伸 x115/x180（不在 moat run 内，记录不挖）、城外土路 x210 实际开缺口；缺口加两块端坡，openings=[{x,z,width,reason,gap}]，moat segments≤8"
     },
     {
       "id": "barbican-moved-or-squared",
