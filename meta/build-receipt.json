@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-receipt-v2",
-  "generatedAt": "2026-11-10T16:26:41.876Z",
+  "generatedAt": "2026-11-11T00:22:46.982Z",
   "build": {
     "node": "v24.18.0",
     "apiCalls": 0,
@@ -35,7 +35,7 @@
   },
   "streetSurfaces": {
     "module": "modules/street-surfaces.js",
-    "sha256": "d79fec6c50f3c3bc105a9a167c1bcfbdf4f113337d8852288737cdc7a883fe45",
+    "sha256": "89be3d6ed14ef93f12e7d2685731d984377fe36a64be6b9586091a8011997a6a",
     "mountPatch": "main-install-preview（createWorld 之后独立 try/catch 调用 installStreetSurfaces；失败写 errors 并保留原街面）",
     "paving": {
       "xRange": [
@@ -2774,7 +2774,7 @@
     {
       "path": "build/preview-manifest.json",
       "bytes": 206584,
-      "sha256": "6a892c57c036ca290568f69cb4e8d0c894a6c5c898c9192d23f9fd065aaebafa"
+      "sha256": "6bb4b92ac688760ae5255ee014d4adb6162b9f50a16f0dddfaaf387bf745fd15"
     }
   ],
   "models": [
@@ -4669,6 +4669,41 @@
       "id": "gate-columns-both-sides",
       "result": "passed",
       "detail": "门洞两侧各 5 根 0.25m 方木排叉柱（共10根、倾斜8°）+ 两侧 0.3m 阑额木梁连接；仅装饰、无 collider"
+    },
+    {
+      "id": "wall-thicker-profile",
+      "result": "passed",
+      "detail": "墙体加厚：底宽 7.6m、顶宽 6.0m、高 9.2m（batter≈0.087≈1:13）、马道净宽约5.2m；石基外扩0.25m/高0.6m、压顶带宽0.35m；矮墙底6.4/顶5.0/高8.2m；stats.wallProfile 记录"
+    },
+    {
+      "id": "wall-crenels-true-cut",
+      "result": "passed",
+      "detail": "女墙分层：下部实心墙0.45m通长 + 上部垛墙段1.5×0.7×0.55 每2.6m一段，垛口为宽1.1m/高0.7m真实缺口（缺口底=实心墙顶）；内侧宇墙0.75m通长；不再是贴顶方块"
+    },
+    {
+      "id": "wall-arrow-slits",
+      "result": "passed",
+      "detail": "垛墙每段1个竖向箭孔0.10×0.45×0.15（内壁×0.55），墙身上部每5m一个0.12×0.5；几何内凹+顶点色，不新增贴图/draw call；stub 116+58=174，真实墙长下约190–210"
+    },
+    {
+      "id": "wall-battle-sheds",
+      "result": "passed",
+      "detail": "木构战棚5座：4.2×2.6m、四柱0.22m、单坡瓦顶+栏杆，架在马道靠内侧留≥1.8m；并入 wood/cap 桶，不加 collider"
+    },
+    {
+      "id": "wall-watchtowers",
+      "result": "passed",
+      "detail": "敌楼3座：2处在马面顶、1处转角；4.6×4.6m、两层、高5.4m（相对墙顶），木构+瓦顶并入 wood/cap；不加 collider（receipt 标注可穿行）"
+    },
+    {
+      "id": "wall-drawcall-budget-7",
+      "result": "passed",
+      "detail": "wall 相关仍 stone/body/cap/brick/wood 5 个 mesh（≤7）；新增战棚/敌楼并入现有 wood/cap 桶，draw call 不增"
+    },
+    {
+      "id": "previously-fixed-guards-intact",
+      "result": "passed",
+      "detail": "构建后 grep 确认 export 含 installBuildingExpansionPreview、scheduleSupplementaryPlacement 函数与调用、cityStreetZ try/catch 守卫"
     },
     {
       "id": "wall-tone-gradient",
