@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "builtAt": "2026-11-11T05:22:03.892904+00:00",
+ "builtAt": "2026-11-11T07:44:48.786106+00:00",
  "scope": "清上河图建筑扩充候选资产；独立留档，不并入冻结 r1，不对外发布",
  "honesty": {
   "notWholePainting": true,
@@ -10,10 +10,10 @@
   "severalCandidatesKnownIncomplete": true
  },
  "totals": {
-  "assets": 92,
-  "bytes": 619030068,
-  "paidTasksRepresented": 74,
-  "paidCreditsRepresented": 1367
+  "assets": 97,
+  "bytes": 666490548,
+  "paidTasksRepresented": 79,
+  "paidCreditsRepresented": 1467
  },
  "assets": [
   {
@@ -3664,6 +3664,76 @@
    "adoption": "candidate-only-not-integrated-into-frozen-r1"
   },
   {
+   "id": "supp-house-a-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-house-a-v1/output-1.glb",
+   "sha256": "4f637391dd7292b65d7c4c75afa8463e3a1b225a1ffea6bcd96b8744ac9920d2",
+   "bytes": 8848240,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6380493,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "supp-house-b-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-house-b-v1/output-1.glb",
+   "sha256": "eba9e64c2923bca939e7dd1c0cb3982dde7576da07c197abd5ca0beac7bf8428",
+   "bytes": 9354992,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6380500,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
    "id": "supp-office-v1",
    "kind": "text-or-image-to-3d-candidate",
    "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-office-v1/output-1.glb",
@@ -3734,6 +3804,76 @@
    "adoption": "candidate-only-not-integrated-into-frozen-r1"
   },
   {
+   "id": "supp-school-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-school-v1/output-1.glb",
+   "sha256": "62dba85e27cda666cb91a0c3bb9d92e143395ba088bd3679226201a877086126",
+   "bytes": 9055060,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6381233,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "supp-spiceshop-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-spiceshop-v1/output-1.glb",
+   "sha256": "47e445752b26a3de520ec7998bb3887b9b0d13219843e1b6ed6e4d765b91c827",
+   "bytes": 11861632,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6381243,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
    "id": "supp-tavern-v1",
    "kind": "text-or-image-to-3d-candidate",
    "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-tavern-v1/output-1.glb",
@@ -3754,6 +3894,41 @@
    },
    "paid": {
     "taskId": 6031331,
+    "operation": "text-to-3d",
+    "state": "downloaded",
+    "quotedCredits": 20,
+    "consumedCredits": 20,
+    "originalImageUploaded": false,
+    "imageGuidanceKind": null
+   },
+   "review": {
+    "statusLabel": "未人工验收",
+    "observations": [],
+    "inferred": []
+   },
+   "adoption": "candidate-only-not-integrated-into-frozen-r1"
+  },
+  {
+   "id": "supp-teahouse-v1",
+   "kind": "text-or-image-to-3d-candidate",
+   "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-teahouse-v1/output-1.glb",
+   "sha256": "effcf5a5fa3c740500d1ae0ba32669ad6672af732f62c35a81b27c6fbd0c34ab",
+   "bytes": 8340556,
+   "glb": {
+    "valid": true,
+    "check": "glb-v2-header-size-match"
+   },
+   "source": {
+    "sourceId": null,
+    "catalog": null,
+    "title": null,
+    "cropPath": null,
+    "cropSHA256": null,
+    "visible": null,
+    "inferred": null
+   },
+   "paid": {
+    "taskId": 6380505,
     "operation": "text-to-3d",
     "state": "downloaded",
     "quotedCredits": 20,

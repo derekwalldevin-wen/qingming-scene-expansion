@@ -1,6 +1,6 @@
 {
   "schema": "building-expansion-game-preview-receipt-v2",
-  "generatedAt": "2026-11-11T06:21:09.223Z",
+  "generatedAt": "2026-11-11T07:41:30.378Z",
   "build": {
     "node": "v24.18.0",
     "apiCalls": 0,
@@ -1452,7 +1452,7 @@
     "state": "adopted"
   },
   "supplementary": {
-    "count": 8,
+    "count": 13,
     "inferredPosition": true,
     "reason": "原画中常见建筑类型，位置为推断，用于填充空置地块，非锚点精确复原",
     "roofOverrideSkip": {
@@ -2111,6 +2111,386 @@
           "nearHorizontal": 1717,
           "reason": null
         }
+      },
+      {
+        "id": "supp-house-a-v1",
+        "sourceId": "supp-house-a-v1",
+        "artifactId": "supp-house-a-v1",
+        "templateName": "building_supplementary_house_a",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "第二梯队民居院落甲（正屋+厢房+院墙+井台）；位置为推断，避开锚点/塔寺/主街中轴，非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-house-a-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-house-a-v1/output-1.glb",
+          "bytes": 8848240,
+          "sha256": "4f637391dd7292b65d7c4c75afa8463e3a1b225a1ffea6bcd96b8744ac9920d2",
+          "rawProviderBytesPreserved": true,
+          "triangles": 19396,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            1.0038,
+            0.6562,
+            1
+          ],
+          "uniformScale": 7.969715,
+          "width": 8,
+          "depth": 7.9697,
+          "height": 5.2297
+        },
+        "target": {
+          "x": 270,
+          "z": 28,
+          "yaw": "面向街心",
+          "yawDegrees": null,
+          "axis": "x",
+          "shiftRange": 12,
+          "groundY": 0.62,
+          "targetWidthMeters": 16,
+          "targetHeightMeters": null,
+          "targetScale": 2
+        },
+        "predictedWorldSize": {
+          "width": 16,
+          "depth": 15.939,
+          "height": 10.459
+        },
+        "materialTone": {
+          "avgL": 0.5321,
+          "k": 0.7893,
+          "clampHit": false,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 19396,
+          "roofTriangles": 7220,
+          "darkTriangles": 5653,
+          "lowTriangles": 6508,
+          "droppedDuplicates": 15,
+          "duplicateTriangles": 15,
+          "duplicateRatio": 0.0012,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 0.656,
+          "minY": -0.315,
+          "maxY": 0.341,
+          "nearHorizontal": 2011,
+          "reason": null
+        }
+      },
+      {
+        "id": "supp-house-b-v1",
+        "sourceId": "supp-house-b-v1",
+        "artifactId": "supp-house-b-v1",
+        "templateName": "building_supplementary_house_b",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "第二梯队民居院落乙（前店后宅）；河对岸背街推断位置，非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-house-b-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-house-b-v1/output-1.glb",
+          "bytes": 9354992,
+          "sha256": "eba9e64c2923bca939e7dd1c0cb3982dde7576da07c197abd5ca0beac7bf8428",
+          "rawProviderBytesPreserved": true,
+          "triangles": 17946,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            0.8771,
+            0.4677,
+            1.0052
+          ],
+          "uniformScale": 9.120967,
+          "width": 8,
+          "depth": 9.1684,
+          "height": 4.2659
+        },
+        "target": {
+          "x": 140,
+          "z": 16,
+          "yaw": "面向街心",
+          "yawDegrees": null,
+          "axis": "x",
+          "shiftRange": 12,
+          "groundY": 0.62,
+          "targetWidthMeters": 12,
+          "targetHeightMeters": null,
+          "targetScale": 1.5
+        },
+        "predictedWorldSize": {
+          "width": 12,
+          "depth": 13.753,
+          "height": 6.399
+        },
+        "materialTone": {
+          "avgL": 0.4451,
+          "k": 0.9435,
+          "clampHit": false,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 17946,
+          "roofTriangles": 8250,
+          "darkTriangles": 6954,
+          "lowTriangles": 2712,
+          "droppedDuplicates": 30,
+          "duplicateTriangles": 30,
+          "duplicateRatio": 0.002,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 0.468,
+          "minY": -0.234,
+          "maxY": 0.234,
+          "nearHorizontal": 968,
+          "reason": null
+        }
+      },
+      {
+        "id": "supp-teahouse-v1",
+        "sourceId": "supp-teahouse-v1",
+        "artifactId": "supp-teahouse-v1",
+        "templateName": "building_supplementary_teahouse",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "第二梯队茶坊（两层茶楼）；主街旁推断位置，非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-teahouse-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-teahouse-v1/output-1.glb",
+          "bytes": 8340556,
+          "sha256": "effcf5a5fa3c740500d1ae0ba32669ad6672af732f62c35a81b27c6fbd0c34ab",
+          "rawProviderBytesPreserved": true,
+          "triangles": 23186,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            0.9267,
+            1.0038,
+            0.8636
+          ],
+          "uniformScale": 8.632783,
+          "width": 8,
+          "depth": 7.4553,
+          "height": 8.6656
+        },
+        "target": {
+          "x": 160,
+          "z": 44,
+          "yaw": "面向街心",
+          "yawDegrees": null,
+          "axis": "x",
+          "shiftRange": 12,
+          "groundY": 0.636,
+          "targetWidthMeters": 11,
+          "targetHeightMeters": null,
+          "targetScale": 1.375
+        },
+        "predictedWorldSize": {
+          "width": 11,
+          "depth": 10.251,
+          "height": 11.915
+        },
+        "materialTone": {
+          "avgL": 0.4468,
+          "k": 0.9401,
+          "clampHit": false,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 23186,
+          "roofTriangles": 11013,
+          "darkTriangles": 5626,
+          "lowTriangles": 6545,
+          "droppedDuplicates": 2,
+          "duplicateTriangles": 2,
+          "duplicateRatio": 0.0001,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 1.004,
+          "minY": -0.502,
+          "maxY": 0.502,
+          "nearHorizontal": 2502,
+          "reason": null
+        }
+      },
+      {
+        "id": "supp-school-v1",
+        "sourceId": "supp-school-v1",
+        "artifactId": "supp-school-v1",
+        "templateName": "building_supplementary_school",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "第二梯队学塾（讲堂）；寺院西侧推断位置，非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-school-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-school-v1/output-1.glb",
+          "bytes": 9055060,
+          "sha256": "62dba85e27cda666cb91a0c3bb9d92e143395ba088bd3679226201a877086126",
+          "rawProviderBytesPreserved": true,
+          "triangles": 21714,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            1.0062,
+            0.7593,
+            0.9044
+          ],
+          "uniformScale": 7.950706,
+          "width": 8,
+          "depth": 7.1906,
+          "height": 6.037
+        },
+        "target": {
+          "x": 262,
+          "z": 58,
+          "yaw": "面向街心",
+          "yawDegrees": null,
+          "axis": "x",
+          "shiftRange": 12,
+          "groundY": 0.62,
+          "targetWidthMeters": 13,
+          "targetHeightMeters": null,
+          "targetScale": 1.625
+        },
+        "predictedWorldSize": {
+          "width": 13,
+          "depth": 11.685,
+          "height": 9.81
+        },
+        "materialTone": {
+          "avgL": 0.4797,
+          "k": 0.8756,
+          "clampHit": false,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 21714,
+          "roofTriangles": 8645,
+          "darkTriangles": 6978,
+          "lowTriangles": 6079,
+          "droppedDuplicates": 12,
+          "duplicateTriangles": 12,
+          "duplicateRatio": 0.0008,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 0.759,
+          "minY": -0.378,
+          "maxY": 0.381,
+          "nearHorizontal": 1894,
+          "reason": null
+        }
+      },
+      {
+        "id": "supp-spiceshop-v1",
+        "sourceId": "supp-spiceshop-v1",
+        "artifactId": "supp-spiceshop-v1",
+        "templateName": "building_supplementary_spiceshop",
+        "category": "supplementary",
+        "inferredPosition": true,
+        "positionReason": "第二梯队香药铺（临街铺面）；城门内侧推断位置，非锚点精确复原",
+        "kind": "supplementary",
+        "url": "/preview/candidates/supp-spiceshop-v1/output-1.glb",
+        "glb": {
+          "path": "output/building-expansion-20261109-v1/provider/artifacts/supp-spiceshop-v1/output-1.glb",
+          "bytes": 11861632,
+          "sha256": "47e445752b26a3de520ec7998bb3887b9b0d13219843e1b6ed6e4d765b91c827",
+          "rawProviderBytesPreserved": true,
+          "triangles": 20258,
+          "extensionsUsed": [
+            "KHR_materials_specular"
+          ],
+          "hasAnimations": false
+        },
+        "fit": {
+          "baseWidth": 8,
+          "modelBounds": [
+            0.9677,
+            0.8573,
+            1.0034
+          ],
+          "uniformScale": 8.267025,
+          "width": 8,
+          "depth": 8.2951,
+          "height": 7.0873
+        },
+        "target": {
+          "x": 228,
+          "z": 46,
+          "yaw": "面向街心",
+          "yawDegrees": null,
+          "axis": "x",
+          "shiftRange": 12,
+          "groundY": 0.636,
+          "targetWidthMeters": 9,
+          "targetHeightMeters": null,
+          "targetScale": 1.125
+        },
+        "predictedWorldSize": {
+          "width": 9,
+          "depth": 9.332,
+          "height": 7.973
+        },
+        "materialTone": {
+          "avgL": 0.4413,
+          "k": 0.9517,
+          "clampHit": false,
+          "materialCount": 1
+        },
+        "roofStats": {
+          "trianglesTotal": 20258,
+          "roofTriangles": 7359,
+          "darkTriangles": 4870,
+          "lowTriangles": 8006,
+          "droppedDuplicates": 23,
+          "duplicateTriangles": 23,
+          "duplicateRatio": 0.0019,
+          "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+          "meshes": 1,
+          "split": true,
+          "reverted": false,
+          "conserved": true,
+          "height": 0.857,
+          "minY": -0.425,
+          "maxY": 0.432,
+          "nearHorizontal": 1778,
+          "reason": null
+        }
       }
     ],
     "statsPath": "window.__BUILDING_EXPANSION_PREVIEW__.supplementary"
@@ -2132,6 +2512,14 @@
     "note": "程序化巷道/步道/护栏/墙根与背街民居/城东小院；并入 wood/cloth/earth/tile/paving，无 collider"
   },
   "landmarks": {
+    "secondTier": [
+      "supp-house-a-v1",
+      "supp-house-b-v1",
+      "supp-teahouse-v1",
+      "supp-school-v1",
+      "supp-spiceshop-v1"
+    ],
+    "secondTierCount": 5,
     "repositioned": {
       "pagoda": {
         "from": [
@@ -2656,17 +3044,17 @@
     "dedupe": "模型局部坐标质心 4 位小数；少量重复剔除（保留首个）不回退，重复比 >5% 或守恒失败才回退",
     "algorithm": "三组拆分：屋面(ny>0.2 或 yc>minY+0.72H 且 ny>-0.30) → 1 tile mesh（世界 UV 0.85m）；剩余中 yc>minY+0.6H → 1 dark mesh（材质克隆 color×0.55）；其余低位保留原 mesh。守恒 原=屋面+dark+低位、质心去重、失败回退",
     "modelsProcessed": 13,
-    "splitModels": 21,
+    "splitModels": 26,
     "revertedModels": 0,
-    "roofTrianglesTotal": 183251,
-    "darkTrianglesTotal": 81488,
-    "lowTrianglesTotal": 185908,
-    "darkGroupsTotal": 21,
-    "trianglesTotal": 451110,
-    "drawCallDeltaTotal": 42,
+    "roofTrianglesTotal": 225738,
+    "darkTrianglesTotal": 111569,
+    "lowTrianglesTotal": 215758,
+    "darkGroupsTotal": 26,
+    "trianglesTotal": 553610,
+    "drawCallDeltaTotal": 52,
     "duplicateTrianglesTotal": 0,
-    "droppedDuplicatesTotal": 463,
-    "conservedModels": 21,
+    "droppedDuplicatesTotal": 545,
+    "conservedModels": 26,
     "sources": {
       "guided-C01-local-G1-v2": {
         "trianglesTotal": 19446,
@@ -3066,6 +3454,101 @@
         "maxY": 0.443,
         "nearHorizontal": 1717,
         "reason": null
+      },
+      "supp-house-a-v1": {
+        "trianglesTotal": 19396,
+        "roofTriangles": 7220,
+        "darkTriangles": 5653,
+        "lowTriangles": 6508,
+        "droppedDuplicates": 15,
+        "duplicateTriangles": 15,
+        "duplicateRatio": 0.0012,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.656,
+        "minY": -0.315,
+        "maxY": 0.341,
+        "nearHorizontal": 2011,
+        "reason": null
+      },
+      "supp-house-b-v1": {
+        "trianglesTotal": 17946,
+        "roofTriangles": 8250,
+        "darkTriangles": 6954,
+        "lowTriangles": 2712,
+        "droppedDuplicates": 30,
+        "duplicateTriangles": 30,
+        "duplicateRatio": 0.002,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.468,
+        "minY": -0.234,
+        "maxY": 0.234,
+        "nearHorizontal": 968,
+        "reason": null
+      },
+      "supp-teahouse-v1": {
+        "trianglesTotal": 23186,
+        "roofTriangles": 11013,
+        "darkTriangles": 5626,
+        "lowTriangles": 6545,
+        "droppedDuplicates": 2,
+        "duplicateTriangles": 2,
+        "duplicateRatio": 0.0001,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 1.004,
+        "minY": -0.502,
+        "maxY": 0.502,
+        "nearHorizontal": 2502,
+        "reason": null
+      },
+      "supp-school-v1": {
+        "trianglesTotal": 21714,
+        "roofTriangles": 8645,
+        "darkTriangles": 6978,
+        "lowTriangles": 6079,
+        "droppedDuplicates": 12,
+        "duplicateTriangles": 12,
+        "duplicateRatio": 0.0008,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.759,
+        "minY": -0.378,
+        "maxY": 0.381,
+        "nearHorizontal": 1894,
+        "reason": null
+      },
+      "supp-spiceshop-v1": {
+        "trianglesTotal": 20258,
+        "roofTriangles": 7359,
+        "darkTriangles": 4870,
+        "lowTriangles": 8006,
+        "droppedDuplicates": 23,
+        "duplicateTriangles": 23,
+        "duplicateRatio": 0.0019,
+        "duplicateCheck": "模型局部坐标质心 4 位小数去重；少量重复剔除、不回退",
+        "meshes": 1,
+        "split": true,
+        "reverted": false,
+        "conserved": true,
+        "height": 0.857,
+        "minY": -0.425,
+        "maxY": 0.432,
+        "nearHorizontal": 1778,
+        "reason": null
       }
     },
     "fallbacks": []
@@ -3427,8 +3910,8 @@
     },
     {
       "path": "build/preview-manifest.json",
-      "bytes": 229930,
-      "sha256": "ea71bc15b1f6633b682b7200992b23f11b5e0676d2c4f9884996cd049a38a611"
+      "bytes": 247631,
+      "sha256": "d81434f3252acd1cb81c0bc0b3636011660f3d48d85a3cd3bf5d53839c249379"
     }
   ],
   "models": [
@@ -4664,7 +5147,7 @@
       9,
       16
     ],
-    "skippedCount": 71,
+    "skippedCount": 76,
     "skippedIds": [
       "A02",
       "A03",
@@ -4708,9 +5191,14 @@
       "E05",
       "material-A04-local-v1",
       "supp-fanlou-v1",
+      "supp-house-a-v1",
+      "supp-house-b-v1",
       "supp-office-v1",
       "supp-pagoda-v1",
+      "supp-school-v1",
+      "supp-spiceshop-v1",
       "supp-tavern-v1",
+      "supp-teahouse-v1",
       "supp-temple-v1",
       "supp-warehouse-v1",
       "supp-watergate-v1",
@@ -5029,6 +5517,21 @@
       "id": "backstreet-houses-ge10",
       "result": "passed",
       "detail": "河对岸民居候选扩到 x−100…200 每18m × z11/14/16.5、半径1.6m，stub 10 栋（目标≥10）"
+    },
+    {
+      "id": "second-tier-5-placed",
+      "result": "passed",
+      "detail": "第二梯队5件全部走 supplementary（民居甲/乙/茶坊/学塾/香药铺）；items 目标扩到13；state.landmarks.secondTier 记录5件；放不下记 blocked（含 blockerColliders）继续其它"
+    },
+    {
+      "id": "second-tier-measured",
+      "result": "passed",
+      "detail": "每件走世界 Box3 实测+二次修正缩放，items 记 size/measured{w,h,d}/roofSplit/appliedScale；landmarks.secondTier 冗余 measured"
+    },
+    {
+      "id": "second-tier-targets",
+      "result": "passed",
+      "detail": "目标面阔 民居甲16/民居乙12/茶坊11/学塾13/香药铺9m；落点(270,28)/(140,16)/(160,44)/(262,58)/(228,46)，±12m 避让；额外避 other supplementary footprint 与主街中轴3.2m"
     },
     {
       "id": "landmarks-6-placed",
